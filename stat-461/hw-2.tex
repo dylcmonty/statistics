@@ -1,5 +1,8 @@
 \documentclass{article}
 
+\usepackage{amsmath}
+\usepackage{amssymb}
+
 \begin{document}
 \subsection*{Problem 4}
 
@@ -27,29 +30,38 @@ C=\{FFFF,\,VVVV\}.
 
 \item[(d)] Event $D=$ ``at most one is variable'' $\iff$ 0 or 1 $V$:
 \[
-D=\{FFFF\}\cup\{VFFF,FVFF,FFVF,FFFV\}=\{FFFF,VFFF,FVFF,FFVF,FFFV\}.
+\begin{aligned}
+D &= \{FFFF\}\cup\{VFFF,FVFF,FFVF,FFFV\}\\
+  &= \{FFFF,VFFF,FVFF,FFVF,FFFV\}.
+\end{aligned}
 \]
 
 \item[(e)] Union and intersection of events in (c) and (d):
 \[
-C\cup D=\{FFFF,VVVV\}\cup\{FFFF,VFFF,FVFF,FFVF,FFFV\}
+\begin{aligned}
+C\cup D
+&= \{FFFF,VVVV\}\cup\{FFFF,VFFF,FVFF,FFVF,FFFV\}\\
+&= \{FFFF,VFFF,FVFF,FFVF,FFFV,VVVV\},
+\end{aligned}
 \]
 \[
-      =\{FFFF,VFFF,FVFF,FFVF,FFFV,VVVV\}
-\]
-\[
-C\cap D=\{FFFF,VVVV\}\cap\{FFFF,VFFF,FVFF,FFVF,FFFV\}=\{FFFF\}.
+\begin{aligned}
+C\cap D
+&= \{FFFF,VVVV\}\cap\{FFFF,VFFF,FVFF,FFVF,FFFV\}\\
+&= \{FFFF\}.
+\end{aligned}
 \]
 
 \item[(f)] Union and intersection of events in (b) and (c):
 \[
-B\cup C=\{VFFF,FVFF,FFVF,FFFV\}\cup\{FFFF,VVVV\}
+\begin{aligned}
+B\cup C
+&= \{VFFF,FVFF,FFVF,FFFV\}\cup\{FFFF,VVVV\}\\
+&= \{VFFF,FVFF,FFVF,FFFV,FFFF,VVVV\},
+\end{aligned}
 \]
 \[
-      =\{VFFF,FVFF,FFVF,FFFV,FFFF,VVVV\},
-\]
-\[
-B\cap C=\{VFFF,FVFF,FFVF,FFFV\}\cap\{FFFF,VVVV\}=nothing.
+B\cap C=\varnothing.
 \]
 \end{enumerate}
 
@@ -398,10 +410,13 @@ P(\text{Pr})=(0.02+0.07+0.07)+(0.02+0.05+0.02)=0.16+0.09=0.25.
 
 \item[(e)] Given short-sleeved plaid:
 \[
-P(M\mid \text{Sh}\cap \text{Pl})=\frac{P(M\cap \text{Sh}\cap \text{Pl})}{P(\text{Sh}\cap \text{Pl})}
-=\frac{0.08}{0.04+0.08+0.03}
+\begin{aligned}
+P(M\mid \text{Sh}\cap \text{Pl})
+&=\frac{P(M\cap \text{Sh}\cap \text{Pl})}{P(\text{Sh}\cap \text{Pl})}\\
+&=\frac{0.08}{0.04+0.08+0.03}
 =\frac{0.08}{0.15}
 =\frac{8}{15}\approx 0.5333.
+\end{aligned}
 \]
 
 \item[(f)] Given medium plaid:
@@ -475,8 +490,11 @@ P(L^c\mid D^c)=0.90 \;\Rightarrow\; P(L\mid D^c)=0.10.
 \]
 First compute
 \[
-P(L)=P(L\mid D)P(D)+P(L\mid D^c)P(D^c)
-=0.60(0.70)+0.10(0.30)=0.42+0.03=0.45.
+\begin{aligned}
+P(L)
+&=P(L\mid D)P(D)+P(L\mid D^c)P(D^c)\\
+&=0.60(0.70)+0.10(0.30)=0.42+0.03=0.45.
+\end{aligned}
 \]
 
 \begin{enumerate}
@@ -515,8 +533,11 @@ P(\text{both }O)=P(O)\cdot P(O)=(0.45)^2=0.2025.
 
 \item[(b)] Probability the two phenotypes match:
 \[
-P(\text{match})=P(A)^2+P(B)^2+P(AB)^2+P(O)^2
-=(0.40)^2+(0.11)^2+(0.04)^2+(0.45)^2.
+\begin{aligned}
+P(\text{match})
+&=P(A)^2+P(B)^2+P(AB)^2+P(O)^2\\
+&=(0.40)^2+(0.11)^2+(0.04)^2+(0.45)^2.
+\end{aligned}
 \]
 Compute:
 \[
@@ -532,10 +553,13 @@ independently.
 \begin{enumerate}
 \item[(a)] Probability at least one valve opens:
 \[
-P(\text{at least one opens}) = 1 - P(\text{none open})
-= 1 - (0.04)^5
-= 1 - 0.0000001024
-= 0.9999998976.
+\begin{aligned}
+P(\text{at least one opens})
+&= 1 - P(\text{none open})\\
+&= 1 - (0.04)^5\\
+&= 1 - 0.0000001024\\
+&= 0.9999998976.
+\end{aligned}
 \]
 
 \item[(b)] Probability at least one valve fails to open:
@@ -546,7 +570,10 @@ P(\text{at least one fails}) = 1 - P(\text{none fail})
 \]
 Compute:
 \[
-0.96^2=0.9216,\quad 0.96^3=0.884736,\quad 0.96^4=0.84934656,\quad 0.96^5=0.8153726976,
+\begin{aligned}
+0.96^2&=0.9216,\quad 0.96^3=0.884736,\\
+0.96^4&=0.84934656,\quad 0.96^5=0.8153726976.
+\end{aligned}
 \]
 so
 \[
