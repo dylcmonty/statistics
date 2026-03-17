@@ -1,0 +1,2934 @@
+\documentclass[11pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{amssymb}
+
+\begin{document}
+
+\subsection*{Problem 4}
+
+A 4-digit PIN is formed by choosing 4 digits, where each digit can be any of \(0,1,\dots,9\).  
+Let \(X=\) the number of nonzero digits in the PIN.
+
+The possible values of \(X\) are determined by how many of the 4 digits are nonzero.
+
+\[
+X \in \{0,1,2,3,4\}.
+\]
+
+This is because:
+\begin{itemize}
+    \item \(X=0\): all 4 digits are \(0\),
+    \item \(X=1\): exactly 1 digit is nonzero,
+    \item \(X=2\): exactly 2 digits are nonzero,
+    \item \(X=3\): exactly 3 digits are nonzero,
+    \item \(X=4\): all 4 digits are nonzero.
+\end{itemize}
+
+Three possible outcomes and their corresponding values of \(X\) are:
+
+\[
+0000 \quad \Rightarrow \quad X=0
+\]
+
+\[
+1050 \quad \Rightarrow \quad X=2
+\]
+
+\[
+4827 \quad \Rightarrow \quad X=4
+\]
+
+\textbf{Answer:} The possible values of \(X\) are
+\[
+\boxed{0,1,2,3,4}.
+\]
+Three example outcomes are \(0000\) with \(X=0\), \(1050\) with \(X=2\), and \(4827\) with \(X=4\).
+
+\subsection*{Problem 6}
+
+Each car is observed until the first car that turns left (\(L\)) appears.  
+Let \(X=\) the number of cars observed.
+
+Since the experiment stops at the first \(L\), an outcome must consist of any number of \(A\)'s and/or \(R\)'s, followed by one \(L\).
+
+Thus the possible values of \(X\) are
+\[
+X \in \{1,2,3,\dots\}.
+\]
+
+That is,
+\begin{itemize}
+    \item \(X=1\) if the first car turns left,
+    \item \(X=2\) if the first car is not \(L\) and the second car is \(L\),
+    \item \(X=3\) if the first two cars are not \(L\) and the third car is \(L\),
+    \item and so on.
+\end{itemize}
+
+Five possible outcomes and their associated values of \(X\) are:
+
+\[
+L \quad \Rightarrow \quad X=1
+\]
+
+\[
+AL \quad \Rightarrow \quad X=2
+\]
+
+\[
+RL \quad \Rightarrow \quad X=2
+\]
+
+\[
+AAL \quad \Rightarrow \quad X=3
+\]
+
+\[
+RRAL \quad \Rightarrow \quad X=4
+\]
+
+\textbf{Answer:} The possible values of \(X\) are
+\[
+\boxed{1,2,3,\dots}
+\]
+and five example outcomes are \(L, AL, RL, AAL,\) and \(RRAL\), with associated values \(1,2,2,3,\) and \(4\), respectively.
+
+\subsection*{Problem 10}
+
+Let
+\[
+\begin{aligned}
+S_1 &= \text{number of pumps in use at the 6-pump station},\\
+S_2 &= \text{number of pumps in use at the 4-pump station}.
+\end{aligned}
+\]
+Then
+\[
+S_1 \in \{0,1,2,3,4,5,6\}, \qquad S_2 \in \{0,1,2,3,4\}.
+\]
+
+\begin{enumerate}
+    \item[(a)] \(T=\) the total number of pumps in use.
+
+    \[
+    T=S_1+S_2
+    \]
+    The smallest possible total is \(0+0=0\), and the largest is \(6+4=10\). Hence
+    \[
+    T \in \{0,1,2,3,4,5,6,7,8,9,10\}.
+    \]
+
+    \textbf{Answer:}
+    \[
+    \boxed{\{0,1,2,3,4,5,6,7,8,9,10\}}
+    \]
+
+    \item[(b)] \(X=\) the difference between the numbers in use at stations 1 and 2.
+
+    Assumption: interpret “difference” as
+    \[
+    X=S_1-S_2.
+    \]
+    The smallest possible value is
+    \[
+    0-4=-4,
+    \]
+    and the largest possible value is
+    \[
+    6-0=6.
+    \]
+    Therefore
+    \[
+    X \in \{-4,-3,-2,-1,0,1,2,3,4,5,6\}.
+    \]
+
+    \textbf{Answer:}
+    \[
+    \boxed{\{-4,-3,-2,-1,0,1,2,3,4,5,6\}}
+    \]
+
+    \item[(c)] \(U=\) the maximum number of pumps in use at either station.
+
+    \[
+    U=\max(S_1,S_2)
+    \]
+    The minimum possible maximum is \(0\), and the largest possible maximum is \(6\). Every integer from \(0\) to \(6\) can occur, so
+    \[
+    U \in \{0,1,2,3,4,5,6\}.
+    \]
+
+    \textbf{Answer:}
+    \[
+    \boxed{\{0,1,2,3,4,5,6\}}
+    \]
+
+    \item[(d)] \(Z=\) the number of stations having exactly two pumps in use.
+
+    There are only two stations, so:
+    \begin{itemize}
+        \item \(Z=0\): neither station has exactly 2 pumps in use,
+        \item \(Z=1\): exactly one station has 2 pumps in use,
+        \item \(Z=2\): both stations have 2 pumps in use.
+    \end{itemize}
+    Thus
+    \[
+    Z \in \{0,1,2\}.
+    \]
+
+    \textbf{Answer:}
+    \[
+    \boxed{\{0,1,2\}}
+    \]
+\end{enumerate}
+
+\subsection*{Problem 12}
+
+Let \(Y=\) the number of ticketed passengers who show up for a flight with \(50\) seats.  
+The pmf is:
+
+\[
+\begin{array}{c|ccccccccccc}
+y      & 45 & 46 & 47 & 48 & 49 & 50 & 51 & 52 & 53 & 54 & 55 \\ \hline
+p(y)   & .05 & .10 & .12 & .14 & .25 & .17 & .06 & .05 & .03 & .02 & .01
+\end{array}
+\]
+
+\begin{enumerate}
+    \item[(a)] Probability that the flight will accommodate all ticketed passengers who show up.
+
+    All ticketed passengers can be accommodated when at most \(50\) passengers show up:
+    \[
+    P(\text{all accommodated})=P(Y\le 50).
+    \]
+    Thus,
+    \[
+    P(Y\le 50)=.05+.10+.12+.14+.25+.17=.83.
+    \]
+
+    \textbf{Answer:}
+    \[
+    \boxed{0.83}
+    \]
+
+    \item[(b)] Probability that not all ticketed passengers who show up can be accommodated.
+
+    This occurs when more than \(50\) passengers show up:
+    \[
+    P(\text{not all accommodated})=P(Y>50).
+    \]
+    So,
+    \[
+    P(Y>50)=.06+.05+.03+.02+.01=.17.
+    \]
+
+    (Equivalently, \(1-.83=.17\).)
+
+    \textbf{Answer:}
+    \[
+    \boxed{0.17}
+    \]
+
+    \item[(c)] Probability a standby passenger gets on the flight.
+
+    \begin{itemize}
+        \item If you are the \emph{first} person on the standby list, you get on if at least \(1\) seat is available after ticketed passengers are seated.  
+        That requires
+        \[
+        50-Y \ge 1 \quad \Longleftrightarrow \quad Y\le 49.
+        \]
+        Therefore,
+        \[
+        P(\text{first standby gets on})=P(Y\le 49)
+        \]
+        \[
+        =.05+.10+.12+.14+.25=.66.
+        \]
+
+        \textbf{Answer:}
+        \[
+        \boxed{0.66}
+        \]
+
+        \item If you are the \emph{third} person on the standby list, you get on if at least \(3\) seats are available.  
+        That requires
+        \[
+        50-Y \ge 3 \quad \Longleftrightarrow \quad Y\le 47.
+        \]
+        Hence,
+        \[
+        P(\text{third standby gets on})=P(Y\le 47)
+        \]
+        \[
+        =.05+.10+.12=.27.
+        \]
+
+        \textbf{Answer:}
+        \[
+        \boxed{0.27}
+        \]
+    \end{itemize}
+\end{enumerate}
+
+\subsection*{Problem 14}
+
+Let \(Y=\) the number of forms required, where \(Y \in \{1,2,3,4,5\}\), and suppose
+\[
+p(y)=ky, \qquad y=1,2,3,4,5.
+\]
+
+\begin{enumerate}
+    \item[(a)] Find \(k\).
+
+    Since \(p(y)\) is a pmf,
+    \[
+    \sum_{y=1}^5 p(y)=1.
+    \]
+    Thus,
+    \[
+    \sum_{y=1}^5 ky = k\sum_{y=1}^5 y = 1.
+    \]
+    Now
+    \[
+    \sum_{y=1}^5 y = 1+2+3+4+5=15,
+    \]
+    so
+    \[
+    15k=1 \quad \Rightarrow \quad k=\frac{1}{15}.
+    \]
+
+    \textbf{Answer:}
+    \[
+    \boxed{k=\frac{1}{15}}
+    \]
+
+    \item[(b)] Find \(P(Y\le 3)\).
+
+    \[
+    P(Y\le 3)=p(1)+p(2)+p(3)
+    \]
+    \[
+    =k(1)+k(2)+k(3)=k(1+2+3)=6k.
+    \]
+    Substituting \(k=\frac{1}{15}\),
+    \[
+    P(Y\le 3)=6\left(\frac{1}{15}\right)=\frac{6}{15}=\frac{2}{5}=0.4.
+    \]
+
+    \textbf{Answer:}
+    \[
+    \boxed{P(Y\le 3)=\frac{2}{5}=0.4}
+    \]
+
+    \item[(c)] Find \(P(2\le Y\le 4)\).
+
+    \[
+    P(2\le Y\le 4)=p(2)+p(3)+p(4)
+    \]
+    \[
+    =k(2+3+4)=9k.
+    \]
+    Using \(k=\frac{1}{15}\),
+    \[
+    P(2\le Y\le 4)=9\left(\frac{1}{15}\right)=\frac{9}{15}=\frac{3}{5}=0.6.
+    \]
+
+    \textbf{Answer:}
+    \[
+    \boxed{P(2\le Y\le 4)=\frac{3}{5}=0.6}
+    \]
+
+    \item[(d)] Could
+    \[
+    p(y)=\frac{y^2}{50}, \qquad y=1,2,3,4,5
+    \]
+    be the pmf of \(Y\)?
+
+    For a valid pmf, the probabilities must sum to \(1\). Compute:
+    \[
+    \sum_{y=1}^5 \frac{y^2}{50}
+    =\frac{1^2+2^2+3^2+4^2+5^2}{50}
+    =\frac{1+4+9+16+25}{50}
+    =\frac{55}{50}
+    =1.1.
+    \]
+    Since \(1.1 \ne 1\), this is not a valid pmf.
+
+    \textbf{Answer:}
+    \[
+    \boxed{\text{No, because } \sum_{y=1}^5 p(y)=\frac{55}{50}=1.1 \ne 1.}
+    \]
+\end{enumerate}
+
+\subsection*{Problem 18}
+
+Two fair six-sided dice are tossed independently. Let
+\[
+M=\max(\text{die 1},\text{die 2}).
+\]
+Since each die can show \(1,\dots,6\), the possible values of \(M\) are
+\[
+M \in \{1,2,3,4,5,6\}.
+\]
+
+There are \(36\) equally likely ordered outcomes.
+
+\begin{enumerate}
+    \item[(a)] Find the pmf of \(M\).
+
+    A convenient way is to count outcomes with maximum exactly \(m\).
+
+    \[
+    p_M(m)=P(M=m)=P(M\le m)-P(M\le m-1).
+    \]
+
+    Since both dice must be at most \(m\),
+    \[
+    P(M\le m)=\left(\frac{m}{6}\right)^2=\frac{m^2}{36}.
+    \]
+    Therefore,
+    \[
+    p_M(m)=\frac{m^2-(m-1)^2}{36}
+    =\frac{2m-1}{36}, \qquad m=1,2,3,4,5,6.
+    \]
+
+    So the pmf is:
+
+    \[
+    \begin{array}{c|cccccc}
+    m & 1 & 2 & 3 & 4 & 5 & 6 \\ \hline
+    p_M(m) & \frac{1}{36} & \frac{3}{36} & \frac{5}{36} & \frac{7}{36} & \frac{9}{36} & \frac{11}{36}
+    \end{array}
+    \]
+
+    Equivalently,
+    \[
+    p_M(1)=\frac{1}{36},\quad
+    p_M(2)=\frac{3}{36},\quad
+    p_M(3)=\frac{5}{36},\quad
+    p_M(4)=\frac{7}{36},\quad
+    p_M(5)=\frac{9}{36},\quad
+    p_M(6)=\frac{11}{36}.
+    \]
+
+    \textbf{Answer:}
+    \[
+    \boxed{p_M(m)=\frac{2m-1}{36}, \quad m=1,2,3,4,5,6}
+    \]
+
+    \item[(b)] Determine the cdf of \(M\) and graph it.
+
+    The cdf is
+    \[
+    F_M(m)=P(M\le m).
+    \]
+    Since both dice must be \(\le m\),
+    \[
+    F_M(m)=\frac{m^2}{36}, \qquad m=1,2,3,4,5,6.
+    \]
+
+    Writing it as a step function:
+    \[
+    F_M(x)=
+    \begin{cases}
+    0, & x<1,\\[4pt]
+    \dfrac{1}{36}, & 1\le x<2,\\[6pt]
+    \dfrac{4}{36}, & 2\le x<3,\\[6pt]
+    \dfrac{9}{36}, & 3\le x<4,\\[6pt]
+    \dfrac{16}{36}, & 4\le x<5,\\[6pt]
+    \dfrac{25}{36}, & 5\le x<6,\\[6pt]
+    1, & x\ge 6.
+    \end{cases}
+    \]
+
+    The cdf values at the integers are:
+    \[
+    \begin{array}{c|cccccc}
+    x & 1 & 2 & 3 & 4 & 5 & 6 \\ \hline
+    F_M(x) & \frac{1}{36} & \frac{4}{36} & \frac{9}{36} & \frac{16}{36} & \frac{25}{36} & 1
+    \end{array}
+    \]
+
+    \begin{figure}[ht]
+    \centering
+    \vspace{2in}
+    \caption{CDF graph for Problem 18(b)}
+    \end{figure}
+
+    \textbf{Answer:}
+    \[
+    \boxed{
+    F_M(x)=
+    \begin{cases}
+    0, & x<1,\\
+    \dfrac{1}{36}, & 1\le x<2,\\
+    \dfrac{4}{36}, & 2\le x<3,\\
+    \dfrac{9}{36}, & 3\le x<4,\\
+    \dfrac{16}{36}, & 4\le x<5,\\
+    \dfrac{25}{36}, & 5\le x<6,\\
+    1, & x\ge 6.
+    \end{cases}}
+    \]
+\end{enumerate}
+
+\subsection*{Problem 28}
+
+Let
+\[
+F(x)=P(X\le x)
+\]
+be the cdf of a random variable \(X\).
+
+Suppose \(x_1<x_2\). Then the event
+\[
+\{X\le x_1\}
+\]
+is contained in the event
+\[
+\{X\le x_2\},
+\]
+because every value that is \(\le x_1\) is also \(\le x_2\). Thus
+\[
+\{X\le x_1\}\subseteq \{X\le x_2\}.
+\]
+Since probabilities preserve set inclusion,
+\[
+P(X\le x_1)\le P(X\le x_2).
+\]
+Therefore,
+\[
+F(x_1)\le F(x_2),
+\]
+so \(F(x)\) is a nondecreasing function.
+
+Also,
+\[
+F(x_2)-F(x_1)=P(X\le x_2)-P(X\le x_1)=P(x_1<X\le x_2).
+\]
+Hence,
+\[
+F(x_1)=F(x_2)
+\quad \Longleftrightarrow \quad
+P(x_1<X\le x_2)=0.
+\]
+
+\textbf{Answer:}
+\[
+\boxed{F(x)\text{ is nondecreasing because }x_1<x_2 \implies \{X\le x_1\}\subseteq \{X\le x_2\}.}
+\]
+Moreover,
+\[
+\boxed{F(x_1)=F(x_2)\text{ exactly when }P(x_1<X\le x_2)=0.}
+\]
+
+\subsection*{Problem 32}
+
+The rated capacity \(X\) (in ft\(^3\)) has pmf
+\[
+\begin{array}{c|ccc}
+x & 16 & 18 & 20 \\ \hline
+p(x) & 0.2 & 0.5 & 0.3
+\end{array}
+\]
+
+\begin{enumerate}
+    \item[(a)] Compute \(E(X)\), \(E(X^2)\), and \(V(X)\).
+
+    First,
+    \[
+    E(X)=\sum x\,p(x)
+    =16(0.2)+18(0.5)+20(0.3).
+    \]
+    \[
+    E(X)=3.2+9+6=18.2.
+    \]
+
+    Next,
+    \[
+    E(X^2)=\sum x^2 p(x)
+    =16^2(0.2)+18^2(0.5)+20^2(0.3).
+    \]
+    \[
+    E(X^2)=256(0.2)+324(0.5)+400(0.3)
+    =51.2+162+120=333.2.
+    \]
+
+    Then
+    \[
+    V(X)=E(X^2)-[E(X)]^2
+    =333.2-(18.2)^2.
+    \]
+    \[
+    V(X)=333.2-331.24=1.96.
+    \]
+
+    \textbf{Answer:}
+    \[
+    \boxed{E(X)=18.2,\qquad E(X^2)=333.2,\qquad V(X)=1.96}
+    \]
+
+    \item[(b)] If the price is \(70X-650\), find the expected price.
+
+    Let
+    \[
+    Y=70X-650.
+    \]
+    Using linearity of expectation,
+    \[
+    E(Y)=E(70X-650)=70E(X)-650.
+    \]
+    Substituting \(E(X)=18.2\),
+    \[
+    E(Y)=70(18.2)-650=1274-650=624.
+    \]
+
+    \textbf{Answer:}
+    \[
+    \boxed{624}
+    \]
+
+    \item[(c)] Find the variance of the price paid.
+
+    Since \(Y=70X-650\),
+    \[
+    V(Y)=V(70X-650)=70^2V(X).
+    \]
+    Thus,
+    \[
+    V(Y)=4900(1.96)=9604.
+    \]
+
+    \textbf{Answer:}
+    \[
+    \boxed{9604}
+    \]
+
+    \item[(d)] If the actual capacity is
+    \[
+    h(X)=X-0.008X^2,
+    \]
+    find the expected actual capacity.
+
+    We want
+    \[
+    E[h(X)]=E(X-0.008X^2)=E(X)-0.008E(X^2).
+    \]
+    Using the values from part (a),
+    \[
+    E[h(X)]=18.2-0.008(333.2).
+    \]
+    \[
+    E[h(X)]=18.2-2.6656=15.5344.
+    \]
+
+    \textbf{Answer:}
+    \[
+    \boxed{15.5344\text{ ft}^3}
+    \]
+\end{enumerate}
+
+\subsection*{Problem 36}
+
+Let \(X=\) damage incurred (in dollars), with pmf
+
+\[
+\begin{array}{c|cccc}
+x & 0 & 1000 & 5000 & 10000 \\ \hline
+p(x) & 0.8 & 0.1 & 0.08 & 0.02
+\end{array}
+\]
+
+The policy has a \(\$500\) deductible, so the company's payment for a loss of size \(X\) is
+
+\[
+Y=
+\begin{cases}
+0, & X=0,\\
+1000-500=500, & X=1000,\\
+5000-500=4500, & X=5000,\\
+10000-500=9500, & X=10000.
+\end{cases}
+\]
+
+Thus the expected payout is
+
+\[
+E(Y)=0(0.8)+500(0.1)+4500(0.08)+9500(0.02).
+\]
+
+Compute each term:
+
+\[
+500(0.1)=50,\qquad 4500(0.08)=360,\qquad 9500(0.02)=190.
+\]
+
+So,
+
+\[
+E(Y)=50+360+190=600.
+\]
+
+If the premium charged is \(P\), then
+
+\[
+\text{expected profit}=P-E(Y).
+\]
+
+The company wants expected profit to be \(\$100\), so
+
+\[
+P-600=100.
+\]
+
+Therefore,
+
+\[
+P=700.
+\]
+
+\textbf{Answer:}
+\[
+\boxed{\$700}
+\]
+
+\subsection*{Problem 42}
+
+Given
+\[
+E(X)=5
+\qquad \text{and} \qquad
+E[X(X-1)]=27.5.
+\]
+
+\begin{enumerate}
+    \item[(a)] Find \(E(X^2)\).
+
+    First verify the identity:
+    \[
+    X(X-1)=X^2-X.
+    \]
+    Taking expectations,
+    \[
+    E[X(X-1)]=E(X^2)-E(X).
+    \]
+    Hence,
+    \[
+    E(X^2)=E[X(X-1)]+E(X)=27.5+5=32.5.
+    \]
+
+    \textbf{Answer:}
+    \[
+    \boxed{E(X^2)=32.5}
+    \]
+
+    \item[(b)] Find \(V(X)\).
+
+    Use
+    \[
+    V(X)=E(X^2)-[E(X)]^2.
+    \]
+    Substituting the known values,
+    \[
+    V(X)=32.5-5^2=32.5-25=7.5.
+    \]
+
+    \textbf{Answer:}
+    \[
+    \boxed{V(X)=7.5}
+    \]
+
+    \item[(c)] Give the general relationship among \(E(X)\), \(E[X(X-1)]\), and \(V(X)\).
+
+    Since
+    \[
+    E[X(X-1)]=E(X^2)-E(X),
+    \]
+    and
+    \[
+    V(X)=E(X^2)-[E(X)]^2,
+    \]
+    we can substitute \(E(X^2)=E[X(X-1)]+E(X)\) into the variance formula:
+
+    \[
+    V(X)=E[X(X-1)]+E(X)-[E(X)]^2.
+    \]
+
+    Equivalently,
+    \[
+    E[X(X-1)]=V(X)+[E(X)]^2-E(X).
+    \]
+
+    \textbf{Answer:}
+    \[
+    \boxed{V(X)=E[X(X-1)]+E(X)-[E(X)]^2}
+    \]
+    or equivalently
+    \[
+    \boxed{E[X(X-1)]=V(X)+[E(X)]^2-E(X)}.
+    \]
+\end{enumerate}
+
+\subsection*{Problem 48}
+
+Given
+\[
+X \sim \mathrm{Bin}(25,0.05),
+\]
+so
+\[
+P(X=x)=\binom{25}{x}(0.05)^x(0.95)^{25-x}, \qquad x=0,1,\dots,25.
+\]
+
+\begin{enumerate}
+    \item[(a)] Determine \(P(X\le 3)\) and \(P(X<3)\).
+
+    \[
+    P(X\le 3)=\sum_{x=0}^{3}\binom{25}{x}(0.05)^x(0.95)^{25-x}
+    \]
+    \[
+    =\binom{25}{0}(0.95)^{25}
+    +\binom{25}{1}(0.05)(0.95)^{24}
+    +\binom{25}{2}(0.05)^2(0.95)^{23}
+    +\binom{25}{3}(0.05)^3(0.95)^{22}
+    \]
+    \[
+    \approx 0.9659.
+    \]
+
+    Also,
+    \[
+    P(X<3)=P(X\le 2)
+    \]
+    \[
+    =\sum_{x=0}^{2}\binom{25}{x}(0.05)^x(0.95)^{25-x}
+    \approx 0.8729.
+    \]
+
+    \textbf{Answer:}
+    \[
+    \boxed{P(X\le 3)\approx 0.9659,\qquad P(X<3)\approx 0.8729}
+    \]
+
+    \item[(b)] Determine \(P(X\ge 4)\).
+
+    Use the complement:
+    \[
+    P(X\ge 4)=1-P(X\le 3)=1-0.9659=0.0341.
+    \]
+
+    \textbf{Answer:}
+    \[
+    \boxed{P(X\ge 4)\approx 0.0341}
+    \]
+
+    \item[(c)] Determine \(P(1\le X\le 3)\).
+
+    \[
+    P(1\le X\le 3)=P(X\le 3)-P(X=0).
+    \]
+    Since
+    \[
+    P(X=0)=\binom{25}{0}(0.05)^0(0.95)^{25}=(0.95)^{25}\approx 0.2774,
+    \]
+    we get
+    \[
+    P(1\le X\le 3)\approx 0.9659-0.2774=0.6885.
+    \]
+
+    \textbf{Answer:}
+    \[
+    \boxed{P(1\le X\le 3)\approx 0.6885}
+    \]
+
+    \item[(d)] What are \(E(X)\) and \(\sigma_X\)?
+
+    For a binomial random variable,
+    \[
+    E(X)=np, \qquad \sigma_X=\sqrt{np(1-p)}.
+    \]
+    Thus
+    \[
+    E(X)=25(0.05)=1.25,
+    \]
+    and
+    \[
+    \sigma_X=\sqrt{25(0.05)(0.95)}=\sqrt{1.1875}\approx 1.0897.
+    \]
+
+    \textbf{Answer:}
+    \[
+    \boxed{E(X)=1.25,\qquad \sigma_X\approx 1.0897}
+    \]
+
+    \item[(e)] In a sample of \(50\) children, what is the probability that none has a food allergy?
+
+    Here \(X \sim \mathrm{Bin}(50,0.05)\), so
+    \[
+    P(X=0)=\binom{50}{0}(0.05)^0(0.95)^{50}=(0.95)^{50}\approx 0.0769.
+    \]
+
+    \textbf{Answer:}
+    \[
+    \boxed{0.0769}
+    \]
+\end{enumerate}
+
+\subsection*{Problem 50}
+
+Let \(X=\) the number of calls (out of \(25\)) that involve a fax message. Then
+\[
+X\sim \mathrm{Bin}(25,0.25),
+\]
+so
+\[
+P(X=x)=\binom{25}{x}(0.25)^x(0.75)^{25-x}, \qquad x=0,1,\dots,25.
+\]
+
+\begin{enumerate}
+    \item[(a)] At most \(6\) of the calls involve a fax message.
+
+    \[
+    P(X\le 6)=\sum_{x=0}^{6}\binom{25}{x}(0.25)^x(0.75)^{25-x}
+    \approx 0.5611.
+    \]
+
+    \textbf{Answer:}
+    \[
+    \boxed{P(X\le 6)\approx 0.5611}
+    \]
+
+    \item[(b)] Exactly \(6\) of the calls involve a fax message.
+
+    \[
+    P(X=6)=\binom{25}{6}(0.25)^6(0.75)^{19}\approx 0.1828.
+    \]
+
+    \textbf{Answer:}
+    \[
+    \boxed{P(X=6)\approx 0.1828}
+    \]
+
+    \item[(c)] At least \(6\) of the calls involve a fax message.
+
+    \[
+    P(X\ge 6)=1-P(X\le 5)\approx 0.6217.
+    \]
+
+    \textbf{Answer:}
+    \[
+    \boxed{P(X\ge 6)\approx 0.6217}
+    \]
+
+    \item[(d)] More than \(6\) of the calls involve a fax message.
+
+    \[
+    P(X>6)=1-P(X\le 6)=1-0.5611=0.4389.
+    \]
+
+    \textbf{Answer:}
+    \[
+    \boxed{P(X>6)\approx 0.4389}
+    \]
+\end{enumerate}
+
+\subsection*{Problem 52}
+
+Let \(X=\) the number of the \(25\) purchasers who want a new copy. Then
+\[
+X\sim \mathrm{Bin}(25,0.30).
+\]
+
+\begin{enumerate}
+    \item[(a)] Mean value and standard deviation.
+
+    For a binomial random variable,
+    \[
+    \mu_X=E(X)=np,\qquad \sigma_X=\sqrt{np(1-p)}.
+    \]
+    Thus
+    \[
+    E(X)=25(0.30)=7.5,
+    \]
+    and
+    \[
+    \sigma_X=\sqrt{25(0.30)(0.70)}=\sqrt{5.25}\approx 2.2913.
+    \]
+
+    \textbf{Answer:}
+    \[
+    \boxed{E(X)=7.5,\qquad \sigma_X\approx 2.2913}
+    \]
+
+    \item[(b)] Probability that the number who want new copies is more than two standard deviations away from the mean.
+
+    We want
+    \[
+    P\bigl(|X-\mu_X|>2\sigma_X\bigr).
+    \]
+    Since
+    \[
+    \mu_X=7.5,\qquad 2\sigma_X\approx 2(2.2913)=4.5826,
+    \]
+    this becomes
+    \[
+    P(|X-7.5|>4.5826).
+    \]
+    So
+    \[
+    X<7.5-4.5826=2.9174
+    \quad \text{or} \quad
+    X>7.5+4.5826=12.0826.
+    \]
+    Because \(X\) is integer-valued, this is
+    \[
+    P(X\le 2 \text{ or } X\ge 13).
+    \]
+    Therefore,
+    \[
+    P(X\le 2)+P(X\ge 13)
+    =\sum_{x=0}^{2}\binom{25}{x}(0.3)^x(0.7)^{25-x}
+    +\sum_{x=13}^{25}\binom{25}{x}(0.3)^x(0.7)^{25-x}.
+    \]
+    Numerically,
+    \[
+    P(|X-7.5|>2\sigma_X)\approx 0.0264.
+    \]
+
+    \textbf{Answer:}
+    \[
+    \boxed{0.0264}
+    \]
+
+    \item[(c)] Probability that all \(25\) get the type of book they want if the store has \(15\) new and \(15\) used copies.
+
+    If \(X\) people want new copies, then \(25-X\) want used copies.
+
+    For everyone to get what they want, the store must have enough of each type:
+    \[
+    X\le 15
+    \qquad \text{and} \qquad
+    25-X\le 15.
+    \]
+    The second inequality gives
+    \[
+    X\ge 10.
+    \]
+    So all \(25\) get what they want exactly when
+    \[
+    10\le X\le 15.
+    \]
+    Hence
+    \[
+    P(10\le X\le 15)
+    =\sum_{x=10}^{15}\binom{25}{x}(0.3)^x(0.7)^{25-x}
+    \approx 0.1890.
+    \]
+
+    \textbf{Answer:}
+    \[
+    \boxed{0.1890}
+    \]
+
+    \item[(d)] Expected total revenue from the sale of the next \(25\) copies.
+
+    If \(X\) of the \(25\) purchasers want new copies, then \(25-X\) want used copies. So the revenue is
+    \[
+    h(X)=100X+70(25-X).
+    \]
+    Simplifying,
+    \[
+    h(X)=100X+1750-70X=30X+1750.
+    \]
+
+    Using the linearity of expectation,
+    \[
+    E[h(X)]=E(30X+1750)=30E(X)+1750.
+    \]
+    Since \(E(X)=7.5\),
+    \[
+    E[h(X)]=30(7.5)+1750=225+1750=1975.
+    \]
+
+    \textbf{Answer:}
+    \[
+    \boxed{\$1975}
+    \]
+\end{enumerate}
+
+\subsection*{Problem 54}
+
+Let \(X=\) the number of the next \(10\) customers who want the oversize version. Then
+\[
+X\sim \mathrm{Bin}(10,0.60).
+\]
+
+\begin{enumerate}
+    \item[(a)] Probability that at least six want the oversize version.
+
+    We want
+    \[
+    P(X\ge 6)=\sum_{x=6}^{10}\binom{10}{x}(0.6)^x(0.4)^{10-x}.
+    \]
+    Thus,
+    \[
+    \begin{aligned}
+    P(X\ge 6)
+    &=\binom{10}{6}(0.6)^6(0.4)^4
+    +\binom{10}{7}(0.6)^7(0.4)^3 \\
+    &\quad +\binom{10}{8}(0.6)^8(0.4)^2
+    +\binom{10}{9}(0.6)^9(0.4) \\
+    &\quad +\binom{10}{10}(0.6)^{10}.
+    \end{aligned}
+    \]
+    Numerically,
+    \[
+    P(X\ge 6)\approx 0.6331.
+    \]
+
+    \textbf{Answer:}
+    \[
+    \boxed{0.6331}
+    \]
+
+    \item[(b)] Probability that the number who want the oversize version is within \(1\) standard deviation of the mean.
+
+    For a binomial random variable,
+    \[
+    \mu_X=np=10(0.6)=6,
+    \]
+    \[
+    \sigma_X=\sqrt{np(1-p)}=\sqrt{10(0.6)(0.4)}=\sqrt{2.4}\approx 1.5492.
+    \]
+
+    “Within \(1\) standard deviation of the mean” means
+    \[
+    |X-6|\le 1.5492.
+    \]
+    Since \(X\) is an integer, this gives
+    \[
+    X\in\{5,6,7\}.
+    \]
+    Therefore,
+    \[
+    P(|X-\mu_X|\le \sigma_X)=P(5\le X\le 7)
+    \]
+    \[
+    =\sum_{x=5}^{7}\binom{10}{x}(0.6)^x(0.4)^{10-x}.
+    \]
+    Numerically,
+    \[
+    P(5\le X\le 7)\approx 0.6665.
+    \]
+
+    \textbf{Answer:}
+    \[
+    \boxed{0.6665}
+    \]
+
+    \item[(c)] Probability that all of the next ten customers can get the version they want if the store has seven rackets of each version.
+
+    If \(X\) customers want oversize, then \(10-X\) want midsize.
+
+    For everyone to get what they want, both conditions must hold:
+    \[
+    X\le 7
+    \qquad \text{and} \qquad
+    10-X\le 7.
+    \]
+    The second inequality gives
+    \[
+    X\ge 3.
+    \]
+    So all \(10\) customers can be satisfied exactly when
+    \[
+    3\le X\le 7.
+    \]
+    Hence
+    \[
+    P(3\le X\le 7)=\sum_{x=3}^{7}\binom{10}{x}(0.6)^x(0.4)^{10-x}.
+    \]
+    Numerically,
+    \[
+    P(3\le X\le 7)\approx 0.8204.
+    \]
+
+    \textbf{Answer:}
+    \[
+    \boxed{0.8204}
+    \]
+\end{enumerate}
+
+\subsection*{Problem 56}
+
+Let \(X=\) the number of the \(25\) selected students who received a special accommodation. Then
+\[
+X\sim \mathrm{Bin}(25,0.02).
+\]
+
+So
+\[
+P(X=x)=\binom{25}{x}(0.02)^x(0.98)^{25-x}, \qquad x=0,1,\dots,25.
+\]
+
+\begin{enumerate}
+    \item[(a)] Probability that exactly \(1\) student received a special accommodation.
+
+    \[
+    P(X=1)=\binom{25}{1}(0.02)^1(0.98)^{24}.
+    \]
+    \[
+    P(X=1)\approx 0.3079.
+    \]
+
+    \textbf{Answer:}
+    \[
+    \boxed{0.3079}
+    \]
+
+    \item[(b)] Probability that at least \(1\) student received a special accommodation.
+
+    Use the complement:
+    \[
+    P(X\ge 1)=1-P(X=0)=1-(0.98)^{25}.
+    \]
+    \[
+    P(X\ge 1)\approx 1-0.6035=0.3965.
+    \]
+
+    \textbf{Answer:}
+    \[
+    \boxed{0.3965}
+    \]
+
+    \item[(c)] Probability that at least \(2\) students received a special accommodation.
+
+    Again use the complement:
+    \[
+    P(X\ge 2)=1-P(X=0)-P(X=1).
+    \]
+    \[
+    P(X\ge 2)=1-(0.98)^{25}-\binom{25}{1}(0.02)(0.98)^{24}.
+    \]
+    \[
+    P(X\ge 2)\approx 0.0886.
+    \]
+
+    \textbf{Answer:}
+    \[
+    \boxed{0.0886}
+    \]
+
+    \item[(d)] Probability that the number accommodated is within \(2\) standard deviations of the expected number.
+
+    For a binomial random variable,
+    \[
+    \mu_X=np=25(0.02)=0.5,
+    \]
+    \[
+    \sigma_X=\sqrt{np(1-p)}=\sqrt{25(0.02)(0.98)}=\sqrt{0.49}=0.7.
+    \]
+    Two standard deviations is
+    \[
+    2\sigma_X=1.4.
+    \]
+    “Within \(2\) standard deviations of the mean” means
+    \[
+    |X-0.5|\le 1.4.
+    \]
+    So
+    \[
+    -0.9\le X\le 1.9.
+    \]
+    Because \(X\) is integer-valued, this means
+    \[
+    X=0 \text{ or } X=1.
+    \]
+    Therefore,
+    \[
+    P(|X-\mu_X|\le 2\sigma_X)=P(X=0)+P(X=1).
+    \]
+    \[
+    P(X=0)+P(X=1)\approx 0.6035+0.3079=0.9114.
+    \]
+
+    \textbf{Answer:}
+    \[
+    \boxed{0.9114}
+    \]
+
+    \item[(e)] Expected average time allowed for the \(25\) selected students.
+
+    If \(X\) students are accommodated, then \(25-X\) are not.  
+    Total time allowed is
+    \[
+    T=4.5X+3(25-X)=4.5X+75-3X=75+1.5X.
+    \]
+    Hence the average time per student is
+    \[
+    \frac{T}{25}=\frac{75+1.5X}{25}=3+0.06X.
+    \]
+    Taking expectations,
+    \[
+    E\!\left(3+0.06X\right)=3+0.06E(X).
+    \]
+    Since
+    \[
+    E(X)=np=25(0.02)=0.5,
+    \]
+    we get
+    \[
+    E(\text{average time})=3+0.06(0.5)=3.03.
+    \]
+
+    \textbf{Answer:}
+    \[
+    \boxed{3.03 \text{ hours}}
+    \]
+\end{enumerate}
+
+\subsection*{Problem 60}
+
+Let \(X=\) the number of passenger cars among the \(25\) vehicles. Then
+\[
+X\sim \mathrm{Bin}(25,0.60),
+\]
+so
+\[
+E(X)=np=25(0.60)=15.
+\]
+
+If \(X\) vehicles are passenger cars, then \(25-X\) are other vehicles.  
+Thus the toll revenue is
+\[
+h(X)=1.00X+2.50(25-X).
+\]
+Simplify:
+\[
+h(X)=X+62.5-2.5X=62.5-1.5X.
+\]
+
+Using linearity of expectation,
+\[
+E[h(X)]=E(62.5-1.5X)=62.5-1.5E(X).
+\]
+Substitute \(E(X)=15\):
+\[
+E[h(X)]=62.5-1.5(15)=62.5-22.5=40.
+\]
+
+\textbf{Answer:}
+\[
+\boxed{\$40.00}
+\]
+
+\subsection*{Problem 66}
+
+Let \(Y=\) the number of reservation holders who actually appear for the trip.
+
+Since each person with a reservation shows up with probability \(0.8\), when \(6\) reservations are made,
+\[
+Y\sim \mathrm{Bin}(6,0.8).
+\]
+
+\begin{enumerate}
+    \item[(a)] Probability that at least one person with a reservation cannot be accommodated.
+
+    The limousine holds at most \(4\) passengers, so at least one person cannot be accommodated when
+    \[
+    Y\ge 5.
+    \]
+    Therefore,
+    \[
+    P(Y\ge 5)=P(Y=5)+P(Y=6).
+    \]
+    Compute:
+    \[
+    P(Y=5)=\binom{6}{5}(0.8)^5(0.2)=6(0.8)^5(0.2)=0.393216,
+    \]
+    \[
+    P(Y=6)=\binom{6}{6}(0.8)^6=0.262144.
+    \]
+    Hence
+    \[
+    P(Y\ge 5)=0.393216+0.262144=0.65536.
+    \]
+
+    \textbf{Answer:}
+    \[
+    \boxed{0.65536}
+    \]
+
+    \item[(b)] Expected number of available places when the limousine departs.
+
+    Let \(A=\) number of available places. Since the limousine has \(4\) seats,
+    \[
+    A=
+    \begin{cases}
+    4-Y, & Y\le 4,\\
+    0, & Y\ge 5.
+    \end{cases}
+    \]
+    So
+    \[
+    E(A)=\sum_{y=0}^{4}(4-y)P(Y=y).
+    \]
+
+    First compute:
+    \[
+    P(Y=0)=\binom{6}{0}(0.8)^0(0.2)^6=0.000064,
+    \]
+    \[
+    P(Y=1)=\binom{6}{1}(0.8)(0.2)^5=0.001536,
+    \]
+    \[
+    P(Y=2)=\binom{6}{2}(0.8)^2(0.2)^4=0.01536,
+    \]
+    \[
+    P(Y=3)=\binom{6}{3}(0.8)^3(0.2)^3=0.08192,
+    \]
+    \[
+    P(Y=4)=\binom{6}{4}(0.8)^4(0.2)^2=0.24576.
+    \]
+
+    Then
+    \[
+    E(A)=4P(Y=0)+3P(Y=1)+2P(Y=2)+P(Y=3),
+    \]
+    because the coefficient for \(P(Y=4)\) is \(0\). Thus
+    \[
+    E(A)=4(0.000064)+3(0.001536)+2(0.01536)+1(0.08192)=0.117504.
+    \]
+
+    \textbf{Answer:}
+    \[
+    \boxed{0.117504}
+    \]
+
+    \item[(c)] Obtain the pmf of \(X\), the number of passengers on a randomly selected trip.
+
+    Let \(N=\) number of reservations. The distribution of \(N\) is
+    \[
+    P(N=3)=0.1,\quad P(N=4)=0.2,\quad P(N=5)=0.3,\quad P(N=6)=0.4.
+    \]
+
+    Since the limousine can carry at most \(4\) passengers,
+    \[
+    X=\min(S,4),
+    \]
+    where \(S\mid N=n \sim \mathrm{Bin}(n,0.8)\).
+
+    Use the law of total probability:
+    \[
+    P(X=x)=\sum_{n=3}^{6} P(X=x\mid N=n)P(N=n).
+    \]
+
+    Conditional distributions:
+
+    If \(N=3\), then \(X\sim \mathrm{Bin}(3,0.8)\):
+    \[
+    \begin{aligned}
+    P(X=0\mid N=3)&=0.008,\qquad P(X=1\mid N=3)=0.096,\\
+    P(X=2\mid N=3)&=0.384,\qquad P(X=3\mid N=3)=0.512.
+    \end{aligned}
+    \]
+
+    If \(N=4\), then \(X\sim \mathrm{Bin}(4,0.8)\):
+    \[
+    \begin{aligned}
+    P(X=0\mid N=4)&=0.0016,\qquad P(X=1\mid N=4)=0.0256,\\
+    P(X=2\mid N=4)&=0.1536,\qquad P(X=3\mid N=4)=0.4096,\\
+    P(X=4\mid N=4)&=0.4096.
+    \end{aligned}
+    \]
+
+    If \(N=5\), then
+    \[
+    \begin{aligned}
+    P(X=0\mid N=5)&=0.00032,\qquad P(X=1\mid N=5)=0.0064,\\
+    P(X=2\mid N=5)&=0.0512,\qquad P(X=3\mid N=5)=0.2048,\\
+    P(X=4\mid N=5)&=P(S\ge 4)=0.73728.
+    \end{aligned}
+    \]
+
+    If \(N=6\), then
+    \[
+    \begin{aligned}
+    P(X=0\mid N=6)&=0.000064,\qquad P(X=1\mid N=6)=0.001536,\\
+    P(X=2\mid N=6)&=0.01536,\qquad P(X=3\mid N=6)=0.08192,\\
+    P(X=4\mid N=6)&=P(S\ge 4)=0.90112.
+    \end{aligned}
+    \]
+
+    Therefore,
+    \[
+    P(X=0)=0.1(0.008)+0.2(0.0016)+0.3(0.00032)+0.4(0.000064)=0.0012416,
+    \]
+    \[
+    P(X=1)=0.1(0.096)+0.2(0.0256)+0.3(0.0064)+0.4(0.001536)=0.0172544,
+    \]
+    \[
+    P(X=2)=0.1(0.384)+0.2(0.1536)+0.3(0.0512)+0.4(0.01536)=0.090624,
+    \]
+    \[
+    P(X=3)=0.1(0.512)+0.2(0.4096)+0.3(0.2048)+0.4(0.08192)=0.227328,
+    \]
+    \[
+    P(X=4)=0.2(0.4096)+0.3(0.73728)+0.4(0.90112)=0.663552.
+    \]
+
+    Thus the pmf of \(X\) is
+    \[
+    \begin{array}{c|ccccc}
+    x & 0 & 1 & 2 & 3 & 4 \\ \hline
+    p(x) & 0.0012416 & 0.0172544 & 0.090624 & 0.227328 & 0.663552
+    \end{array}
+    \]
+
+    \textbf{Answer:}
+    \[
+    \boxed{
+    p_X(x)=
+    \begin{cases}
+    0.0012416, & x=0,\\
+    0.0172544, & x=1,\\
+    0.090624, & x=2,\\
+    0.227328, & x=3,\\
+    0.663552, & x=4,\\
+    0, & \text{otherwise.}
+    \end{cases}}
+    \]
+\end{enumerate}
+
+\subsection*{Problem 68}
+
+There are \(N=18\) individuals total, of whom \(K=8\) are taking the test for the first time.  
+A sample of \(n=6\) individuals is assigned to a particular examiner, and \(X\) is the number among these \(6\) who are first-time test takers.
+
+\begin{enumerate}
+    \item[(a)] What distribution does \(X\) have?
+
+    Since \(X\) counts the number of ``successes'' in a sample of size \(6\) drawn \emph{without replacement} from a population of size \(18\) containing \(8\) successes, \(X\) has a hypergeometric distribution:
+    \[
+    X \sim \mathrm{Hypergeometric}(N=18,\;K=8,\;n=6).
+    \]
+
+    Its pmf is
+    \[
+    P(X=x)=\frac{\binom{8}{x}\binom{10}{6-x}}{\binom{18}{6}},
+    \]
+    for
+    \[
+    x=0,1,2,3,4,5,6.
+    \]
+
+    \textbf{Answer:}
+    \[
+    \boxed{X\sim \mathrm{Hypergeometric}(18,8,6)}
+    \]
+
+    \item[(b)] Compute \(P(X=2)\), \(P(X\le 2)\), and \(P(X\ge 2)\).
+
+    First,
+    \[
+    P(X=2)=\frac{\binom{8}{2}\binom{10}{4}}{\binom{18}{6}}
+    =\frac{28\cdot 210}{18564}
+    =\frac{5880}{18564}
+    =\frac{70}{221}
+    \approx 0.3167.
+    \]
+
+    Next,
+    \[
+    P(X\le 2)=P(X=0)+P(X=1)+P(X=2).
+    \]
+    So
+    \[
+    P(X\le 2)=
+    \frac{\binom{8}{0}\binom{10}{6}}{\binom{18}{6}}
+    +
+    \frac{\binom{8}{1}\binom{10}{5}}{\binom{18}{6}}
+    +
+    \frac{\binom{8}{2}\binom{10}{4}}{\binom{18}{6}}.
+    \]
+    \[
+    P(X\le 2)
+    =
+    \frac{210+2016+5880}{18564}
+    =
+    \frac{8106}{18564}
+    \approx 0.4367.
+    \]
+
+    Finally,
+    \[
+    P(X\ge 2)=1-P(X\le 1).
+    \]
+    Thus
+    \[
+    P(X\ge 2)=1-\left[
+    \frac{\binom{8}{0}\binom{10}{6}}{\binom{18}{6}}
+    +
+    \frac{\binom{8}{1}\binom{10}{5}}{\binom{18}{6}}
+    \right]
+    \approx 0.8801.
+    \]
+
+    \textbf{Answer:}
+    \[
+    \boxed{P(X=2)\approx 0.3167,\qquad P(X\le 2)\approx 0.4367,\qquad P(X\ge 2)\approx 0.8801}
+    \]
+
+    \item[(c)] Calculate the mean value and standard deviation of \(X\).
+
+    For a hypergeometric random variable,
+    \[
+    \mu_X=E(X)=n\frac{K}{N},
+    \]
+    and
+    \[
+    \sigma_X=\sqrt{n\frac{K}{N}\left(1-\frac{K}{N}\right)\frac{N-n}{N-1}}.
+    \]
+
+    Therefore,
+    \[
+    E(X)=6\left(\frac{8}{18}\right)=\frac{48}{18}=\frac{8}{3}\approx 2.6667.
+    \]
+
+    Also,
+    \[
+    \sigma_X=
+    \sqrt{
+    6\left(\frac{8}{18}\right)\left(\frac{10}{18}\right)\left(\frac{18-6}{18-1}\right)
+    }
+    =
+    \sqrt{
+    6\left(\frac{8}{18}\right)\left(\frac{10}{18}\right)\left(\frac{12}{17}\right)
+    }
+    \approx 1.0226.
+    \]
+
+    \textbf{Answer:}
+    \[
+    \boxed{E(X)=\frac{8}{3}\approx 2.6667,\qquad \sigma_X\approx 1.0226}
+    \]
+\end{enumerate}
+
+\subsection*{Problem 72}
+
+Let \(X=\) the number of the top four candidates who are interviewed on the first day.
+
+There are \(N=11\) candidates total, with \(K=4\) ``top'' candidates, and \(n=6\) interview slots on the first day. Since the order is random, \(X\) has a hypergeometric distribution.
+
+\begin{enumerate}
+    \item[(a)] Find the probability that \(x\) of the top four candidates are interviewed on the first day.
+
+    \[
+    X \sim \mathrm{Hypergeometric}(N=11,\;K=4,\;n=6)
+    \]
+    so
+    \[
+    P(X=x)=\frac{\binom{4}{x}\binom{7}{6-x}}{\binom{11}{6}},
+    \qquad x=0,1,2,3,4.
+    \]
+
+    Thus the pmf is
+    \[
+    P(X=0)=\frac{\binom{4}{0}\binom{7}{6}}{\binom{11}{6}}=\frac{7}{462}\approx 0.0152,
+    \]
+    \[
+    P(X=1)=\frac{\binom{4}{1}\binom{7}{5}}{\binom{11}{6}}=\frac{84}{462}\approx 0.1818,
+    \]
+    \[
+    P(X=2)=\frac{\binom{4}{2}\binom{7}{4}}{\binom{11}{6}}=\frac{210}{462}\approx 0.4545,
+    \]
+    \[
+    P(X=3)=\frac{\binom{4}{3}\binom{7}{3}}{\binom{11}{6}}=\frac{140}{462}\approx 0.3030,
+    \]
+    \[
+    P(X=4)=\frac{\binom{4}{4}\binom{7}{2}}{\binom{11}{6}}=\frac{21}{462}\approx 0.0455.
+    \]
+
+    \textbf{Answer:}
+    \[
+    \boxed{P(X=x)=\frac{\binom{4}{x}\binom{7}{6-x}}{\binom{11}{6}}, \quad x=0,1,2,3,4}
+    \]
+
+    \item[(b)] How many of the top four candidates can be expected to be interviewed on the first day?
+
+    For a hypergeometric random variable,
+    \[
+    E(X)=n\frac{K}{N}.
+    \]
+    Therefore,
+    \[
+    E(X)=6\left(\frac{4}{11}\right)=\frac{24}{11}\approx 2.1818.
+    \]
+
+    \textbf{Answer:}
+    \[
+    \boxed{E(X)=\frac{24}{11}\approx 2.1818}
+    \]
+\end{enumerate}
+
+\subsection*{Problem 76}
+
+Let \(X=\) the number of children in the family. The family continues having children until it has three children of the same gender, where
+\[
+P(B)=P(G)=0.5.
+\]
+
+The possible values of \(X\) are
+\[
+X\in\{3,4,5\},
+\]
+because:
+\begin{itemize}
+    \item it is possible to stop after \(3\) children if the first three are all the same gender,
+    \item it is possible to stop after \(4\) children if after three children the count is \(2\)-to-\(1\), and the fourth child matches the majority gender,
+    \item if the family has not stopped by \(4\) children, then the first four must consist of \(2\) boys and \(2\) girls, so the fifth child guarantees three of one gender.
+\end{itemize}
+
+Now compute the probabilities.
+
+\begin{enumerate}
+    \item[\(\boldsymbol{x=3}\)] This occurs if the first three children are all boys or all girls:
+    \[
+    P(X=3)=P(BBB)+P(GGG)=\left(\frac12\right)^3+\left(\frac12\right)^3=\frac{2}{8}=\frac14.
+    \]
+
+    \item[\(\boldsymbol{x=4}\)] This occurs if among the first three children there are exactly \(2\) of one gender and \(1\) of the other, and the fourth child matches the majority gender.
+
+    There are \(6\) such patterns for the first three children:
+    \[
+    BBG,\; BGB,\; GBB,\; GGB,\; GBG,\; BGG.
+    \]
+    Each has probability \(\left(\frac12\right)^3=\frac18\), and then the fourth child must match the majority gender, which has probability \(\frac12\). Thus
+    \[
+    P(X=4)=6\left(\frac18\right)\left(\frac12\right)=\frac{6}{16}=\frac38.
+    \]
+
+    \item[\(\boldsymbol{x=5}\)] This occurs if the family has not stopped by \(4\) children. That requires exactly \(2\) boys and \(2\) girls among the first four children:
+    \[
+    P(X=5)=P(\text{2 boys and 2 girls in first 4})
+    =\binom{4}{2}\left(\frac12\right)^4
+    =6\cdot \frac{1}{16}
+    =\frac38.
+    \]
+\end{enumerate}
+
+Therefore, the pmf of \(X\) is
+\[
+p_X(x)=
+\begin{cases}
+\dfrac14, & x=3,\\[6pt]
+\dfrac38, & x=4,\\[6pt]
+\dfrac38, & x=5,\\[6pt]
+0, & \text{otherwise.}
+\end{cases}
+\]
+
+Check:
+\[
+\frac14+\frac38+\frac38=\frac{2}{8}+\frac{3}{8}+\frac{3}{8}=1.
+\]
+
+\textbf{Answer:}
+\[
+\boxed{
+p_X(3)=\frac14,\qquad
+p_X(4)=\frac38,\qquad
+p_X(5)=\frac38
+}
+\]
+
+\subsection*{Problem 80}
+
+Let
+\[
+X \sim \mathrm{Poisson}(\mu=4).
+\]
+Then
+\[
+P(X=x)=e^{-4}\frac{4^x}{x!}, \qquad x=0,1,2,\dots
+\]
+
+\begin{enumerate}
+    \item[(a)] Compute \(P(X\le 4)\) and \(P(X<4)\).
+
+    \[
+    P(X\le 4)=\sum_{x=0}^{4} e^{-4}\frac{4^x}{x!}
+    =e^{-4}\left(1+4+\frac{4^2}{2!}+\frac{4^3}{3!}+\frac{4^4}{4!}\right)
+    \approx 0.6288.
+    \]
+
+    \[
+    P(X<4)=P(X\le 3)=\sum_{x=0}^{3} e^{-4}\frac{4^x}{x!}
+    \approx 0.4335.
+    \]
+
+    \textbf{Answer:}
+    \[
+    \boxed{P(X\le 4)\approx 0.6288,\qquad P(X<4)\approx 0.4335}
+    \]
+
+    \item[(b)] Compute \(P(4\le X\le 8)\).
+
+    \[
+    P(4\le X\le 8)=\sum_{x=4}^{8} e^{-4}\frac{4^x}{x!}
+    \approx 0.5452.
+    \]
+
+    \textbf{Answer:}
+    \[
+    \boxed{P(4\le X\le 8)\approx 0.5452}
+    \]
+
+    \item[(c)] Compute \(P(8\le X)\).
+
+    \[
+    P(X\ge 8)=1-P(X\le 7)
+    =1-\sum_{x=0}^{7} e^{-4}\frac{4^x}{x!}
+    \approx 0.0511.
+    \]
+
+    \textbf{Answer:}
+    \[
+    \boxed{P(X\ge 8)\approx 0.0511}
+    \]
+
+    \item[(d)] Probability that the number of anomalies exceeds its mean value by no more than one standard deviation.
+
+    For a Poisson random variable,
+    \[
+    E(X)=\mu=4,\qquad \sigma_X=\sqrt{\mu}=2.
+    \]
+    “Exceeds its mean value by no more than one standard deviation” means
+    \[
+    4<X\le 4+2,
+    \]
+    so, since \(X\) is integer-valued,
+    \[
+    X=5 \text{ or } 6.
+    \]
+    Therefore,
+    \[
+    P(5\le X\le 6)=P(X=5)+P(X=6)
+    =e^{-4}\frac{4^5}{5!}+e^{-4}\frac{4^6}{6!}
+    \approx 0.2605.
+    \]
+
+    \textbf{Answer:}
+    \[
+    \boxed{0.2605}
+    \]
+\end{enumerate}
+
+\subsection*{Problem 82}
+
+Let
+\[
+X\sim \mathrm{Poisson}(\mu=0.2).
+\]
+Then the pmf is
+\[
+P(X=x)=e^{-0.2}\frac{(0.2)^x}{x!}, \qquad x=0,1,2,\dots
+\]
+
+\begin{enumerate}
+    \item[(a)] Probability that a disk has exactly one missing pulse.
+
+    \[
+    P(X=1)=e^{-0.2}\frac{(0.2)^1}{1!}=0.2e^{-0.2}.
+    \]
+    Numerically,
+    \[
+    P(X=1)\approx 0.2(0.8187)=0.1637.
+    \]
+
+    \textbf{Answer:}
+    \[
+    \boxed{P(X=1)=0.2e^{-0.2}\approx 0.1637}
+    \]
+
+    \item[(b)] Probability that a disk has at least two missing pulses.
+
+    Use the complement:
+    \[
+    P(X\ge 2)=1-P(X=0)-P(X=1).
+    \]
+    Now
+    \[
+    P(X=0)=e^{-0.2}, \qquad P(X=1)=0.2e^{-0.2}.
+    \]
+    So
+    \[
+    P(X\ge 2)=1-e^{-0.2}-0.2e^{-0.2}
+    =1-1.2e^{-0.2}.
+    \]
+    Numerically,
+    \[
+    P(X\ge 2)\approx 1-1.2(0.8187)=0.0175.
+    \]
+
+    \textbf{Answer:}
+    \[
+    \boxed{P(X\ge 2)=1-1.2e^{-0.2}\approx 0.0175}
+    \]
+
+    \item[(c)] If two disks are independently selected, find the probability that neither contains a missing pulse.
+
+    For one disk,
+    \[
+    P(X=0)=e^{-0.2}.
+    \]
+    Because the two disks are independent,
+    \[
+    P(\text{neither has a missing pulse})=P(X=0)^2=(e^{-0.2})^2=e^{-0.4}.
+    \]
+    Numerically,
+    \[
+    e^{-0.4}\approx 0.6703.
+    \]
+
+    \textbf{Answer:}
+    \[
+    \boxed{e^{-0.4}\approx 0.6703}
+    \]
+\end{enumerate}
+
+\subsection*{Problem 88}
+
+Let \(X=\) the number of failed diodes on a board. Since each diode fails with probability \(p=0.01\) and there are \(n=200\) diodes,
+\[
+X\sim \mathrm{Bin}(200,0.01).
+\]
+Because \(n\) is large and \(p\) is small, we use the Poisson approximation with
+\[
+\mu=np=200(0.01)=2,
+\]
+so
+\[
+X \approx \mathrm{Poisson}(2).
+\]
+
+\begin{enumerate}
+    \item[(a)] Expected number and standard deviation of the number that fail.
+
+    For a Poisson random variable,
+    \[
+    E(X)=\mu,\qquad \sigma_X=\sqrt{\mu}.
+    \]
+    Thus
+    \[
+    E(X)=2,\qquad \sigma_X=\sqrt{2}\approx 1.4142.
+    \]
+
+    \textbf{Answer:}
+    \[
+    \boxed{E(X)=2,\qquad \sigma_X\approx 1.4142}
+    \]
+
+    \item[(b)] Approximate probability that at least four diodes fail.
+
+    \[
+    P(X\ge 4)=1-P(X\le 3).
+    \]
+    Using the Poisson pmf,
+    \[
+    P(X\ge 4)=1-\sum_{x=0}^{3} e^{-2}\frac{2^x}{x!}.
+    \]
+    So
+    \[
+    P(X\ge 4)
+    =1-e^{-2}\left(1+2+\frac{2^2}{2!}+\frac{2^3}{3!}\right)
+    =1-e^{-2}\left(1+2+2+\frac{4}{3}\right).
+    \]
+    \[
+    P(X\ge 4)\approx 0.1429.
+    \]
+
+    \textbf{Answer:}
+    \[
+    \boxed{P(X\ge 4)\approx 0.1429}
+    \]
+
+    \item[(c)] If five boards are shipped, how likely is it that at least four work properly?
+
+    A board works properly only if no diodes fail, so for one board
+    \[
+    P(\text{board works})=P(X=0)=e^{-2}\approx 0.1353.
+    \]
+    Let \(Y=\) number of properly working boards among the \(5\). Then
+    \[
+    Y\sim \mathrm{Bin}(5,e^{-2}).
+    \]
+    Therefore,
+    \[
+    P(Y\ge 4)=P(Y=4)+P(Y=5)
+    \]
+    \[
+    =\binom{5}{4}(e^{-2})^4(1-e^{-2})+(e^{-2})^5.
+    \]
+    Numerically,
+    \[
+    P(Y\ge 4)\approx 0.0015.
+    \]
+
+    \textbf{Answer:}
+    \[
+    \boxed{P(\text{at least 4 of 5 work properly})\approx 0.0015}
+    \]
+\end{enumerate}
+
+\subsection*{Problem 2}
+
+Assume
+\[
+X\sim \text{Uniform}(A=-5,B=5).
+\]
+Then the pdf is
+\[
+f(x)=
+\begin{cases}
+\dfrac{1}{B-A}=\dfrac{1}{10}, & -5\le x\le 5,\\[6pt]
+0, & \text{otherwise.}
+\end{cases}
+\]
+
+For a uniform distribution on \([a,b]\),
+\[
+P(c<X<d)=\frac{d-c}{b-a}
+\]
+for any interval \((c,d)\subseteq [a,b]\).
+
+\begin{enumerate}
+    \item[(a)] Compute \(P(X<0)\).
+
+    The interval from \(-5\) to \(0\) has length \(5\), and the total length is \(10\). Thus
+    \[
+    P(X<0)=\frac{0-(-5)}{10}=\frac{5}{10}=\frac12.
+    \]
+
+    \textbf{Answer:}
+    \[
+    \boxed{\frac12}
+    \]
+
+    \item[(b)] Compute \(P(-2.5<X<2.5)\).
+
+    The interval length is
+    \[
+    2.5-(-2.5)=5.
+    \]
+    So
+    \[
+    P(-2.5<X<2.5)=\frac{5}{10}=\frac12.
+    \]
+
+    \textbf{Answer:}
+    \[
+    \boxed{\frac12}
+    \]
+
+    \item[(c)] Compute \(P(-2\le X\le 3)\).
+
+    For a continuous random variable, endpoints do not affect probability, so
+    \[
+    P(-2\le X\le 3)=P(-2<X<3).
+    \]
+    The interval length is
+    \[
+    3-(-2)=5.
+    \]
+    Hence
+    \[
+    P(-2\le X\le 3)=\frac{5}{10}=\frac12.
+    \]
+
+    \textbf{Answer:}
+    \[
+    \boxed{\frac12}
+    \]
+
+    \item[(d)] For \(k\) satisfying \(-5<k<k+4<5\), compute \(P(k<X<k+4)\).
+
+    The interval \((k,k+4)\) has length \(4\). Therefore
+    \[
+    P(k<X<k+4)=\frac{4}{10}=\frac25.
+    \]
+
+    \textbf{Answer:}
+    \[
+    \boxed{\frac25}
+    \]
+\end{enumerate}
+
+\subsection*{Problem 4}
+
+The proposed pdf is
+\[
+f(x;\theta)=
+\begin{cases}
+\dfrac{x}{\theta^2}e^{-x^2/(2\theta^2)}, & x>0,\\[6pt]
+0, & \text{otherwise.}
+\end{cases}
+\]
+
+\begin{enumerate}
+    \item[(a)] Verify that \(f(x;\theta)\) is a legitimate pdf.
+
+    To be a legitimate pdf, we need:
+    \begin{enumerate}
+        \item \(f(x;\theta)\ge 0\) for all \(x\),
+        \item \(\displaystyle \int_{-\infty}^{\infty} f(x;\theta)\,dx=1\).
+    \end{enumerate}
+
+    Since \(x>0\), \(\theta^2>0\), and \(e^{-x^2/(2\theta^2)}>0\), we have
+    \[
+    f(x;\theta)\ge 0.
+    \]
+
+    Also,
+    \[
+    \int_{-\infty}^{\infty} f(x;\theta)\,dx
+    =\int_0^\infty \frac{x}{\theta^2}e^{-x^2/(2\theta^2)}\,dx.
+    \]
+    Let
+    \[
+    u=-\frac{x^2}{2\theta^2}.
+    \]
+    Then
+    \[
+    du=-\frac{x}{\theta^2}\,dx,
+    \qquad
+    -du=\frac{x}{\theta^2}\,dx.
+    \]
+    Therefore,
+    \[
+    \int_0^\infty \frac{x}{\theta^2}e^{-x^2/(2\theta^2)}\,dx
+    =-\int_{u=0}^{u=-\infty} e^u\,du
+    =\int_{-\infty}^{0} e^u\,du
+    =\left[e^u\right]_{-\infty}^{0}
+    =1.
+    \]
+
+    Hence \(f(x;\theta)\) is a legitimate pdf.
+
+    \textbf{Answer:}
+    \[
+    \boxed{f(x;\theta)\text{ is a valid pdf since }f(x;\theta)\ge 0\text{ and }\int_{-\infty}^{\infty}f(x;\theta)\,dx=1.}
+    \]
+
+    \item[(b)] Suppose \(\theta=100\). Find \(P(X\le 200)\), \(P(X<200)\), and \(P(X\ge 200)\).
+
+    For \(x>0\),
+    \[
+    P(X\le x)=\int_0^x \frac{t}{\theta^2}e^{-t^2/(2\theta^2)}\,dt
+    =1-e^{-x^2/(2\theta^2)}.
+    \]
+    Thus, with \(\theta=100\),
+    \[
+    P(X\le 200)=1-e^{-200^2/(2\cdot 100^2)}
+    =1-e^{-2}.
+    \]
+    So
+    \[
+    P(X\le 200)\approx 1-0.1353=0.8647.
+    \]
+
+    Since \(X\) is continuous,
+    \[
+    P(X<200)=P(X\le 200)=1-e^{-2}\approx 0.8647.
+    \]
+
+    Also,
+    \[
+    P(X\ge 200)=1-P(X<200)=e^{-2}\approx 0.1353.
+    \]
+
+    \textbf{Answer:}
+    \[
+    \boxed{P(X\le 200)=1-e^{-2}\approx 0.8647}
+    \]
+    \[
+    \boxed{P(X<200)=1-e^{-2}\approx 0.8647}
+    \]
+    \[
+    \boxed{P(X\ge 200)=e^{-2}\approx 0.1353}
+    \]
+
+    \item[(c)] Find \(P(100\le X\le 200)\) for \(\theta=100\).
+
+    \[
+    P(100\le X\le 200)=P(X\le 200)-P(X\le 100).
+    \]
+    Using
+    \[
+    F(x)=1-e^{-x^2/(2\theta^2)},
+    \]
+    with \(\theta=100\),
+    \[
+    P(100\le X\le 200)
+    =(1-e^{-2})-(1-e^{-1/2})
+    =e^{-1/2}-e^{-2}.
+    \]
+    Numerically,
+    \[
+    P(100\le X\le 200)\approx 0.6065-0.1353=0.4712.
+    \]
+
+    \textbf{Answer:}
+    \[
+    \boxed{e^{-1/2}-e^{-2}\approx 0.4712}
+    \]
+
+    \item[(d)] Give an expression for \(P(X\le x)\).
+
+    The cdf is
+    \[
+    F(x)=P(X\le x)=
+    \begin{cases}
+    0, & x\le 0,\\[6pt]
+    \displaystyle \int_0^x \frac{t}{\theta^2}e^{-t^2/(2\theta^2)}\,dt, & x>0.
+    \end{cases}
+    \]
+    Evaluating the integral gives
+    \[
+    F(x)=
+    \begin{cases}
+    0, & x\le 0,\\[6pt]
+    1-e^{-x^2/(2\theta^2)}, & x>0.
+    \end{cases}
+    \]
+
+    \textbf{Answer:}
+    \[
+    \boxed{
+    P(X\le x)=F(x)=
+    \begin{cases}
+    0, & x\le 0,\\[6pt]
+    1-e^{-x^2/(2\theta^2)}, & x>0.
+    \end{cases}}
+    \]
+\end{enumerate}
+
+\subsection*{Problem 6}
+
+The pdf is
+\[
+f(x)=
+\begin{cases}
+k\bigl[1-(x-3)^2\bigr], & 2\le x\le 4,\\[4pt]
+0, & \text{otherwise.}
+\end{cases}
+\]
+
+\begin{enumerate}
+    \item[(a)] Sketch the graph of \(f(x)\).
+
+    On \(2\le x\le 4\), the graph is a downward-opening parabola:
+    \[
+    f(x)=k\bigl[1-(x-3)^2\bigr].
+    \]
+    It has zeros at
+    \[
+    x=2,\qquad x=4,
+    \]
+    and its maximum occurs at
+    \[
+    x=3,\qquad f(3)=k.
+    \]
+    Also,
+    \[
+    f(x)=0 \quad \text{for } x<2 \text{ and } x>4.
+    \]
+
+    \begin{figure}[ht]
+    \centering
+    \vspace{2in}
+    \caption{Sketch of \(f(x)\) for Problem 6(a)}
+    \end{figure}
+
+    \textbf{Answer:} A downward-opening parabola on \([2,4]\), symmetric about \(x=3\), with endpoints \((2,0)\) and \((4,0)\), and peak at \((3,k)\); \(f(x)=0\) outside \([2,4]\).
+
+    \item[(b)] Find \(k\).
+
+    Since \(f(x)\) is a pdf,
+    \[
+    \int_{-\infty}^{\infty} f(x)\,dx=1.
+    \]
+    Thus
+    \[
+    \int_2^4 k\bigl[1-(x-3)^2\bigr]\,dx=1.
+    \]
+    Let
+    \[
+    u=x-3.
+    \]
+    Then when \(x=2\), \(u=-1\), and when \(x=4\), \(u=1\). So
+    \[
+    k\int_{-1}^{1}(1-u^2)\,du=1.
+    \]
+    Now
+    \[
+    \int_{-1}^{1}(1-u^2)\,du
+    =\left[u-\frac{u^3}{3}\right]_{-1}^{1}
+    =\left(1-\frac13\right)-\left(-1+\frac13\right)
+    =\frac43.
+    \]
+    Therefore,
+    \[
+    k\left(\frac43\right)=1
+    \quad \Rightarrow \quad
+    k=\frac34.
+    \]
+
+    \textbf{Answer:}
+    \[
+    \boxed{k=\frac34}
+    \]
+
+    \item[(c)] What is the probability that the actual tracking weight is greater than the prescribed weight?
+
+    The prescribed weight is \(3\) g, so we want
+    \[
+    P(X>3).
+    \]
+    Because the pdf is symmetric about \(x=3\),
+    \[
+    P(X>3)=P(X<3)=\frac12.
+    \]
+
+    \textbf{Answer:}
+    \[
+    \boxed{\frac12}
+    \]
+
+    \item[(d)] What is the probability that the actual weight is within \(0.25\) g of the prescribed weight?
+
+    We want
+    \[
+    P(|X-3|\le 0.25)=P(2.75\le X\le 3.25).
+    \]
+    So
+    \[
+    P(2.75\le X\le 3.25)=\int_{2.75}^{3.25}\frac34\bigl[1-(x-3)^2\bigr]\,dx.
+    \]
+    Let \(u=x-3\). Then the limits become \(-0.25\) to \(0.25\):
+    \[
+    \frac34\int_{-0.25}^{0.25}(1-u^2)\,du
+    =\frac34\left[u-\frac{u^3}{3}\right]_{-0.25}^{0.25}.
+    \]
+    With \(a=0.25=\frac14\),
+    \[
+    \left[u-\frac{u^3}{3}\right]_{-a}^{a}
+    =2\left(a-\frac{a^3}{3}\right)
+    =2\left(\frac14-\frac{1}{64\cdot 3}\right)
+    =2\left(\frac{47}{192}\right)
+    =\frac{47}{96}.
+    \]
+    Hence
+    \[
+    P(2.75\le X\le 3.25)=\frac34\cdot \frac{47}{96}
+    =\frac{47}{128}.
+    \]
+
+    \textbf{Answer:}
+    \[
+    \boxed{\frac{47}{128}\approx 0.3672}
+    \]
+
+    \item[(e)] What is the probability that the actual weight differs from the prescribed weight by more than \(0.5\) g?
+
+    We want
+    \[
+    P(|X-3|>0.5)=1-P(|X-3|\le 0.5).
+    \]
+    First compute
+    \[
+    P(|X-3|\le 0.5)=P(2.5\le X\le 3.5)
+    =\int_{2.5}^{3.5}\frac34\bigl[1-(x-3)^2\bigr]\,dx.
+    \]
+    Using \(u=x-3\), this becomes
+    \[
+    \frac34\int_{-0.5}^{0.5}(1-u^2)\,du
+    =\frac34\left[u-\frac{u^3}{3}\right]_{-0.5}^{0.5}.
+    \]
+    With \(a=0.5=\frac12\),
+    \[
+    \left[u-\frac{u^3}{3}\right]_{-a}^{a}
+    =2\left(a-\frac{a^3}{3}\right)
+    =2\left(\frac12-\frac{1/8}{3}\right)
+    =2\left(\frac12-\frac{1}{24}\right)
+    =2\left(\frac{11}{24}\right)
+    =\frac{11}{12}.
+    \]
+    Thus
+    \[
+    P(|X-3|\le 0.5)=\frac34\cdot \frac{11}{12}=\frac{11}{16}.
+    \]
+    Therefore,
+    \[
+    P(|X-3|>0.5)=1-\frac{11}{16}=\frac{5}{16}.
+    \]
+
+    \textbf{Answer:}
+    \[
+    \boxed{\frac{5}{16}=0.3125}
+    \]
+\end{enumerate}
+
+\subsection*{Problem 12}
+
+The cdf of \(X\) is
+\[
+F(x)=
+\begin{cases}
+0, & x<-2,\\[4pt]
+\displaystyle \frac12+\frac{3}{32}\left(4x-\frac{x^3}{3}\right), & -2\le x<2,\\[8pt]
+1, & x\ge 2.
+\end{cases}
+\]
+
+\begin{enumerate}
+    \item[(a)] Compute \(P(X<0)\).
+
+    Since \(0\in[-2,2)\),
+    \[
+    P(X<0)=F(0)=\frac12+\frac{3}{32}\left(0-\frac{0^3}{3}\right)=\frac12.
+    \]
+
+    \textbf{Answer:}
+    \[
+    \boxed{\frac12}
+    \]
+
+    \item[(b)] Compute \(P(-1<X<1)\).
+
+    Because \(X\) is continuous,
+    \[
+    P(-1<X<1)=F(1)-F(-1).
+    \]
+    Now
+    \[
+    F(1)=\frac12+\frac{3}{32}\left(4-\frac13\right)
+    =\frac12+\frac{3}{32}\cdot\frac{11}{3}
+    =\frac12+\frac{11}{32}
+    =\frac{27}{32},
+    \]
+    and
+    \[
+    F(-1)=\frac12+\frac{3}{32}\left(-4+\frac13\right)
+    =\frac12-\frac{11}{32}
+    =\frac{5}{32}.
+    \]
+    Therefore,
+    \[
+    P(-1<X<1)=\frac{27}{32}-\frac{5}{32}=\frac{22}{32}=\frac{11}{16}.
+    \]
+
+    \textbf{Answer:}
+    \[
+    \boxed{\frac{11}{16}=0.6875}
+    \]
+
+    \item[(c)] Compute \(P(.5<X)\).
+
+    Since \(X\) is continuous,
+    \[
+    P(X>.5)=1-F(.5).
+    \]
+    Compute
+    \[
+    F(.5)=\frac12+\frac{3}{32}\left(4\cdot \frac12-\frac{(.5)^3}{3}\right)
+    =\frac12+\frac{3}{32}\left(2-\frac{1/8}{3}\right)
+    =\frac12+\frac{3}{32}\left(2-\frac{1}{24}\right).
+    \]
+    Thus
+    \[
+    F(.5)=\frac12+\frac{3}{32}\cdot \frac{47}{24}
+    =\frac12+\frac{47}{256}
+    =\frac{175}{256}.
+    \]
+    So
+    \[
+    P(X>.5)=1-\frac{175}{256}=\frac{81}{256}.
+    \]
+
+    \textbf{Answer:}
+    \[
+    \boxed{\frac{81}{256}\approx 0.3164}
+    \]
+
+    \item[(d)] Verify that \(f(x)\) is as given in Exercise 3 by obtaining \(F'(x)\).
+
+    Differentiate the middle piece:
+    \[
+    F'(x)=\frac{3}{32}\left(4-x^2\right), \qquad -2<x<2.
+    \]
+    Also, outside \([-2,2]\), \(F(x)\) is constant, so
+    \[
+    F'(x)=0 \qquad \text{for } x<-2 \text{ and } x>2.
+    \]
+    Hence
+    \[
+    f(x)=F'(x)=
+    \begin{cases}
+    \dfrac{3}{32}(4-x^2), & -2<x<2,\\[6pt]
+    0, & \text{otherwise.}
+    \end{cases}
+    \]
+    Since
+    \[
+    \frac{3}{32}=0.09375,
+    \]
+    this is exactly
+    \[
+    f(x)=
+    \begin{cases}
+    0.09375(4-x^2), & -2\le x\le 2,\\
+    0, & \text{otherwise,}
+    \end{cases}
+    \]
+    which is the pdf from Exercise 3.
+
+    \textbf{Answer:}
+    \[
+    \boxed{F'(x)=\frac{3}{32}(4-x^2)\text{ on }(-2,2),\text{ so this matches Exercise 3.}}
+    \]
+
+    \item[(e)] Verify that \(\tilde{\mu}=0\).
+
+    Here \(\tilde{\mu}\) denotes the median, so we must show
+    \[
+    F(\tilde{\mu})=\frac12.
+    \]
+    Since
+    \[
+    F(0)=\frac12+\frac{3}{32}\left(0-\frac{0^3}{3}\right)=\frac12,
+    \]
+    it follows that
+    \[
+    \tilde{\mu}=0.
+    \]
+
+    \textbf{Answer:}
+    \[
+    \boxed{\tilde{\mu}=0}
+    \]
+\end{enumerate}
+
+\subsection*{Problem 14}
+
+Assume the depth \(X\) has a uniform distribution on \((7.5,20)\). Thus
+\[
+X\sim \mathrm{Uniform}(a=7.5,b=20),
+\]
+with pdf
+\[
+f(x)=
+\begin{cases}
+\dfrac{1}{20-7.5}=\dfrac{1}{12.5}, & 7.5<x<20,\\[6pt]
+0, & \text{otherwise.}
+\end{cases}
+\]
+
+\begin{enumerate}
+    \item[(a)] Mean and variance of depth.
+
+    For a uniform distribution on \((a,b)\),
+    \[
+    E(X)=\frac{a+b}{2}, \qquad V(X)=\frac{(b-a)^2}{12}.
+    \]
+    Therefore,
+    \[
+    E(X)=\frac{7.5+20}{2}=13.75,
+    \]
+    and
+    \[
+    V(X)=\frac{(20-7.5)^2}{12}=\frac{12.5^2}{12}=\frac{156.25}{12}=\frac{625}{48}\approx 13.0208.
+    \]
+
+    \textbf{Answer:}
+    \[
+    \boxed{E(X)=13.75,\qquad V(X)=\frac{625}{48}\approx 13.0208}
+    \]
+
+    \item[(b)] Cdf of depth.
+
+    For a uniform distribution on \((a,b)\),
+    \[
+    F(x)=P(X\le x)=
+    \begin{cases}
+    0, & x\le a,\\[4pt]
+    \dfrac{x-a}{b-a}, & a<x<b,\\[8pt]
+    1, & x\ge b.
+    \end{cases}
+    \]
+    Hence
+    \[
+    F(x)=
+    \begin{cases}
+    0, & x\le 7.5,\\[6pt]
+    \dfrac{x-7.5}{12.5}, & 7.5<x<20,\\[10pt]
+    1, & x\ge 20.
+    \end{cases}
+    \]
+
+    \textbf{Answer:}
+    \[
+    \boxed{
+    F(x)=
+    \begin{cases}
+    0, & x\le 7.5,\\[4pt]
+    \dfrac{x-7.5}{12.5}, & 7.5<x<20,\\[6pt]
+    1, & x\ge 20.
+    \end{cases}}
+    \]
+
+    \item[(c)] Probability that observed depth is at most \(10\); between \(10\) and \(15\).
+
+    First,
+    \[
+    P(X\le 10)=\frac{10-7.5}{12.5}=\frac{2.5}{12.5}=0.2.
+    \]
+
+    Next,
+    \[
+    P(10\le X\le 15)=\frac{15-10}{12.5}=\frac{5}{12.5}=0.4.
+    \]
+
+    \textbf{Answer:}
+    \[
+    \boxed{P(X\le 10)=0.2,\qquad P(10\le X\le 15)=0.4}
+    \]
+
+    \item[(d)] Probability that the observed depth is within \(1\) standard deviation of the mean value; within \(2\) standard deviations.
+
+    First compute the standard deviation:
+    \[
+    \sigma=\sqrt{V(X)}=\sqrt{\frac{625}{48}}=\frac{25}{4\sqrt{3}}\approx 3.6084.
+    \]
+
+    The mean is
+    \[
+    \mu=13.75.
+    \]
+
+    Within \(1\) standard deviation:
+    \[
+    P(\mu-\sigma\le X\le \mu+\sigma).
+    \]
+    Since this interval lies inside \((7.5,20)\), its length is \(2\sigma\), so
+    \[
+    P(|X-\mu|\le \sigma)=\frac{2\sigma}{12.5}
+    =\frac{2(25/(4\sqrt3))}{12.5}
+    =\frac{1}{\sqrt3}
+    \approx 0.5774.
+    \]
+
+    Within \(2\) standard deviations:
+    \[
+    \mu-2\sigma \approx 13.75-7.2169=6.5331,\qquad
+    \mu+2\sigma \approx 13.75+7.2169=20.9669.
+    \]
+    This interval contains the entire support \((7.5,20)\), so
+    \[
+    P(|X-\mu|\le 2\sigma)=1.
+    \]
+
+    \textbf{Answer:}
+    \[
+    \boxed{P(|X-\mu|\le \sigma)=\frac{1}{\sqrt3}\approx 0.5774,\qquad P(|X-\mu|\le 2\sigma)=1}
+    \]
+\end{enumerate}
+
+\subsection*{Problem 18}
+
+Let
+\[
+X\sim \mathrm{Uniform}(-1,1),
+\]
+so its pdf is
+\[
+f_X(x)=
+\begin{cases}
+\frac12, & -1\le x\le 1,\\[4pt]
+0, & \text{otherwise.}
+\end{cases}
+\]
+
+The limiter output is
+\[
+Y=
+\begin{cases}
+X, & |X|\le 0.5,\\
+0.5, & X>0.5,\\
+-0.5, & X<-0.5.
+\end{cases}
+\]
+
+\begin{enumerate}
+    \item[(a)] Compute \(P(Y=.5)\).
+
+    The value \(Y=0.5\) occurs whenever \(X>0.5\) (and also at \(X=0.5\), which has probability \(0\)). Thus
+    \[
+    P(Y=0.5)=P(X>0.5).
+    \]
+    Since \(X\) is uniform on \([-1,1]\),
+    \[
+    P(X>0.5)=\frac{1-0.5}{1-(-1)}=\frac{0.5}{2}=\frac14.
+    \]
+
+    \textbf{Answer:}
+    \[
+    \boxed{P(Y=0.5)=\frac14}
+    \]
+
+    \item[(b)] Obtain the cdf of \(Y\) and graph it.
+
+    The cdf is
+    \[
+    F_Y(y)=P(Y\le y).
+    \]
+
+    For \(y<-0.5\),
+    \[
+    F_Y(y)=0.
+    \]
+
+    For \(-0.5\le y<0.5\), the event \(\{Y\le y\}\) consists of:
+    \begin{itemize}
+        \item all \(X<-0.5\), which contribute the point mass at \(-0.5\),
+        \item and all \(-0.5\le X\le y\), where \(Y=X\).
+    \end{itemize}
+    So
+    \[
+    F_Y(y)=P(X\le y)=\frac{y-(-1)}{2}=\frac{y+1}{2}.
+    \]
+
+    For \(y\ge 0.5\),
+    \[
+    F_Y(y)=1.
+    \]
+
+    Therefore,
+    \[
+    F_Y(y)=
+    \begin{cases}
+    0, & y<-0.5,\\[6pt]
+    \dfrac{y+1}{2}, & -0.5\le y<0.5,\\[8pt]
+    1, & y\ge 0.5.
+    \end{cases}
+    \]
+
+    In particular,
+    \[
+    F_Y(-0.5)=\frac{-0.5+1}{2}=\frac14,
+    \qquad
+    \lim_{y\to 0.5^-}F_Y(y)=\frac{0.5+1}{2}=\frac34,
+    \qquad
+    F_Y(0.5)=1.
+    \]
+
+    The graph has a jump from \(0\) to \(\frac14\) at \(y=-0.5\), a straight line \(F_Y(y)=\frac{y+1}{2}\) on \([-0.5,0.5)\), and a jump from \(\frac34\) to \(1\) at \(y=0.5\).
+
+    \begin{figure}[ht]
+    \centering
+    \vspace{2in}
+    \caption{CDF graph for Problem 18(b)}
+    \end{figure}
+
+    \textbf{Answer:}
+    \[
+    \boxed{
+    F_Y(y)=
+    \begin{cases}
+    0, & y<-0.5,\\[4pt]
+    \dfrac{y+1}{2}, & -0.5\le y<0.5,\\[6pt]
+    1, & y\ge 0.5.
+    \end{cases}}
+    \]
+\end{enumerate}
+
+\subsection*{Problem 22}
+
+The weekly demand \(X\) (in thousands of gallons) has pdf
+\[
+f(x)=
+\begin{cases}
+2\left(1-\dfrac{1}{x^2}\right), & 1\le x\le 2,\\[6pt]
+0, & \text{otherwise.}
+\end{cases}
+\]
+
+\begin{enumerate}
+    \item[(a)] Compute the cdf of \(X\).
+
+    For \(x<1\),
+    \[
+    F(x)=0.
+    \]
+
+    For \(1\le x\le 2\),
+    \[
+    F(x)=\int_1^x 2\left(1-\frac{1}{t^2}\right)\,dt
+    =2\left[t+\frac{1}{t}\right]_1^x
+    =2\left(x+\frac{1}{x}-2\right).
+    \]
+    Thus
+    \[
+    F(x)=2x+\frac{2}{x}-4, \qquad 1\le x\le 2.
+    \]
+
+    For \(x>2\),
+    \[
+    F(x)=1.
+    \]
+
+    Therefore,
+    \[
+    F(x)=
+    \begin{cases}
+    0, & x<1,\\[6pt]
+    2x+\dfrac{2}{x}-4, & 1\le x\le 2,\\[8pt]
+    1, & x>2.
+    \end{cases}
+    \]
+
+    \textbf{Answer:}
+    \[
+    \boxed{
+    F(x)=
+    \begin{cases}
+    0, & x<1,\\
+    2x+\dfrac{2}{x}-4, & 1\le x\le 2,\\
+    1, & x>2.
+    \end{cases}}
+    \]
+
+    \item[(b)] Obtain an expression for the \((100p)\)th percentile. What is the value of \(\tilde{\mu}\)?
+
+    Let \(x_p\) denote the \((100p)\)th percentile, so
+    \[
+    F(x_p)=p.
+    \]
+    For \(1\le x_p\le 2\),
+    \[
+    2x_p+\frac{2}{x_p}-4=p.
+    \]
+    Multiply by \(x_p\):
+    \[
+    2x_p^2-(p+4)x_p+2=0.
+    \]
+    Solving,
+    \[
+    x_p=\frac{(p+4)\pm \sqrt{(p+4)^2-16}}{4}
+    =\frac{(p+4)\pm \sqrt{p^2+8p}}{4}.
+    \]
+    Since the percentile must lie in \([1,2]\), we take the \(+\) sign:
+    \[
+    x_p=\frac{p+4+\sqrt{p^2+8p}}{4}.
+    \]
+
+    The median \(\tilde{\mu}\) is the \(50\)th percentile, so set \(p=0.5\):
+    \[
+    \tilde{\mu}
+    =\frac{4.5+\sqrt{4.25}}{4}
+    =\frac{9+\sqrt{17}}{8}
+    \approx 1.6404.
+    \]
+
+    \textbf{Answer:}
+    \[
+    \boxed{x_p=\frac{p+4+\sqrt{p^2+8p}}{4}}
+    \]
+    and
+    \[
+    \boxed{\tilde{\mu}=\frac{9+\sqrt{17}}{8}\approx 1.6404.}
+    \]
+
+    \item[(c)] Compute \(E(X)\) and \(V(X)\).
+
+    First,
+    \[
+    E(X)=\int_1^2 x\,2\left(1-\frac{1}{x^2}\right)\,dx
+    =\int_1^2 2\left(x-\frac{1}{x}\right)\,dx.
+    \]
+    So
+    \[
+    E(X)=\left[x^2-2\ln x\right]_1^2
+    =(4-2\ln 2)-1
+    =3-2\ln 2.
+    \]
+
+    Next,
+    \[
+    E(X^2)=\int_1^2 x^2\,2\left(1-\frac{1}{x^2}\right)\,dx
+    =\int_1^2 2(x^2-1)\,dx.
+    \]
+    Hence
+    \[
+    E(X^2)=2\left[\frac{x^3}{3}-x\right]_1^2
+    =2\left(\frac{8}{3}-2-\frac{1}{3}+1\right)
+    =\frac{8}{3}.
+    \]
+
+    Therefore,
+    \[
+    V(X)=E(X^2)-[E(X)]^2
+    =\frac{8}{3}-(3-2\ln 2)^2.
+    \]
+
+    \textbf{Answer:}
+    \[
+    \boxed{E(X)=3-2\ln 2\approx 1.6137}
+    \]
+    \[
+    \boxed{V(X)=\frac{8}{3}-(3-2\ln 2)^2\approx 0.0620}
+    \]
+
+    \item[(d)] If \(1.5\) thousand gallons are in stock at the beginning of the week and no new supply arrives, how much is expected to be left at the end of the week?
+
+    Let \(h(x)=\) amount left when demand is \(x\). Then
+    \[
+    h(x)=
+    \begin{cases}
+    1.5-x, & 1\le x\le 1.5,\\
+    0, & 1.5<x\le 2.
+    \end{cases}
+    \]
+
+    So
+    \[
+    E[h(X)]
+    =\int_1^{1.5} (1.5-x)\,2\left(1-\frac{1}{x^2}\right)\,dx.
+    \]
+    Expand the integrand:
+    \[
+    (1.5-x)\,2\left(1-\frac{1}{x^2}\right)
+    =3-2x-\frac{3}{x^2}+\frac{2}{x}.
+    \]
+    Hence
+    \[
+    E[h(X)]
+    =\int_1^{3/2}\left(3-2x-\frac{3}{x^2}+\frac{2}{x}\right)\,dx
+    \]
+    \[
+    =\left[3x-x^2+\frac{3}{x}+2\ln x\right]_1^{3/2}.
+    \]
+    Evaluating,
+    \[
+    E[h(X)]
+    =\left(\frac{9}{2}-\frac{9}{4}+2+2\ln\frac{3}{2}\right)-5
+    =-\frac{3}{4}+2\ln\frac{3}{2}.
+    \]
+
+    \textbf{Answer:}
+    \[
+    \boxed{E[h(X)]=-\frac{3}{4}+2\ln\!\left(\frac{3}{2}\right)\approx 0.0609}
+    \]
+    thousand gallons.
+\end{enumerate}
+
+\end{document}
