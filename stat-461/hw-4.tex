@@ -1,0 +1,2209 @@
+\subsection*{Problem 30}
+
+For the standard normal random variable $Z$, the $p$th percentile is the value $z_p$ such that
+\[
+P(Z \le z_p)=p.
+\]
+
+\begin{enumerate}
+    \item[(a)] \textbf{91st percentile}
+
+    We want $P(Z \le z)=0.91$.
+
+    From the standard normal table:
+    \[
+    P(Z\le 1.34)=0.9099,\qquad P(Z\le 1.35)=0.9115.
+    \]
+    Since $0.9100$ is very close to $0.9099$, interpolation gives
+    \[
+    z \approx 1.34.
+    \]
+
+    \textbf{Answer:} $z_{0.91}\approx 1.34$
+
+    \item[(b)] \textbf{9th percentile}
+
+    We want $P(Z \le z)=0.09$.
+
+    By symmetry of the standard normal distribution,
+    \[
+    z_{0.09}=-z_{0.91}\approx -1.34.
+    \]
+
+    \textbf{Answer:} $z_{0.09}\approx -1.34$
+
+    \item[(c)] \textbf{75th percentile}
+
+    We want $P(Z \le z)=0.75$.
+
+    From the table:
+    \[
+    P(Z\le 0.67)=0.7486,\qquad P(Z\le 0.68)=0.7517.
+    \]
+    Since $0.7500$ lies between these, interpolate:
+    \[
+    z \approx 0.67+\frac{0.7500-0.7486}{0.7517-0.7486}(0.01)
+    =0.67+\frac{0.0014}{0.0031}(0.01)
+    \approx 0.6745.
+    \]
+
+    \textbf{Answer:} $z_{0.75}\approx 0.67$ (more precisely, $0.6745$)
+
+    \item[(d)] \textbf{25th percentile}
+
+    We want $P(Z \le z)=0.25$.
+
+    By symmetry,
+    \[
+    z_{0.25}=-z_{0.75}\approx -0.6745.
+    \]
+
+    \textbf{Answer:} $z_{0.25}\approx -0.67$ (more precisely, $-0.6745$)
+
+    \item[(e)] \textbf{6th percentile}
+
+    We want $P(Z \le z)=0.06$.
+
+    By symmetry, this is the negative of the 94th percentile. From the table:
+    \[
+    P(Z\le 1.55)=0.9394,\qquad P(Z\le 1.56)=0.9406.
+    \]
+    Since $0.9400$ lies halfway between these,
+    \[
+    z_{0.94}\approx 1.555,
+    \]
+    so
+    \[
+    z_{0.06}\approx -1.555.
+    \]
+
+    \textbf{Answer:} $z_{0.06}\approx -1.56$
+\end{enumerate}
+
+\subsection*{Problem 32}
+
+Let
+\[
+X \sim N(\mu=15.0,\sigma=1.25).
+\]
+To compute each probability, standardize with
+\[
+Z=\frac{X-\mu}{\sigma}=\frac{X-15}{1.25}.
+\]
+
+\begin{enumerate}
+    \item[(a)] \textbf{$P(X\le 15)$}
+
+    Standardizing,
+    \[
+    P(X\le 15)=P\left(Z\le \frac{15-15}{1.25}\right)=P(Z\le 0).
+    \]
+    From the standard normal table,
+    \[
+    P(Z\le 0)=0.5000.
+    \]
+
+    \textbf{Answer:} $P(X\le 15)=0.5000$
+
+    \item[(b)] \textbf{$P(X\le 17.5)$}
+
+    Standardizing,
+    \[
+    P(X\le 17.5)=P\left(Z\le \frac{17.5-15}{1.25}\right)=P(Z\le 2.00).
+    \]
+    From Table A.3,
+    \[
+    P(Z\le 2.00)=0.9772.
+    \]
+
+    \textbf{Answer:} $P(X\le 17.5)=0.9772$
+
+    \item[(c)] \textbf{$P(X\ge 10)$}
+
+    Standardizing,
+    \[
+    P(X\ge 10)=P\left(Z\ge \frac{10-15}{1.25}\right)=P(Z\ge -4.00).
+    \]
+    By symmetry,
+    \[
+    P(Z\ge -4.00)=P(Z\le 4.00)\approx 0.99997.
+    \]
+    Rounded to four decimals,
+    \[
+    P(X\ge 10)\approx 1.0000.
+    \]
+
+    \textbf{Answer:} $P(X\ge 10)\approx 1.0000$
+
+    \item[(d)] \textbf{$P(14\le X\le 18)$}
+
+    Standardizing both endpoints,
+    \[
+    P(14\le X\le 18)=P\left(\frac{14-15}{1.25}\le Z\le \frac{18-15}{1.25}\right)
+    =P(-0.80\le Z\le 2.40).
+    \]
+    Using the table,
+    \[
+    P(Z\le 2.40)=0.9918,\qquad P(Z\le -0.80)=0.2119.
+    \]
+    Therefore,
+    \[
+    P(-0.80\le Z\le 2.40)=0.9918-0.2119=0.7799.
+    \]
+
+    \textbf{Answer:} $P(14\le X\le 18)=0.7799$
+
+    \item[(e)] \textbf{$P(|X-15|\le 3)$}
+
+    The condition $|X-15|\le 3$ means
+    \[
+    12\le X\le 18.
+    \]
+    Standardizing,
+    \[
+    P(12\le X\le 18)=P\left(\frac{12-15}{1.25}\le Z\le \frac{18-15}{1.25}\right)
+    =P(-2.40\le Z\le 2.40).
+    \]
+    From the table,
+    \[
+    P(Z\le 2.40)=0.9918,\qquad P(Z\le -2.40)=0.0082.
+    \]
+    So,
+    \[
+    P(-2.40\le Z\le 2.40)=0.9918-0.0082=0.9836.
+    \]
+
+    \textbf{Answer:} $P(|X-15|\le 3)=0.9836$
+\end{enumerate}
+
+\subsection*{Problem 34}
+
+Let $X$ denote the substrate concentration. We are given that
+\[
+X \sim N(\mu=0.30,\sigma=0.06).
+\]
+To find each probability, standardize using
+\[
+Z=\frac{X-\mu}{\sigma}=\frac{X-0.30}{0.06}.
+\]
+
+\begin{enumerate}
+    \item[(a)] \textbf{Probability that the concentration exceeds $0.50$}
+
+    We want
+    \[
+    P(X>0.50)=P\left(Z>\frac{0.50-0.30}{0.06}\right)
+    =P(Z>3.33).
+    \]
+    From the standard normal table,
+    \[
+    P(Z\le 3.33)=0.9996.
+    \]
+    Therefore,
+    \[
+    P(Z>3.33)=1-0.9996=0.0004.
+    \]
+
+    \textbf{Answer:} $P(X>0.50)\approx 0.0004$
+
+    \item[(b)] \textbf{Probability that the concentration is at most $0.20$}
+
+    We want
+    \[
+    P(X\le 0.20)=P\left(Z\le \frac{0.20-0.30}{0.06}\right)
+    =P(Z\le -1.67).
+    \]
+    From the standard normal table,
+    \[
+    P(Z\le -1.67)=0.0475.
+    \]
+
+    \textbf{Answer:} $P(X\le 0.20)\approx 0.0475$
+
+    \item[(c)] \textbf{Characterize the largest $5\%$ of all concentration values}
+
+    The largest $5\%$ corresponds to the cutoff $x$ such that
+    \[
+    P(X>x)=0.05,
+    \]
+    so $x$ is the $95$th percentile.
+
+    For the standard normal distribution, the $95$th percentile is
+    \[
+    z_{0.95}\approx 1.645.
+    \]
+    Thus,
+    \[
+    x=\mu+z_{0.95}\sigma
+    =0.30+(1.645)(0.06)
+    =0.30+0.0987
+    =0.3987.
+    \]
+
+    So the largest $5\%$ of concentration values are those greater than about $0.399$.
+
+    \textbf{Answer:} The top $5\%$ are concentrations exceeding approximately $0.399\ \text{mg/cm}^3$.
+\end{enumerate}
+
+\subsection*{Problem 44}
+
+Assume the bolt thread length is a normally distributed random variable $X$ with mean $\mu$ and standard deviation $\sigma$. Standardize by letting
+\[
+Z=\frac{X-\mu}{\sigma},
+\]
+so that $Z\sim N(0,1)$.
+
+\begin{enumerate}
+    \item[(a)] \textbf{Within 1.5 SDs of its mean value}
+
+    We want
+    \[
+    P(\mu-1.5\sigma \le X \le \mu+1.5\sigma)
+    =P(-1.5\le Z\le 1.5).
+    \]
+    Using the standard normal table,
+    \[
+    P(Z\le 1.5)=0.9332,\qquad P(Z\le -1.5)=0.0668.
+    \]
+    Therefore,
+    \[
+    P(-1.5\le Z\le 1.5)=0.9332-0.0668=0.8664.
+    \]
+
+    \textbf{Answer:} $0.8664$
+
+    \item[(b)] \textbf{Farther than 2.5 SDs from its mean value}
+
+    We want
+    \[
+    P(|X-\mu|>2.5\sigma)=P(|Z|>2.5).
+    \]
+    By symmetry,
+    \[
+    P(|Z|>2.5)=2P(Z>2.5).
+    \]
+    From the table,
+    \[
+    P(Z\le 2.5)=0.9938,
+    \]
+    so
+    \[
+    P(Z>2.5)=1-0.9938=0.0062.
+    \]
+    Thus,
+    \[
+    P(|Z|>2.5)=2(0.0062)=0.0124.
+    \]
+
+    \textbf{Answer:} $0.0124$
+
+    \item[(c)] \textbf{Between 1 and 2 SDs from its mean value}
+
+    We want the probability that the value is between $1\sigma$ and $2\sigma$ away from the mean on either side:
+    \[
+    P(1<|Z|<2).
+    \]
+    By symmetry,
+    \[
+    P(1<|Z|<2)=2P(1<Z<2).
+    \]
+    From the standard normal table,
+    \[
+    P(Z\le 2)=0.9772,\qquad P(Z\le 1)=0.8413.
+    \]
+    So
+    \[
+    P(1<Z<2)=0.9772-0.8413=0.1359,
+    \]
+    and therefore
+    \[
+    P(1<|Z|<2)=2(0.1359)=0.2718.
+    \]
+
+    \textbf{Answer:} $0.2718$
+\end{enumerate}
+
+\subsection*{Problem 50}
+
+Let $X$ be the number of individuals, out of $n=1000$, who \emph{can} taste the difference between the two oils.
+
+Since the company claims that $97$ out of $100$ people cannot detect a difference, we use
+\[
+p=P(\text{can taste the difference})=0.03.
+\]
+Thus,
+\[
+X\sim \operatorname{Bin}(1000,0.03).
+\]
+
+Using the normal approximation to the binomial,
+\[
+\mu=np=(1000)(0.03)=30,
+\]
+\[
+\sigma=\sqrt{np(1-p)}=\sqrt{(1000)(0.03)(0.97)}=\sqrt{29.1}\approx 5.394.
+\]
+
+\begin{enumerate}
+    \item[(a)] \textbf{At least 40 can taste the difference}
+
+    We want
+    \[
+    P(X\ge 40).
+    \]
+    Using the continuity correction,
+    \[
+    P(X\ge 40)\approx P\left(Y\ge 39.5\right),
+    \]
+    where $Y\sim N(30,29.1)$.
+
+    Standardizing,
+    \[
+    z=\frac{39.5-30}{5.394}\approx 1.76.
+    \]
+    Therefore,
+    \[
+    P(X\ge 40)\approx P(Z\ge 1.76)=1-P(Z\le 1.76).
+    \]
+    From the standard normal table,
+    \[
+    P(Z\le 1.76)=0.9608.
+    \]
+    So,
+    \[
+    P(X\ge 40)\approx 1-0.9608=0.0392.
+    \]
+
+    \textbf{Answer:} $P(X\ge 40)\approx 0.0392$
+
+    \item[(b)] \textbf{At most $5\%$ can taste the difference}
+
+    Since $5\%$ of $1000$ is $50$, we want
+    \[
+    P(X\le 50).
+    \]
+    Using the continuity correction,
+    \[
+    P(X\le 50)\approx P(Y\le 50.5).
+    \]
+    Standardizing,
+    \[
+    z=\frac{50.5-30}{5.394}\approx 3.80.
+    \]
+    Hence,
+    \[
+    P(X\le 50)\approx P(Z\le 3.80).
+    \]
+    From the standard normal table,
+    \[
+    P(Z\le 3.80)\approx 0.9999.
+    \]
+
+    \textbf{Answer:} $P(X\le 50)\approx 0.9999$
+\end{enumerate}
+
+\subsection*{Problem 54}
+
+Let
+\[
+X\sim \operatorname{Bin}(n=200,p=0.10),
+\]
+since each shaft has probability $0.10$ of being nonconforming but reworkable.
+
+Because $n$ is large, use the normal approximation:
+\[
+\mu=np=(200)(0.10)=20,
+\]
+\[
+\sigma=\sqrt{np(1-p)}=\sqrt{(200)(0.10)(0.90)}=\sqrt{18}\approx 4.243.
+\]
+
+\begin{enumerate}
+    \item[(a)] \textbf{At most 30}
+
+    We want
+    \[
+    P(X\le 30).
+    \]
+    Using the continuity correction,
+    \[
+    P(X\le 30)\approx P(Y\le 30.5),
+    \]
+    where $Y\sim N(20,18)$.
+
+    Standardizing,
+    \[
+    z=\frac{30.5-20}{4.243}\approx 2.47.
+    \]
+    Thus,
+    \[
+    P(X\le 30)\approx P(Z\le 2.47).
+    \]
+    From the standard normal table,
+    \[
+    P(Z\le 2.47)\approx 0.9932.
+    \]
+
+    \textbf{Answer:} $P(X\le 30)\approx 0.9932$
+
+    \item[(b)] \textbf{Less than 30}
+
+    We want
+    \[
+    P(X<30)=P(X\le 29).
+    \]
+    Using the continuity correction,
+    \[
+    P(X<30)\approx P(Y\le 29.5).
+    \]
+    Standardizing,
+    \[
+    z=\frac{29.5-20}{4.243}\approx 2.24.
+    \]
+    Therefore,
+    \[
+    P(X<30)\approx P(Z\le 2.24).
+    \]
+    From the table,
+    \[
+    P(Z\le 2.24)\approx 0.9875.
+    \]
+
+    \textbf{Answer:} $P(X<30)\approx 0.9875$
+
+    \item[(c)] \textbf{Between 15 and 25 (inclusive)}
+
+    We want
+    \[
+    P(15\le X\le 25).
+    \]
+    Using the continuity correction,
+    \[
+    P(15\le X\le 25)\approx P(14.5\le Y\le 25.5).
+    \]
+    Standardizing both endpoints,
+    \[
+    z_1=\frac{14.5-20}{4.243}\approx -1.30,
+    \qquad
+    z_2=\frac{25.5-20}{4.243}\approx 1.30.
+    \]
+    So,
+    \[
+    P(15\le X\le 25)\approx P(-1.30\le Z\le 1.30).
+    \]
+    From the standard normal table,
+    \[
+    P(Z\le 1.30)=0.9032,
+    \qquad
+    P(Z\le -1.30)=0.0968.
+    \]
+    Hence,
+    \[
+    P(-1.30\le Z\le 1.30)=0.9032-0.0968=0.8064.
+    \]
+
+    \textbf{Answer:} $P(15\le X\le 25)\approx 0.8064$
+\end{enumerate}
+
+\subsection*{Problem 60}
+
+Let $X$ denote the distance moved. We are given that $X$ has an exponential distribution with parameter
+\[
+\lambda=0.01386.
+\]
+Thus the pdf and cdf are
+\[
+f(x)=\lambda e^{-\lambda x}, \qquad x\ge 0,
+\]
+and
+\[
+F(x)=P(X\le x)=1-e^{-\lambda x}, \qquad x\ge 0.
+\]
+
+\begin{enumerate}
+    \item[(a)] \textbf{Find $P(X\le 100)$, $P(X\le 200)$, and $P(100\le X\le 200)$.}
+
+    First,
+    \[
+    P(X\le 100)=1-e^{-0.01386(100)}=1-e^{-1.386}\approx 1-0.2501=0.7499.
+    \]
+
+    Next,
+    \[
+    P(X\le 200)=1-e^{-0.01386(200)}=1-e^{-2.772}\approx 1-0.0625=0.9375.
+    \]
+
+    Finally,
+    \[
+    P(100\le X\le 200)=P(X\le 200)-P(X\le 100)
+    \]
+    \[
+    =0.9375-0.7499=0.1876.
+    \]
+
+    \textbf{Answer:}
+    \[
+    P(X\le 100)\approx 0.7499,\qquad
+    P(X\le 200)\approx 0.9375,\qquad
+    P(100\le X\le 200)\approx 0.1876.
+    \]
+
+    \item[(b)] \textbf{Find the probability that the distance exceeds the mean distance by more than 2 standard deviations.}
+
+    For an exponential distribution,
+    \[
+    \mu=\frac{1}{\lambda}, \qquad \sigma=\frac{1}{\lambda}.
+    \]
+    So
+    \[
+    \mu+2\sigma=\frac{1}{\lambda}+2\cdot \frac{1}{\lambda}=\frac{3}{\lambda}.
+    \]
+
+    Therefore,
+    \[
+    P\bigl(X>\mu+2\sigma\bigr)=P\left(X>\frac{3}{\lambda}\right)=e^{-\lambda(3/\lambda)}=e^{-3}.
+    \]
+    Hence,
+    \[
+    P\bigl(X>\mu+2\sigma\bigr)=e^{-3}\approx 0.0498.
+    \]
+
+    \textbf{Answer:}
+    \[
+    P\bigl(X>\mu+2\sigma\bigr)\approx 0.0498.
+    \]
+
+    \item[(c)] \textbf{Find the median distance.}
+
+    The median $m$ satisfies
+    \[
+    P(X\le m)=0.5.
+    \]
+    Using the cdf,
+    \[
+    1-e^{-\lambda m}=0.5.
+    \]
+    So
+    \[
+    e^{-\lambda m}=0.5,
+    \]
+    \[
+    -\lambda m=\ln(0.5)=-\ln 2,
+    \]
+    \[
+    m=\frac{\ln 2}{\lambda}.
+    \]
+    Substituting $\lambda=0.01386$,
+    \[
+    m=\frac{0.6931}{0.01386}\approx 50.01.
+    \]
+
+    \textbf{Answer:}
+    \[
+    \text{Median distance} \approx 50.0\text{ m}.
+    \]
+\end{enumerate}
+
+\subsection*{Problem 68}
+
+For the Erlang distribution with parameters $\lambda$ and $n$,
+\[
+f(x;\lambda,n)=
+\begin{cases}
+\dfrac{\lambda(\lambda x)^{n-1}e^{-\lambda x}}{(n-1)!}, & x\ge 0,\\[1ex]
+0, & x<0.
+\end{cases}
+\]
+This is the gamma distribution with shape parameter $\alpha=n$ and scale parameter $\beta=\frac{1}{\lambda}$.
+
+\begin{enumerate}
+    \item[(a)] \textbf{Expected value of $X$; expected time until the 10th customer arrives when $\lambda=0.5$.}
+
+    For a gamma random variable,
+    \[
+    E(X)=\alpha\beta.
+    \]
+    Here $\alpha=n$ and $\beta=\frac{1}{\lambda}$, so
+    \[
+    E(X)=n\left(\frac{1}{\lambda}\right)=\frac{n}{\lambda}.
+    \]
+
+    If interarrival times are exponential with $\lambda=0.5$ and we wait for the 10th customer, then $X$ has an Erlang distribution with
+    \[
+    n=10,\qquad \lambda=0.5.
+    \]
+    Therefore,
+    \[
+    E(X)=\frac{10}{0.5}=20.
+    \]
+
+    \textbf{Answer:} 
+    \[
+    E(X)=\frac{n}{\lambda},\qquad \text{and for } n=10,\ \lambda=0.5,\ E(X)=20\text{ minutes.}
+    \]
+
+    \item[(b)] \textbf{Probability that the 10th customer arrives within the next 30 minutes.}
+
+    Here $X$ is the waiting time until the 10th customer, so
+    \[
+    X\sim \text{Erlang}(\lambda=0.5,n=10).
+    \]
+    We want
+    \[
+    P(X\le 30).
+    \]
+
+    Using the Poisson interpretation, the event $\{X\le 30\}$ means that at least 10 customers arrive in the next 30 minutes. If $N$ is the number of arrivals in 30 minutes, then
+    \[
+    N\sim \text{Poisson}(\lambda t)=\text{Poisson}(0.5\cdot 30)=\text{Poisson}(15).
+    \]
+    Thus,
+    \[
+    P(X\le 30)=P(N\ge 10)=1-P(N\le 9).
+    \]
+    So
+    \[
+    P(X\le 30)=1-\sum_{y=0}^{9} e^{-15}\frac{15^y}{y!}.
+    \]
+    Numerically,
+    \[
+    P(X\le 30)\approx 0.9301.
+    \]
+
+    \textbf{Answer:}
+    \[
+    P(X\le 30)=1-\sum_{y=0}^{9} e^{-15}\frac{15^y}{y!}\approx 0.9301.
+    \]
+
+    \item[(c)] \textbf{Expression for the Erlang cdf.}
+
+    The event $\{X\le t\}$ occurs if and only if at least $n$ events occur in the next $t$ units of time. If $Y$ is the number of events in time $t$, then
+    \[
+    Y\sim \text{Poisson}(\lambda t).
+    \]
+    Therefore,
+    \[
+    F(t;\lambda,n)=P(X\le t)=P(Y\ge n).
+    \]
+    Since $P(Y\ge n)=1-P(Y\le n-1)$,
+    \[
+    F(t;\lambda,n)=1-\sum_{y=0}^{n-1} e^{-\lambda t}\frac{(\lambda t)^y}{y!}, \qquad t\ge 0.
+    \]
+
+    \textbf{Answer:}
+    \[
+    F(t;\lambda,n)=P(X\le t)=P\bigl(\text{Poisson}(\lambda t)\ge n\bigr)
+    =1-\sum_{y=0}^{n-1} e^{-\lambda t}\frac{(\lambda t)^y}{y!}, \qquad t\ge 0.
+    \]
+\end{enumerate}
+
+\subsection*{Problem 76}
+
+Let $X$ denote the $\text{SO}_2$ concentration. If $X$ has a lognormal distribution with parameters $\mu=1.9$ and $\sigma=0.9$, then
+\[
+Y=\ln(X)\sim N(\mu=1.9,\sigma=0.9).
+\]
+
+\begin{enumerate}
+    \item[(a)] \textbf{Mean and standard deviation of concentration}
+
+    For a lognormal random variable,
+    \[
+    E(X)=e^{\mu+\sigma^2/2}
+    \]
+    and
+    \[
+    \operatorname{Var}(X)=\left(e^{\sigma^2}-1\right)e^{2\mu+\sigma^2}.
+    \]
+
+    Substituting $\mu=1.9$ and $\sigma=0.9$:
+    \[
+    E(X)=e^{1.9+\frac{0.9^2}{2}}=e^{1.9+0.405}=e^{2.305}\approx 10.0242.
+    \]
+
+    Also,
+    \[
+    \operatorname{Var}(X)=\left(e^{0.81}-1\right)e^{2(1.9)+0.81}
+    =\left(e^{0.81}-1\right)e^{4.61}\approx 125.3949.
+    \]
+    Therefore,
+    \[
+    \operatorname{SD}(X)=\sqrt{125.3949}\approx 11.1980.
+    \]
+
+    \textbf{Answer:}
+    \[
+    E(X)\approx 10.02,\qquad \operatorname{SD}(X)\approx 11.20.
+    \]
+
+    \item[(b)] \textbf{Probability that concentration is at most $10$; probability that it is between $5$ and $10$}
+
+    First,
+    \[
+    P(X\le 10)=P(\ln X\le \ln 10)
+    =P\left(Z\le \frac{\ln 10-1.9}{0.9}\right).
+    \]
+    Since
+    \[
+    \frac{\ln 10-1.9}{0.9}=\frac{2.3026-1.9}{0.9}\approx 0.4473,
+    \]
+    we get
+    \[
+    P(X\le 10)=P(Z\le 0.4473)\approx 0.6727.
+    \]
+
+    Next,
+    \[
+    P(5\le X\le 10)=P(X\le 10)-P(X\le 5).
+    \]
+    Now
+    \[
+    P(X\le 5)=P(\ln X\le \ln 5)
+    =P\left(Z\le \frac{\ln 5-1.9}{0.9}\right),
+    \]
+    and
+    \[
+    \frac{\ln 5-1.9}{0.9}=\frac{1.6094-1.9}{0.9}\approx -0.3228.
+    \]
+    So
+    \[
+    P(X\le 5)=P(Z\le -0.3228)\approx 0.3734.
+    \]
+    Therefore,
+    \[
+    P(5\le X\le 10)\approx 0.6727-0.3734=0.2993.
+    \]
+
+    \textbf{Answer:}
+    \[
+    P(X\le 10)\approx 0.6727,
+    \qquad
+    P(5\le X\le 10)\approx 0.2993.
+    \]
+\end{enumerate}
+
+\subsection*{Problem 84}
+
+Let
+\[
+X\sim \text{Beta}(\alpha=5,\beta=2).
+\]
+For a standard beta distribution,
+\[
+f(x)=\frac{1}{B(\alpha,\beta)}x^{\alpha-1}(1-x)^{\beta-1}, \qquad 0<x<1.
+\]
+Here,
+\[
+B(5,2)=\frac{\Gamma(5)\Gamma(2)}{\Gamma(7)}=\frac{4!1!}{6!}=\frac{24}{720}=\frac{1}{30},
+\]
+so
+\[
+f(x)=30x^4(1-x), \qquad 0<x<1.
+\]
+
+\begin{enumerate}
+    \item[(a)] \textbf{Compute $E(X)$ and $V(X)$.}
+
+    For a beta distribution,
+    \[
+    E(X)=\frac{\alpha}{\alpha+\beta}, \qquad V(X)=\frac{\alpha\beta}{(\alpha+\beta)^2(\alpha+\beta+1)}.
+    \]
+    Thus,
+    \[
+    E(X)=\frac{5}{5+2}=\frac{5}{7},
+    \]
+    and
+    \[
+    V(X)=\frac{(5)(2)}{(7)^2(8)}=\frac{10}{392}=\frac{5}{196}.
+    \]
+
+    \textbf{Answer:}
+    \[
+    E(X)=\frac{5}{7}\approx 0.7143, \qquad V(X)=\frac{5}{196}\approx 0.0255.
+    \]
+
+    \item[(b)] \textbf{Compute $P(X\le .2)$.}
+
+    We integrate the pdf:
+    \[
+    P(X\le 0.2)=\int_0^{0.2} 30x^4(1-x)\,dx
+    =\int_0^{0.2} (30x^4-30x^5)\,dx.
+    \]
+    An antiderivative is
+    \[
+    6x^5-5x^6.
+    \]
+    Therefore,
+    \[
+    P(X\le 0.2)=\left[6x^5-5x^6\right]_0^{0.2}
+    =6(0.2)^5-5(0.2)^6.
+    \]
+    Since
+    \[
+    (0.2)^5=0.00032,\qquad (0.2)^6=0.000064,
+    \]
+    we get
+    \[
+    P(X\le 0.2)=6(0.00032)-5(0.000064)=0.00192-0.00032=0.00160.
+    \]
+
+    \textbf{Answer:}
+    \[
+    P(X\le 0.2)=0.0016.
+    \]
+
+    \item[(c)] \textbf{Compute $P(.2\le X\le .4)$.}
+
+    Using the cdf from part (b),
+    \[
+    F(x)=6x^5-5x^6.
+    \]
+    Then
+    \[
+    P(0.2\le X\le 0.4)=F(0.4)-F(0.2).
+    \]
+    First,
+    \[
+    F(0.4)=6(0.4)^5-5(0.4)^6.
+    \]
+    Since
+    \[
+    (0.4)^5=0.01024,\qquad (0.4)^6=0.004096,
+    \]
+    \[
+    F(0.4)=6(0.01024)-5(0.004096)=0.06144-0.02048=0.04096.
+    \]
+    Also from part (b),
+    \[
+    F(0.2)=0.00160.
+    \]
+    Hence,
+    \[
+    P(0.2\le X\le 0.4)=0.04096-0.00160=0.03936.
+    \]
+
+    \textbf{Answer:}
+    \[
+    P(0.2\le X\le 0.4)=0.03936.
+    \]
+
+    \item[(d)] \textbf{Expected proportion of the sampling region not covered by the plant}
+
+    The uncovered proportion is
+    \[
+    1-X.
+    \]
+    Therefore,
+    \[
+    E(1-X)=1-E(X)=1-\frac{5}{7}=\frac{2}{7}.
+    \]
+
+    \textbf{Answer:}
+    \[
+    E(1-X)=\frac{2}{7}\approx 0.2857.
+    \]
+\end{enumerate}
+
+\subsection*{Problem 86}
+
+Let
+\[
+X=\frac{Y}{20}.
+\]
+Then $X$ has a standard beta distribution with parameters $\alpha$ and $\beta$. Since
+\[
+E(Y)=10,\qquad V(Y)=\frac{100}{7},
+\]
+we have
+\[
+E(X)=\frac{E(Y)}{20}=\frac{10}{20}=\frac12,
+\qquad
+V(X)=\frac{V(Y)}{20^2}=\frac{100/7}{400}=\frac{1}{28}.
+\]
+
+For a beta$(\alpha,\beta)$ random variable,
+\[
+E(X)=\frac{\alpha}{\alpha+\beta},
+\qquad
+V(X)=\frac{\alpha\beta}{(\alpha+\beta)^2(\alpha+\beta+1)}.
+\]
+
+\begin{enumerate}
+    \item[(a)] \textbf{Find the parameters of the beta distribution.}
+
+    From
+    \[
+    \frac{\alpha}{\alpha+\beta}=\frac12,
+    \]
+    we get
+    \[
+    \alpha=\beta.
+    \]
+    Let $\alpha=\beta=t$. Then
+    \[
+    V(X)=\frac{t^2}{(2t)^2(2t+1)}=\frac{1}{4(2t+1)}.
+    \]
+    Set this equal to $\frac{1}{28}$:
+    \[
+    \frac{1}{4(2t+1)}=\frac{1}{28}.
+    \]
+    So
+    \[
+    4(2t+1)=28,
+    \qquad
+    2t+1=7,
+    \qquad
+    t=3.
+    \]
+    Therefore,
+    \[
+    \alpha=3,\qquad \beta=3.
+    \]
+
+    \textbf{Answer:}
+    \[
+    X=\frac{Y}{20}\sim \mathrm{Beta}(3,3).
+    \]
+
+    \item[(b)] \textbf{Compute $P(8\le Y\le 12)$.}
+
+    Since $X=Y/20$,
+    \[
+    P(8\le Y\le 12)=P\left(0.4\le X\le 0.6\right).
+    \]
+    For a beta$(3,3)$ distribution,
+    \[
+    f(x)=\frac{1}{B(3,3)}x^{2}(1-x)^2=30x^2(1-x)^2,\qquad 0<x<1.
+    \]
+    Thus,
+    \[
+    P(0.4\le X\le 0.6)=\int_{0.4}^{0.6}30x^2(1-x)^2\,dx.
+    \]
+    Expand:
+    \[
+    30x^2(1-x)^2=30x^2-60x^3+30x^4.
+    \]
+    An antiderivative is
+    \[
+    10x^3-15x^4+6x^5.
+    \]
+    Therefore,
+    \[
+    P(0.4\le X\le 0.6)=\left[10x^3-15x^4+6x^5\right]_{0.4}^{0.6}.
+    \]
+    Evaluate:
+    \[
+    \left(10(0.6)^3-15(0.6)^4+6(0.6)^5\right)
+    -
+    \left(10(0.4)^3-15(0.4)^4+6(0.4)^5\right)
+    \]
+    \[
+    =0.68256-0.31744=0.36512.
+    \]
+
+    \textbf{Answer:}
+    \[
+    P(8\le Y\le 12)=0.36512.
+    \]
+
+    \item[(c)] \textbf{Probability that the bar snaps more than 2 in. from where you expect it to}
+
+    Since $E(Y)=10$, this probability is
+    \[
+    P(|Y-10|>2)=P(Y<8\text{ or }Y>12).
+    \]
+    So
+    \[
+    P(|Y-10|>2)=1-P(8\le Y\le 12)=1-0.36512=0.63488.
+    \]
+
+    \textbf{Answer:}
+    \[
+    P(|Y-10|>2)=0.63488.
+    \]
+\end{enumerate}
+
+\subsection*{Problem 6}
+
+Given
+\[
+P(X=x)=
+\begin{cases}
+0.10, & x=0,\\
+0.20, & x=1,\\
+0.30, & x=2,\\
+0.25, & x=3,\\
+0.15, & x=4,
+\end{cases}
+\]
+and each purchaser buys an extended warranty independently with probability
+\[
+p=0.6.
+\]
+Thus, conditional on $X=x$,
+\[
+Y \mid X=x \sim \text{Binomial}(x,0.6),
+\]
+so
+\[
+P(Y=y\mid X=x)=\binom{x}{y}(0.6)^y(0.4)^{x-y}, \qquad y=0,1,\dots,x.
+\]
+
+\begin{enumerate}
+    \item[(a)] \textbf{Find $P(X=4,Y=2)$.}
+
+    \[
+    P(X=4,Y=2)=P(Y=2\mid X=4)P(X=4).
+    \]
+    Now
+    \[
+    P(Y=2\mid X=4)=\binom{4}{2}(0.6)^2(0.4)^2
+    =6(0.36)(0.16)=0.3456.
+    \]
+    Therefore,
+    \[
+    P(X=4,Y=2)=0.3456(0.15)=0.05184.
+    \]
+
+    \textbf{Answer:}
+    \[
+    P(X=4,Y=2)=0.05184.
+    \]
+
+    \item[(b)] \textbf{Calculate $P(X=Y)$.}
+
+    The event $X=Y$ means that every purchaser buys an extended warranty. Thus,
+    \[
+    P(X=Y)=\sum_{x=0}^4 P(Y=x\mid X=x)P(X=x).
+    \]
+    Since
+    \[
+    P(Y=x\mid X=x)=(0.6)^x,
+    \]
+    we get
+    \[
+    P(X=Y)=\sum_{x=0}^4 (0.6)^x P(X=x).
+    \]
+    So
+    \[
+    P(X=Y)=1(0.10)+0.6(0.20)+0.6^2(0.30)+0.6^3(0.25)+0.6^4(0.15).
+    \]
+    That is,
+    \[
+    P(X=Y)=0.10+0.12+0.108+0.054+0.01944=0.40144.
+    \]
+
+    \textbf{Answer:}
+    \[
+    P(X=Y)=0.40144.
+    \]
+
+    \item[(c)] \textbf{Determine the joint pmf of $X$ and $Y$, and then the marginal pmf of $Y$.}
+
+    The joint pmf is
+    \[
+    p_{X,Y}(x,y)=P(X=x,Y=y)=P(Y=y\mid X=x)P(X=x),
+    \]
+    so
+    \[
+    p_{X,Y}(x,y)=P(X=x)\binom{x}{y}(0.6)^y(0.4)^{x-y},
+    \qquad y=0,1,\dots,x,\quad x=0,1,2,3,4.
+    \]
+
+    The numerical values are:
+
+    \[
+    \begin{array}{c|ccccc}
+    & y=0 & y=1 & y=2 & y=3 & y=4\\
+    \hline
+    x=0 & 0.10000 & 0 & 0 & 0 & 0\\
+    x=1 & 0.08000 & 0.12000 & 0 & 0 & 0\\
+    x=2 & 0.04800 & 0.14400 & 0.10800 & 0 & 0\\
+    x=3 & 0.01600 & 0.07200 & 0.10800 & 0.05400 & 0\\
+    x=4 & 0.00384 & 0.02304 & 0.05184 & 0.05184 & 0.01944
+    \end{array}
+    \]
+
+    The marginal pmf of $Y$ is obtained by summing down each column:
+    \[
+    p_Y(y)=\sum_{x=y}^4 p_{X,Y}(x,y).
+    \]
+
+    Therefore,
+    \[
+    P(Y=0)=0.10000+0.08000+0.04800+0.01600+0.00384=0.24784,
+    \]
+    \[
+    P(Y=1)=0.12000+0.14400+0.07200+0.02304=0.35904,
+    \]
+    \[
+    P(Y=2)=0.10800+0.10800+0.05184=0.26784,
+    \]
+    \[
+    P(Y=3)=0.05400+0.05184=0.10584,
+    \]
+    \[
+    P(Y=4)=0.01944.
+    \]
+
+    So the marginal pmf of $Y$ is
+    \[
+    p_Y(y)=
+    \begin{cases}
+    0.24784, & y=0,\\
+    0.35904, & y=1,\\
+    0.26784, & y=2,\\
+    0.10584, & y=3,\\
+    0.01944, & y=4,\\
+    0, & \text{otherwise}.
+    \end{cases}
+    \]
+
+    \textbf{Answer:} The joint pmf is
+    \[
+    p_{X,Y}(x,y)=P(X=x)\binom{x}{y}(0.6)^y(0.4)^{x-y},
+    \]
+    for $y=0,\dots,x$, and the marginal pmf of $Y$ is given above.
+\end{enumerate}
+
+\subsection*{Problem 10}
+
+Let $X$ and $Y$ denote Annie's and Alvie's arrival times, respectively. Since they are independent and each is uniformly distributed on $[5,6]$,
+
+\[
+f_X(x)=1,\quad 5\le x\le 6,
+\qquad
+f_Y(y)=1,\quad 5\le y\le 6.
+\]
+
+\begin{enumerate}
+    \item[(a)] \textbf{Find the joint pdf of $X$ and $Y$.}
+
+    Because $X$ and $Y$ are independent,
+    \[
+    f_{X,Y}(x,y)=f_X(x)f_Y(y).
+    \]
+    Therefore,
+    \[
+    f_{X,Y}(x,y)=
+    \begin{cases}
+    1, & 5\le x\le 6,\ 5\le y\le 6,\\
+    0, & \text{otherwise}.
+    \end{cases}
+    \]
+
+    \textbf{Answer:}
+    \[
+    f_{X,Y}(x,y)=
+    \begin{cases}
+    1, & (x,y)\in [5,6]\times [5,6],\\
+    0, & \text{otherwise}.
+    \end{cases}
+    \]
+
+    \item[(b)] \textbf{Probability that they both arrive between 5:15 and 5:45.}
+
+    The interval from 5:15 to 5:45 is
+    \[
+    \left[5.25,\,5.75\right],
+    \]
+    which has length $0.5$ hour.
+
+    Thus,
+    \[
+    P(5.25\le X\le 5.75)=0.5,
+    \qquad
+    P(5.25\le Y\le 5.75)=0.5.
+    \]
+    By independence,
+    \[
+    P(5.25\le X\le 5.75,\ 5.25\le Y\le 5.75)=0.5(0.5)=0.25.
+    \]
+
+    \textbf{Answer:}
+    \[
+    P(\text{both arrive between 5:15 and 5:45})=0.25.
+    \]
+
+    \item[(c)] \textbf{Probability that they dine together if the first one to arrive waits only 10 minutes.}
+
+    They dine together provided
+    \[
+    |X-Y|\le \frac{1}{6},
+    \]
+    since 10 minutes $=\frac{1}{6}$ hour.
+
+    In the square $[5,6]\times[5,6]$, this is the region between the lines
+    \[
+    y=x+\frac{1}{6}
+    \qquad \text{and} \qquad
+    y=x-\frac{1}{6}.
+    \]
+    The complement consists of two right triangles, each with legs
+    \[
+    1-\frac{1}{6}=\frac{5}{6}.
+    \]
+    So each triangle has area
+    \[
+    \frac12\left(\frac{5}{6}\right)^2=\frac{25}{72}.
+    \]
+    Hence the total area outside the band is
+    \[
+    2\cdot \frac{25}{72}=\frac{25}{36}.
+    \]
+    Since the total area of the square is $1$,
+    \[
+    P\left(|X-Y|\le \frac{1}{6}\right)=1-\frac{25}{36}=\frac{11}{36}.
+    \]
+
+    \textbf{Answer:}
+    \[
+    P\left(|X-Y|\le \frac{1}{6}\right)=\frac{11}{36}\approx 0.3056.
+    \]
+\end{enumerate}
+
+\subsection*{Problem 12}
+
+The joint pdf is
+\[
+f(x,y)=
+\begin{cases}
+x e^{-x(1+y)}, & x\ge 0,\ y\ge 0,\\
+0, & \text{otherwise}.
+\end{cases}
+\]
+
+\begin{enumerate}
+    \item[(a)] \textbf{Find $P(X>3)$.}
+
+    First find the marginal pdf of $X$:
+    \[
+    f_X(x)=\int_0^\infty x e^{-x(1+y)}\,dy
+    =x e^{-x}\int_0^\infty e^{-xy}\,dy.
+    \]
+    For $x>0$,
+    \[
+    \int_0^\infty e^{-xy}\,dy=\frac{1}{x},
+    \]
+    so
+    \[
+    f_X(x)=e^{-x}, \qquad x\ge 0.
+    \]
+    Therefore,
+    \[
+    P(X>3)=\int_3^\infty e^{-x}\,dx=e^{-3}.
+    \]
+
+    \textbf{Answer:}
+    \[
+    P(X>3)=e^{-3}\approx 0.0498.
+    \]
+
+    \item[(b)] \textbf{Find the marginal pdf's of $X$ and $Y$. Are $X$ and $Y$ independent?}
+
+    From part (a),
+    \[
+    f_X(x)=
+    \begin{cases}
+    e^{-x}, & x\ge 0,\\
+    0, & \text{otherwise}.
+    \end{cases}
+    \]
+
+    Now find the marginal pdf of $Y$:
+    \[
+    f_Y(y)=\int_0^\infty x e^{-x(1+y)}\,dx, \qquad y\ge 0.
+    \]
+    Using
+    \[
+    \int_0^\infty x e^{-ax}\,dx=\frac{1}{a^2}, \qquad a>0,
+    \]
+    with $a=1+y$, we get
+    \[
+    f_Y(y)=\frac{1}{(1+y)^2}, \qquad y\ge 0.
+    \]
+    So
+    \[
+    f_Y(y)=
+    \begin{cases}
+    \dfrac{1}{(1+y)^2}, & y\ge 0,\\
+    0, & \text{otherwise}.
+    \end{cases}
+    \]
+
+    To test independence, compare $f(x,y)$ with $f_X(x)f_Y(y)$:
+    \[
+    f_X(x)f_Y(y)=\frac{e^{-x}}{(1+y)^2},
+    \]
+    which is not equal to
+    \[
+    x e^{-x(1+y)}
+    \]
+    in general. Therefore, $X$ and $Y$ are not independent.
+
+    \textbf{Answer:}
+    \[
+    f_X(x)=
+    \begin{cases}
+    e^{-x}, & x\ge 0,\\
+    0, & \text{otherwise},
+    \end{cases}
+    \qquad
+    f_Y(y)=
+    \begin{cases}
+    \dfrac{1}{(1+y)^2}, & y\ge 0,\\
+    0, & \text{otherwise}.
+    \end{cases}
+    \]
+    $X$ and $Y$ are \textbf{not independent}.
+
+    \item[(c)] \textbf{Find the probability that the lifetime of at least one component exceeds $3$.}
+
+    We want
+    \[
+    P(X>3 \text{ or } Y>3)=P(X>3)+P(Y>3)-P(X>3,Y>3).
+    \]
+
+    From part (a),
+    \[
+    P(X>3)=e^{-3}.
+    \]
+
+    Also,
+    \[
+    P(Y>3)=\int_3^\infty \frac{1}{(1+y)^2}\,dy
+    =\left[-\frac{1}{1+y}\right]_3^\infty
+    =\frac14.
+    \]
+
+    Finally,
+    \[
+    P(X>3,Y>3)=\int_3^\infty\int_3^\infty x e^{-x(1+y)}\,dy\,dx.
+    \]
+    Integrating with respect to $y$ first,
+    \[
+    \int_3^\infty x e^{-x(1+y)}\,dy
+    =x e^{-x}\int_3^\infty e^{-xy}\,dy
+    =x e^{-x}\left(\frac{e^{-3x}}{x}\right)=e^{-4x}.
+    \]
+    So
+    \[
+    P(X>3,Y>3)=\int_3^\infty e^{-4x}\,dx
+    =\left[-\frac14 e^{-4x}\right]_3^\infty
+    =\frac{e^{-12}}{4}.
+    \]
+
+    Therefore,
+    \[
+    P(X>3 \text{ or } Y>3)=e^{-3}+\frac14-\frac{e^{-12}}{4}.
+    \]
+
+    \textbf{Answer:}
+    \[
+    P(\text{at least one lifetime exceeds }3)=e^{-3}+\frac14-\frac{e^{-12}}{4}\approx 0.2998.
+    \]
+\end{enumerate}
+
+\subsection*{Problem 22}
+
+The joint pmf of $X$ and $Y$ is given by
+
+\[
+\begin{array}{c|cccc}
+p(x,y) & y=0 & y=5 & y=10 & y=15\\
+\hline
+x=0 & 0.02 & 0.06 & 0.02 & 0.10\\
+x=5 & 0.04 & 0.15 & 0.20 & 0.10\\
+x=10 & 0.01 & 0.15 & 0.14 & 0.01
+\end{array}
+\]
+
+\begin{enumerate}
+    \item[(a)] \textbf{Find $E(X+Y)$.}
+
+    Using linearity of expectation,
+    \[
+    E(X+Y)=E(X)+E(Y).
+    \]
+
+    First find the marginal pmf of $X$:
+    \[
+    P(X=0)=0.02+0.06+0.02+0.10=0.20,
+    \]
+    \[
+    P(X=5)=0.04+0.15+0.20+0.10=0.49,
+    \]
+    \[
+    P(X=10)=0.01+0.15+0.14+0.01=0.31.
+    \]
+    So
+    \[
+    E(X)=0(0.20)+5(0.49)+10(0.31)=0+2.45+3.10=5.55.
+    \]
+
+    Now find the marginal pmf of $Y$:
+    \[
+    P(Y=0)=0.02+0.04+0.01=0.07,
+    \]
+    \[
+    P(Y=5)=0.06+0.15+0.15=0.36,
+    \]
+    \[
+    P(Y=10)=0.02+0.20+0.14=0.36,
+    \]
+    \[
+    P(Y=15)=0.10+0.10+0.01=0.21.
+    \]
+    Thus,
+    \[
+    E(Y)=0(0.07)+5(0.36)+10(0.36)+15(0.21)
+    =0+1.80+3.60+3.15=8.55.
+    \]
+
+    Therefore,
+    \[
+    E(X+Y)=5.55+8.55=14.10.
+    \]
+
+    \textbf{Answer:}
+    \[
+    E(X+Y)=14.10.
+    \]
+
+    \item[(b)] \textbf{If the recorded score is $\max(X,Y)$, find its expected value.}
+
+    Compute
+    \[
+    E(\max(X,Y))=\sum_x \sum_y \max(x,y)\,p(x,y).
+    \]
+
+    Using the table entries,
+    \[
+    E(\max(X,Y))
+    \]
+    \[
+    =0(0.02)+5(0.06)+10(0.02)+15(0.10)
+    \]
+    \[
+    \quad +5(0.04)+5(0.15)+10(0.20)+15(0.10)
+    \]
+    \[
+    \quad +10(0.01)+10(0.15)+10(0.14)+15(0.01).
+    \]
+
+    Now simplify:
+    \[
+    E(\max(X,Y))
+    =0+0.30+0.20+1.50+0.20+0.75+2.00+1.50+0.10+1.50+1.40+0.15
+    =9.60.
+    \]
+
+    \textbf{Answer:}
+    \[
+    E(\max(X,Y))=9.60.
+    \]
+\end{enumerate}
+
+\subsection*{Problem 36}
+
+Suppose
+\[
+Y=aX+b, \qquad a\ne 0.
+\]
+We want to compute
+\[
+\rho_{X,Y}=\operatorname{Corr}(X,Y)=\frac{\operatorname{Cov}(X,Y)}{\sigma_X\sigma_Y}.
+\]
+
+First,
+\[
+\operatorname{Cov}(X,Y)=\operatorname{Cov}(X,aX+b).
+\]
+Using the covariance properties,
+\[
+\operatorname{Cov}(X,aX+b)=a\,\operatorname{Cov}(X,X)+\operatorname{Cov}(X,b).
+\]
+Since $\operatorname{Cov}(X,X)=\operatorname{Var}(X)$ and $\operatorname{Cov}(X,b)=0$,
+\[
+\operatorname{Cov}(X,Y)=a\,\operatorname{Var}(X)=a\sigma_X^2.
+\]
+
+Also,
+\[
+\operatorname{Var}(Y)=\operatorname{Var}(aX+b)=a^2\operatorname{Var}(X)=a^2\sigma_X^2,
+\]
+so
+\[
+\sigma_Y=\sqrt{\operatorname{Var}(Y)}=\sqrt{a^2\sigma_X^2}=|a|\sigma_X.
+\]
+
+Therefore,
+\[
+\rho_{X,Y}
+=\frac{a\sigma_X^2}{\sigma_X(|a|\sigma_X)}
+=\frac{a}{|a|}.
+\]
+Hence,
+\[
+\rho_{X,Y}=
+\begin{cases}
+1, & a>0,\\[1ex]
+-1, & a<0.
+\end{cases}
+\]
+
+So if $Y=aX+b$ with $a\ne 0$, then
+\[
+\operatorname{Corr}(X,Y)=\pm 1.
+\]
+
+\textbf{Condition for $\rho=+1$:} this occurs exactly when
+\[
+a>0,
+\]
+that is, when $Y$ is an increasing linear function of $X$.
+
+\textbf{Answer:}
+\[
+\operatorname{Corr}(X,Y)=1 \text{ if } a>0, \qquad \operatorname{Corr}(X,Y)=-1 \text{ if } a<0.
+\]
+
+\subsection*{Problem 38}
+
+Let $X_1$ and $X_2$ be independent random variables with pmf
+\[
+P(X_i=0)=0.2,\qquad P(X_i=1)=0.5,\qquad P(X_i=2)=0.3,
+\]
+and let
+\[
+T_0=X_1+X_2.
+\]
+
+\begin{enumerate}
+    \item[(a)] \textbf{Determine the pmf of $T_0=X_1+X_2$.}
+
+    Since $X_1$ and $X_2$ are independent, use convolution:
+    \[
+    P(T_0=t)=\sum_x P(X_1=x)P(X_2=t-x).
+    \]
+
+    Possible values of $T_0$ are $0,1,2,3,4$.
+
+    \[
+    P(T_0=0)=P(X_1=0,X_2=0)=(0.2)(0.2)=0.04.
+    \]
+
+    \[
+    P(T_0=1)=P(0,1)+P(1,0)=(0.2)(0.5)+(0.5)(0.2)=0.20.
+    \]
+
+    \[
+    P(T_0=2)=P(0,2)+P(1,1)+P(2,0)
+    \]
+    \[
+    =(0.2)(0.3)+(0.5)(0.5)+(0.3)(0.2)=0.06+0.25+0.06=0.37.
+    \]
+
+    \[
+    P(T_0=3)=P(1,2)+P(2,1)=(0.5)(0.3)+(0.3)(0.5)=0.30.
+    \]
+
+    \[
+    P(T_0=4)=P(2,2)=(0.3)(0.3)=0.09.
+    \]
+
+    Therefore, the pmf of $T_0$ is
+    \[
+    \begin{array}{c|ccccc}
+    t & 0 & 1 & 2 & 3 & 4\\
+    \hline
+    P(T_0=t) & 0.04 & 0.20 & 0.37 & 0.30 & 0.09
+    \end{array}
+    \]
+
+    \textbf{Answer:}
+    \[
+    P(T_0=0)=0.04,\quad P(T_0=1)=0.20,\quad P(T_0=2)=0.37,\quad P(T_0=3)=0.30,\quad P(T_0=4)=0.09.
+    \]
+
+    \item[(b)] \textbf{Calculate $\mu_{T_0}$. How does it relate to $\mu$?}
+
+    Since
+    \[
+    T_0=X_1+X_2,
+    \]
+    by linearity of expectation,
+    \[
+    \mu_{T_0}=E(T_0)=E(X_1)+E(X_2)=\mu+\mu=2\mu.
+    \]
+    Given $\mu=1.1$,
+    \[
+    \mu_{T_0}=2(1.1)=2.2.
+    \]
+
+    \textbf{Answer:}
+    \[
+    \mu_{T_0}=2.2=2\mu.
+    \]
+
+    \item[(c)] \textbf{Calculate $\sigma^2_{T_0}$. How does it relate to $\sigma^2$?}
+
+    Because $X_1$ and $X_2$ are independent,
+    \[
+    \sigma^2_{T_0}=\operatorname{Var}(T_0)=\operatorname{Var}(X_1+X_2)
+    =\operatorname{Var}(X_1)+\operatorname{Var}(X_2).
+    \]
+    So
+    \[
+    \sigma^2_{T_0}=\sigma^2+\sigma^2=2\sigma^2.
+    \]
+    Given $\sigma^2=0.49$,
+    \[
+    \sigma^2_{T_0}=2(0.49)=0.98.
+    \]
+
+    \textbf{Answer:}
+    \[
+    \sigma^2_{T_0}=0.98=2\sigma^2.
+    \]
+\end{enumerate}
+
+\subsection*{Problem 40}
+
+Each selected envelope contains one of the amounts
+\[
+0,\quad 5,\quad 10
+\]
+with probabilities
+\[
+P(X_i=0)=\frac{5}{10}=0.5,\qquad
+P(X_i=5)=\frac{3}{10}=0.3,\qquad
+P(X_i=10)=\frac{2}{10}=0.2.
+\]
+Since the sample is selected \emph{with replacement}, $X_1,X_2,X_3$ are independent and identically distributed.
+
+Let
+\[
+M=\max(X_1,X_2,X_3).
+\]
+Then the possible values of $M$ are
+\[
+0,\ 5,\ 10.
+\]
+
+To obtain the pmf, it is easiest to use cumulative probabilities.
+
+\begin{enumerate}
+    \item[\textbf{1.}] \textbf{Find $P(M=0)$}
+
+    The maximum is $0$ only if all three envelopes contain $0$:
+    \[
+    P(M=0)=P(X_1=0,X_2=0,X_3=0)=(0.5)^3=0.125.
+    \]
+
+    \item[\textbf{2.}] \textbf{Find $P(M\le 5)$}
+
+    The event $M\le 5$ means that none of the three envelopes contains $10$.
+    Since
+    \[
+    P(X_i\le 5)=P(X_i=0)+P(X_i=5)=0.5+0.3=0.8,
+    \]
+    we get
+    \[
+    P(M\le 5)=(0.8)^3=0.512.
+    \]
+
+    Therefore,
+    \[
+    P(M=5)=P(M\le 5)-P(M=0)=0.512-0.125=0.387.
+    \]
+
+    \item[\textbf{3.}] \textbf{Find $P(M=10)$}
+
+    \[
+    P(M=10)=1-P(M\le 5)=1-0.512=0.488.
+    \]
+\end{enumerate}
+
+Thus, the probability distribution of $M$ is
+
+\[
+\begin{array}{c|ccc}
+m & 0 & 5 & 10\\
+\hline
+P(M=m) & 0.125 & 0.387 & 0.488
+\end{array}
+\]
+
+\textbf{Answer:}
+\[
+P(M=0)=0.125,\qquad P(M=5)=0.387,\qquad P(M=10)=0.488.
+\]
+
+\subsection*{Problem 48}
+
+Given:
+\[
+n=277,\qquad \bar{x}=86.3\text{ cm},
+\]
+and the estimated population percentiles
+
+\[
+\begin{array}{c|ccccccc}
+\text{Percentile} & 5^\text{th} & 10^\text{th} & 25^\text{th} & 50^\text{th} & 75^\text{th} & 90^\text{th} & 95^\text{th}\\
+\hline
+\text{Value} & 69.6 & 70.9 & 75.2 & 81.3 & 95.4 & 107.1 & 116.4
+\end{array}
+\]
+
+\begin{enumerate}
+    \item[(a)] \textbf{Is it plausible that the waist-size distribution is approximately normal?}
+
+    For a normal distribution, percentiles should be roughly symmetric about the median.
+
+    Here the median is $81.3$. Compare distances on either side:
+    \[
+    81.3-75.2=6.1,\qquad 95.4-81.3=14.1,
+    \]
+    \[
+    81.3-70.9=10.4,\qquad 107.1-81.3=25.8,
+    \]
+    \[
+    81.3-69.6=11.7,\qquad 116.4-81.3=35.1.
+    \]
+
+    These are not at all symmetric; the upper tail extends much farther than the lower tail. Also,
+    \[
+    \bar{x}=86.3 > 81.3=\text{median},
+    \]
+    which is consistent with right-skewness.
+
+    Therefore, the distribution does \emph{not} appear approximately normal.
+
+    \textbf{Answer:} No. The population distribution appears to be \emph{right-skewed} (positively skewed).
+
+    \item[(b)] \textbf{If $\mu=85$ cm and $\sigma=15$ cm, find $P(\bar{X}\ge 86.3)$.}
+
+    For large $n$, the sample mean is approximately normal:
+    \[
+    \bar{X}\approx N\left(\mu,\frac{\sigma^2}{n}\right).
+    \]
+    So
+    \[
+    \mu_{\bar{X}}=85,\qquad \sigma_{\bar{X}}=\frac{15}{\sqrt{277}}\approx 0.9013.
+    \]
+
+    Standardizing,
+    \[
+    z=\frac{86.3-85}{15/\sqrt{277}}
+    =\frac{1.3}{0.9013}\approx 1.44.
+    \]
+
+    Thus,
+    \[
+    P(\bar{X}\ge 86.3)=P(Z\ge 1.44).
+    \]
+    From the standard normal table,
+    \[
+    P(Z\le 1.44)=0.9251,
+    \]
+    so
+    \[
+    P(Z\ge 1.44)=1-0.9251=0.0749.
+    \]
+
+    \textbf{Answer:}
+    \[
+    P(\bar{X}\ge 86.3)\approx 0.0749.
+    \]
+
+    \item[(c)] \textbf{If $\mu=82$ cm and $\sigma=15$ cm, find $P(\bar{X}\ge 86.3)$. Is $82$ cm a reasonable value for $\mu$?}
+
+    Again,
+    \[
+    \sigma_{\bar{X}}=\frac{15}{\sqrt{277}}\approx 0.9013.
+    \]
+    Standardizing,
+    \[
+    z=\frac{86.3-82}{15/\sqrt{277}}
+    =\frac{4.3}{0.9013}\approx 4.77.
+    \]
+
+    Therefore,
+    \[
+    P(\bar{X}\ge 86.3)=P(Z\ge 4.77).
+    \]
+    This upper-tail probability is extremely small:
+    \[
+    P(Z\ge 4.77)\approx 9.2\times 10^{-7}.
+    \]
+
+    Since this probability is essentially zero, observing a sample mean of $86.3$ would be extraordinarily unlikely if the true mean were $82$.
+
+    \textbf{Answer:}
+    \[
+    P(\bar{X}\ge 86.3)\approx 9.2\times 10^{-7}.
+    \]
+    No, $82$ cm does \emph{not} appear to be a reasonable value for $\mu$.
+\end{enumerate}
+
+\subsection*{Problem 52}
+
+Let $X_i$ be the lifetime (in hours) of the $i$th battery, for $i=1,2,3,4$. We are given
+\[
+X_i \sim N(10,1^2),
+\]
+and assume the four battery lifetimes are independent.
+
+Let
+\[
+T=X_1+X_2+X_3+X_4
+\]
+be the total lifetime of all batteries in a package.
+
+Since a sum of independent normal random variables is normal,
+\[
+T \sim N(\mu_T,\sigma_T^2),
+\]
+where
+\[
+\mu_T=4(10)=40
+\]
+and
+\[
+\sigma_T^2=4(1^2)=4.
+\]
+So
+\[
+T\sim N(40,4), \qquad \sigma_T=2.
+\]
+
+We want the value $t$ such that only $5\%$ of all packages exceed it:
+\[
+P(T>t)=0.05.
+\]
+Equivalently,
+\[
+P(T\le t)=0.95.
+\]
+Thus $t$ is the 95th percentile of $N(40,4)$.
+
+Using the standard normal 95th percentile,
+\[
+z_{0.95}\approx 1.645.
+\]
+Standardizing,
+\[
+t=\mu_T+z_{0.95}\sigma_T
+=40+(1.645)(2)
+=40+3.29
+=43.29.
+\]
+
+\textbf{Answer:}
+\[
+t\approx 43.29 \text{ hours}.
+\]
+So the total lifetime exceeds about $43.29$ hours for only $5\%$ of all packages.
+
+\subsection*{Problem 58}
+
+Let the total volume shipped in one week be
+\[
+V=27X_1+125X_2+512X_3.
+\]
+Given
+\[
+\mu_1=200,\quad \mu_2=250,\quad \mu_3=100,
+\]
+and
+\[
+\sigma_1=10,\quad \sigma_2=12,\quad \sigma_3=8,
+\]
+we have
+\[
+\operatorname{Var}(X_1)=10^2=100,\qquad
+\operatorname{Var}(X_2)=12^2=144,\qquad
+\operatorname{Var}(X_3)=8^2=64.
+\]
+
+\begin{enumerate}
+    \item[(a)] \textbf{Find the expected value and variance of the total volume shipped.}
+
+    Using linearity of expectation,
+    \[
+    E(V)=27E(X_1)+125E(X_2)+512E(X_3).
+    \]
+    Thus,
+    \[
+    E(V)=27(200)+125(250)+512(100).
+    \]
+    Compute each term:
+    \[
+    27(200)=5400,\qquad 125(250)=31250,\qquad 512(100)=51200.
+    \]
+    Therefore,
+    \[
+    E(V)=5400+31250+51200=87850.
+    \]
+
+    Since $X_1,X_2,X_3$ are independent,
+    \[
+    \operatorname{Var}(V)=27^2\operatorname{Var}(X_1)+125^2\operatorname{Var}(X_2)+512^2\operatorname{Var}(X_3).
+    \]
+    So
+    \[
+    \operatorname{Var}(V)=27^2(100)+125^2(144)+512^2(64).
+    \]
+    Compute:
+    \[
+    27^2(100)=72900,
+    \]
+    \[
+    125^2(144)=15625(144)=2250000,
+    \]
+    \[
+    512^2(64)=262144(64)=16777216.
+    \]
+    Hence,
+    \[
+    \operatorname{Var}(V)=72900+2250000+16777216=19100116.
+    \]
+
+    \textbf{Answer:}
+    \[
+    E(V)=87850\ \text{ft}^3,
+    \qquad
+    \operatorname{Var}(V)=19100116\ \text{(ft}^3)^2.
+    \]
+
+    \item[(b)] \textbf{Would the calculations necessarily be correct if the $X_i$'s were not independent? Explain.}
+
+    The expected value would still be correct, because expectation is linear regardless of independence:
+    \[
+    E(V)=27E(X_1)+125E(X_2)+512E(X_3).
+    \]
+
+    However, the variance calculation would not necessarily be correct. Without independence, covariance terms must be included:
+    \[
+    \operatorname{Var}(V)=27^2\operatorname{Var}(X_1)+125^2\operatorname{Var}(X_2)+512^2\operatorname{Var}(X_3)
+    \]
+    \[
+    \quad +2(27)(125)\operatorname{Cov}(X_1,X_2)
+    +2(27)(512)\operatorname{Cov}(X_1,X_3)
+    +2(125)(512)\operatorname{Cov}(X_2,X_3).
+    \]
+
+    \textbf{Answer:} The mean calculation is still correct, but the variance calculation is not necessarily correct unless the $X_i$'s are independent (or at least pairwise uncorrelated).
+\end{enumerate}
+
+\subsection*{Problem 62}
+
+Let $X_1$, $X_2$, and $X_3$ denote the machining times (in minutes) for the three operations. We are given
+\[
+X_1\sim N(15,1^2), \qquad X_2\sim N(30,2^2), \qquad X_3\sim N(20,1.5^2),
+\]
+and the three times are independent.
+
+Let
+\[
+T=X_1+X_2+X_3
+\]
+be the total machining time for one component.
+
+Since the sum of independent normal random variables is normal,
+\[
+T\sim N(\mu_T,\sigma_T^2),
+\]
+where
+\[
+\mu_T=15+30+20=65
+\]
+and
+\[
+\sigma_T^2=1^2+2^2+1.5^2=1+4+2.25=7.25.
+\]
+Thus,
+\[
+T\sim N(65,7.25),
+\qquad
+\sigma_T=\sqrt{7.25}\approx 2.693.
+\]
+
+We want
+\[
+P(T\le 60).
+\]
+Standardizing,
+\[
+P(T\le 60)=P\left(Z\le \frac{60-65}{\sqrt{7.25}}\right)
+= P\left(Z\le \frac{-5}{2.693}\right)
+= P(Z\le -1.86).
+\]
+From the standard normal table,
+\[
+P(Z\le -1.86)\approx 0.0314.
+\]
+
+\textbf{Answer:}
+\[
+P(T\le 60)\approx 0.0314.
+\]
+So the probability that it takes at most 1 hour to machine the component is about $0.0314$.
+
+\subsection*{Problem 68}
+
+Let $X_1$ and $X_2$ denote the speeds (km/hr) of the first and second planes, respectively.
+
+Assumption: $X_1$ and $X_2$ are independent.
+
+Given
+\[
+X_1 \sim N(520,10^2), \qquad X_2 \sim N(500,10^2).
+\]
+Let
+\[
+D=X_2-X_1.
+\]
+Then
+\[
+D \sim N\!\left(500-520,\;10^2+10^2\right)=N(-20,200),
+\]
+so
+\[
+\mu_D=-20,\qquad \sigma_D=\sqrt{200}=10\sqrt{2}\approx 14.14.
+\]
+
+At $t=0$, the first plane is 10 km ahead. After 2 hr, the signed separation is
+\[
+S=10+2(X_1-X_2)=10-2D.
+\]
+
+\begin{enumerate}
+    \item[(a)] \textbf{Probability that after 2 hr the second plane has not caught up to the first}
+
+    The second plane has not caught up if the first plane is still ahead, i.e.
+    \[
+    S>0.
+    \]
+    Since
+    \[
+    10-2D>0 \iff D<5,
+    \]
+    we have
+    \[
+    P(\text{second has not caught up})=P(D<5).
+    \]
+    Standardizing,
+    \[
+    z=\frac{5-(-20)}{\sqrt{200}}=\frac{25}{14.14}\approx 1.77.
+    \]
+    Thus,
+    \[
+    P(D<5)=P(Z<1.77)\approx 0.9616.
+    \]
+
+    \textbf{Answer:}
+    \[
+    P(\text{second plane has not caught up after 2 hr})\approx 0.9616.
+    \]
+
+    \item[(b)] \textbf{Probability that the planes are separated by at most 10 km after 2 hr}
+
+    “Separated by at most 10 km” means
+    \[
+    |S|\le 10.
+    \]
+    Since $S=10-2D$,
+    \[
+    |10-2D|\le 10
+    \iff -10\le 10-2D\le 10.
+    \]
+    Solving,
+    \[
+    D\ge 0 \qquad \text{and} \qquad D\le 10,
+    \]
+    so
+    \[
+    P(|S|\le 10)=P(0\le D\le 10).
+    \]
+    Therefore,
+    \[
+    P(0\le D\le 10)
+    =P\!\left(\frac{0-(-20)}{14.14}\le Z\le \frac{10-(-20)}{14.14}\right)
+    \]
+    \[
+    =P(1.41\le Z\le 2.12).
+    \]
+    Using the standard normal table,
+    \[
+    \Phi(2.12)\approx 0.9830,\qquad \Phi(1.41)\approx 0.9207.
+    \]
+    Hence,
+    \[
+    P(0\le D\le 10)\approx 0.9830-0.9207=0.0623.
+    \]
+
+    \textbf{Answer:}
+    \[
+    P(\text{planes are separated by at most 10 km after 2 hr})\approx 0.0623.
+    \]
+\end{enumerate}
+
+\subsection*{Problem 74}
+
+Let
+\[
+X\sim \operatorname{Bin}(50,0.7), \qquad Y\sim \operatorname{Bin}(50,0.6),
+\]
+and assume $X$ and $Y$ are independent.
+
+We want an approximation to
+\[
+P(-5\le X-Y\le 5).
+\]
+
+Let
+\[
+D=X-Y.
+\]
+Using the normal approximation to the binomial, $D$ is approximately normal with
+
+\[
+\mu_D=E(X)-E(Y)=50(0.7)-50(0.6)=35-30=5,
+\]
+and
+\[
+\sigma_D^2=\operatorname{Var}(X)+\operatorname{Var}(Y)
+=50(0.7)(0.3)+50(0.6)(0.4)
+=10.5+12=22.5.
+\]
+So
+\[
+D \approx N(5,22.5),
+\qquad
+\sigma_D=\sqrt{22.5}\approx 4.743.
+\]
+
+Therefore,
+\[
+P(-5\le D\le 5)
+\approx
+P\left(\frac{-5-5}{4.743}\le Z\le \frac{5-5}{4.743}\right)
+=
+P(-2.11\le Z\le 0).
+\]
+
+From the standard normal table,
+\[
+P(Z\le 0)=0.5000,\qquad P(Z\le -2.11)=0.0174.
+\]
+Hence,
+\[
+P(-2.11\le Z\le 0)=0.5000-0.0174=0.4826.
+\]
+
+\textbf{Answer:}
+\[
+P(-5\le X-Y\le 5)\approx 0.4826.
+\]
