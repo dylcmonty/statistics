@@ -1,0 +1,896 @@
+\documentclass[11pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb}
+\setlength{\parindent}{0pt}
+
+\begin{document}
+
+\section*{Section 6.1}
+
+\subsection*{Problem 2}
+
+The sample HDL levels (mg/dl) are
+\[
+35,\ 49,\ 52,\ 54,\ 65,\ 51,\ 51,\ 47,\ 86,\ 36,\ 46,\ 33,\ 39,\ 45,\ 39,\ 63,\ 95,\ 35,\ 30,\ 48.
+\]
+Thus,
+\[
+n=20, \qquad \sum x_i = 999.
+\]
+
+\begin{enumerate}
+\item[(a)] The point estimate of the population mean is the sample mean:
+\[
+\bar{x}=\frac{\sum x_i}{n}=\frac{999}{20}=49.95.
+\]
+Therefore, the point estimate of the population mean HDL level is
+\[
+\bar{x}=49.95\text{ mg/dl}.
+\]
+
+\item[(b)] The value separating the largest 50\% from the smallest 50\% is estimated by the sample median.
+
+Ordering the data gives
+\[
+30,\ 33,\ 35,\ 35,\ 36,\ 39,\ 39,\ 45,\ 46,\ 47,\ 48,\ 49,\ 51,\ 51,\ 52,\ 54,\ 63,\ 65,\ 86,\ 95.
+\]
+Since $n=20$ is even,
+\[
+\tilde{x}=\frac{x_{(10)}+x_{(11)}}{2}=\frac{47+48}{2}=47.5.
+\]
+So the point estimate is
+\[
+47.5\text{ mg/dl}.
+\]
+
+\item[(c)] The point estimate of the population standard deviation is the sample standard deviation:
+\[
+s=\sqrt{\frac{1}{n-1}\sum_{i=1}^{n}(x_i-\bar{x})^2}.
+\]
+Using $\bar{x}=49.95$,
+\[
+\sum_{i=1}^{20}(x_i-\bar{x})^2=5368.95.
+\]
+Hence,
+\[
+s=\sqrt{\frac{5368.95}{19}}=\sqrt{282.5763}\approx 16.81.
+\]
+Thus, the point estimate of the population standard deviation is
+\[
+16.81\text{ mg/dl}.
+\]
+
+\item[(d)] The point estimate of the population proportion $p$ with HDL level at least $60$ is the sample proportion:
+\[
+\hat{p}=\frac{x}{n}.
+\]
+The observations at least $60$ are
+\[
+63,\ 65,\ 86,\ 95,
+\]
+so $x=4$. Therefore,
+\[
+\hat{p}=\frac{4}{20}=0.20.
+\]
+\end{enumerate}
+
+\subsection*{Problem 8}
+
+A sample of $80$ components contains $12$ defective components, so the number of nondefective components is
+\[
+80-12=68.
+\]
+
+\begin{enumerate}
+\item[(a)] If $p$ denotes the proportion of all such components that are not defective, then the point estimate of $p$ is
+\[
+\hat{p}=\frac{68}{80}=0.85.
+\]
+
+\item[(b)] For a series system to work properly, both components must work properly. Thus,
+\[
+P(\text{system works})=p^2.
+\]
+Using the plug-in estimate,
+\[
+\widehat{P(\text{system works})}=(\hat{p})^2=(0.85)^2=0.7225.
+\]
+\end{enumerate}
+
+\subsection*{Problem 10}
+
+Let
+\[
+\bar{X}=\frac{1}{n}\sum_{i=1}^{n}X_i, \qquad S^2=\frac{1}{n-1}\sum_{i=1}^{n}(X_i-\bar{X})^2.
+\]
+Each $X_i$ has mean $\mu$ and variance $\sigma^2$, and the observations are independent.
+
+\begin{enumerate}
+\item[(a)] Using the identity $E(Y^2)=V(Y)+[E(Y)]^2$ with $Y=\bar{X}$,
+\[
+E(\bar{X}^{\,2})=V(\bar{X})+[E(\bar{X})]^2.
+\]
+Now
+\[
+E(\bar{X})=\mu, \qquad V(\bar{X})=\frac{\sigma^2}{n},
+\]
+so
+\[
+E(\bar{X}^{\,2})=\frac{\sigma^2}{n}+\mu^2.
+\]
+Since this is not equal to $\mu^2$, $\bar{X}^{\,2}$ is not an unbiased estimator of $\mu^2$.
+
+\item[(b)] Consider the estimator $\bar{X}^{\,2}-kS^2$. Then
+\[
+E(\bar{X}^{\,2}-kS^2)=E(\bar{X}^{\,2})-kE(S^2).
+\]
+From part (a),
+\[
+E(\bar{X}^{\,2})=\mu^2+\frac{\sigma^2}{n},
+\]
+and since $S^2$ is unbiased for $\sigma^2$,
+\[
+E(S^2)=\sigma^2.
+\]
+Therefore,
+\[
+E(\bar{X}^{\,2}-kS^2)=\mu^2+\frac{\sigma^2}{n}-k\sigma^2
+=\mu^2+\sigma^2\left(\frac{1}{n}-k\right).
+\]
+For unbiasedness, set this equal to $\mu^2$:
+\[
+\frac{1}{n}-k=0.
+\]
+Hence,
+\[
+k=\frac{1}{n}.
+\]
+So an unbiased estimator of $\mu^2$ is
+\[
+\bar{X}^{\,2}-\frac{1}{n}S^2.
+\]
+\end{enumerate}
+
+\section*{Section 6.2}
+
+\subsection*{Problem 22}
+
+Given
+\[
+f(x;\theta)=
+\begin{cases}
+(\theta+1)x^{\theta}, & 0 \le x \le 1,\\
+0, & \text{otherwise},
+\end{cases}
+\qquad \theta>-1,
+\]
+with sample
+\[
+x_1=.92,\ x_2=.79,\ x_3=.90,\ x_4=.65,\ x_5=.86,\ x_6=.47,\ x_7=.73,\ x_8=.97,\ x_9=.94,\ x_{10}=.77.
+\]
+The sample mean is
+\[
+\bar{x}=\frac{.92+.79+.90+.65+.86+.47+.73+.97+.94+.77}{10}=\frac{8.00}{10}=0.80.
+\]
+
+\begin{enumerate}
+\item[(a)] For the method of moments, compute $E(X)$:
+\[
+E(X)=\int_0^1 x(\theta+1)x^{\theta}\,dx
+=(\theta+1)\int_0^1 x^{\theta+1}\,dx
+=(\theta+1)\cdot \frac{1}{\theta+2}
+=\frac{\theta+1}{\theta+2}.
+\]
+Set $E(X)=\bar{x}$:
+\[
+\frac{\theta+1}{\theta+2}=\bar{x}.
+\]
+Solving for $\theta$ gives
+\[
+\theta+1=\bar{x}(\theta+2),
+\]
+\[
+\theta(1-\bar{x})=2\bar{x}-1,
+\]
+so
+\[
+\hat{\theta}_{\text{MOM}}=\frac{2\bar{x}-1}{1-\bar{x}}.
+\]
+Substituting $\bar{x}=0.80$,
+\[
+\hat{\theta}_{\text{MOM}}=\frac{2(0.80)-1}{1-0.80}=\frac{0.60}{0.20}=3.
+\]
+
+\item[(b)] The likelihood function is
+\[
+L(\theta)=\prod_{i=1}^{10}(\theta+1)x_i^{\theta}=(\theta+1)^{10}\prod_{i=1}^{10}x_i^{\theta}.
+\]
+Thus the log-likelihood is
+\[
+\ell(\theta)=10\ln(\theta+1)+\theta\sum_{i=1}^{10}\ln x_i.
+\]
+Differentiate and set equal to $0$:
+\[
+\ell'(\theta)=\frac{10}{\theta+1}+\sum_{i=1}^{10}\ln x_i=0.
+\]
+Hence,
+\[
+\hat{\theta}_{\text{MLE}}=-\frac{10}{\sum_{i=1}^{10}\ln x_i}-1.
+\]
+Now
+\[
+\sum_{i=1}^{10}\ln x_i
+=\ln(.92)+\ln(.79)+\ln(.90)+\ln(.65)+\ln(.86)+\ln(.47)+\ln(.73)+\ln(.97)+\ln(.94)+\ln(.77)
+\approx -2.4295.
+\]
+Therefore,
+\[
+\hat{\theta}_{\text{MLE}}=-\frac{10}{-2.4295}-1\approx 3.1161.
+\]
+Also,
+\[
+\ell''(\theta)=-\frac{10}{(\theta+1)^2}<0,
+\]
+so this critical point gives a maximum.
+\end{enumerate}
+
+\subsection*{Problem 24}
+
+Let $X$ be the number of incorrect diagnoses before the $r$th correct diagnosis. Here,
+\[
+r=3, \qquad x=17,
+\]
+since there were $20$ diagnoses in all and $20-3=17$ of them were incorrect.
+
+For a negative binomial random variable,
+\[
+P(X=x)=\binom{x+r-1}{x}p^r(1-p)^x, \qquad x=0,1,2,\dots
+\]
+so the likelihood function is
+\[
+L(p)=\binom{19}{17}p^3(1-p)^{17}, \qquad 0<p<1.
+\]
+Taking logs,
+\[
+\ell(p)=\ln\binom{19}{17}+3\ln p+17\ln(1-p).
+\]
+Differentiate and set equal to $0$:
+\[
+\ell'(p)=\frac{3}{p}-\frac{17}{1-p}=0.
+\]
+Thus,
+\[
+3(1-p)=17p,
+\]
+so
+\[
+3=20p, \qquad \hat{p}_{\text{MLE}}=\frac{3}{20}=0.15.
+\]
+
+If a random sample of $20$ mechanics results in $3$ correct diagnoses, the binomial likelihood is proportional to
+\[
+p^3(1-p)^{17},
+\]
+which is the same function of $p$. Therefore, the mle is again
+\[
+\hat{p}_{\text{MLE}}=\frac{3}{20}=0.15.
+\]
+So the two mles are the same.
+
+From Exercise 17, the unbiased estimator is
+\[
+\hat{p}=\frac{r-1}{X+r-1}.
+\]
+With $r=3$ and $X=17$,
+\[
+\hat{p}_{\text{unb}}=\frac{3-1}{17+3-1}=\frac{2}{19}\approx 0.1053.
+\]
+Hence,
+\[
+\hat{p}_{\text{MLE}}=0.15 > 0.1053=\hat{p}_{\text{unb}}.
+\]
+
+\section*{Section 7.1}
+
+\subsection*{Problem 2}
+
+The two confidence intervals for $\mu$ are
+\[
+(114.4,115.6) \qquad \text{and} \qquad (114.1,115.9).
+\]
+
+\begin{enumerate}
+\item[(a)] The sample mean is the midpoint of either interval:
+\[
+\bar{x}=\frac{114.4+115.6}{2}=115.0
+\]
+and also
+\[
+\bar{x}=\frac{114.1+115.9}{2}=115.0.
+\]
+Thus,
+\[
+\bar{x}=115.0\text{ Hz}.
+\]
+
+\item[(b)] Both intervals are based on the same sample data, so they have the same center. The interval with the higher confidence level must be wider.
+
+The widths are
+\[
+115.6-114.4=1.2
+\]
+and
+\[
+115.9-114.1=1.8.
+\]
+Thus $(114.1,115.9)$ is the wider interval, so it is the $99\%$ interval. Therefore,
+\[
+(114.4,115.6)
+\]
+is the $90\%$ confidence interval.
+\end{enumerate}
+
+\subsection*{Problem 4}
+
+Given
+\[
+\sigma=3.0, \qquad \bar{x}=58.3.
+\]
+Since $\sigma$ is known, the confidence interval for $\mu$ is
+\[
+\bar{x}\pm z_{\alpha/2}\frac{\sigma}{\sqrt{n}}.
+\]
+
+\begin{enumerate}
+\item[(a)] For a $95\%$ confidence interval with $n=25$,
+\[
+E=1.96\left(\frac{3}{\sqrt{25}}\right)=1.176.
+\]
+Therefore,
+\[
+58.3\pm 1.176=(57.124,\ 59.476)\approx(57.12,\ 59.48).
+\]
+
+\item[(b)] For a $95\%$ confidence interval with $n=100$,
+\[
+E=1.96\left(\frac{3}{\sqrt{100}}\right)=0.588.
+\]
+Therefore,
+\[
+58.3\pm 0.588=(57.712,\ 58.888)\approx(57.71,\ 58.89).
+\]
+
+\item[(c)] For a $99\%$ confidence interval with $n=100$,
+\[
+E=2.576\left(\frac{3}{10}\right)=0.7728.
+\]
+Therefore,
+\[
+58.3\pm 0.7728=(57.5272,\ 59.0728)\approx(57.53,\ 59.07).
+\]
+
+\item[(d)] For an $82\%$ confidence interval, $\alpha=0.18$, so $\alpha/2=0.09$ and
+\[
+z_{0.09}=z_{0.91}\approx 1.341.
+\]
+With $n=100$,
+\[
+E=1.341\left(\frac{3}{10}\right)=0.4023.
+\]
+Therefore,
+\[
+58.3\pm 0.4023=(57.8977,\ 58.7023)\approx(57.90,\ 58.70).
+\]
+
+\item[(e)] The width of a $99\%$ confidence interval is
+\[
+2z_{0.005}\frac{\sigma}{\sqrt{n}}.
+\]
+Set this equal to $1.0$:
+\[
+2(2.576)\frac{3}{\sqrt{n}}=1.
+\]
+Then
+\[
+\sqrt{n}=2(2.576)(3)=15.456,
+\]
+so
+\[
+n=(15.456)^2\approx 238.89.
+\]
+Rounding up,
+\[
+n=239.
+\]
+\end{enumerate}
+
+\subsection*{Problem 10}
+
+The sample lifetimes (years) are
+\[
+2.0,\ 1.3,\ 6.0,\ 1.9,\ 5.1,\ 0.4,\ 1.0,\ 5.3,\ 15.7,\ 0.7,\ 4.8,\ 0.9,\ 12.2,\ 5.3,\ 0.6.
+\]
+Thus,
+\[
+n=15, \qquad \sum x_i=63.2.
+\]
+Assume the lifetime distribution is exponential with rate parameter $\lambda$. Then
+\[
+\mu=\frac{1}{\lambda}
+\]
+and
+\[
+2\lambda\sum_{i=1}^{n}X_i\sim \chi^2_{2n}.
+\]
+Since $2n=30$,
+\[
+2\lambda\sum X_i\sim \chi^2_{30}.
+\]
+
+\begin{enumerate}
+\item[(a)] For a $95\%$ confidence interval,
+\[
+P\left(\chi^2_{.975,30}<2\lambda\sum X_i<\chi^2_{.025,30}\right)=0.95.
+\]
+Using
+\[
+\chi^2_{.025,30}=46.979, \qquad \chi^2_{.975,30}=16.791,
+\]
+we obtain
+\[
+P\left(\frac{16.791}{2\sum X_i}<\lambda<\frac{46.979}{2\sum X_i}\right)=0.95.
+\]
+Since $\mu=1/\lambda$,
+\[
+P\left(\frac{2\sum X_i}{46.979}<\mu<\frac{2\sum X_i}{16.791}\right)=0.95.
+\]
+Substituting $\sum X_i=63.2$,
+\[
+\left(\frac{126.4}{46.979},\ \frac{126.4}{16.791}\right)=(2.691,\ 7.528)\approx(2.69,\ 7.53).
+\]
+
+\item[(b)] For a $99\%$ confidence interval,
+\[
+P\left(\chi^2_{.995,30}<2\lambda\sum X_i<\chi^2_{.005,30}\right)=0.99.
+\]
+Using
+\[
+\chi^2_{.005,30}=53.672, \qquad \chi^2_{.995,30}=13.787,
+\]
+we get
+\[
+P\left(\frac{2\sum X_i}{53.672}<\mu<\frac{2\sum X_i}{13.787}\right)=0.99.
+\]
+Thus,
+\[
+\left(\frac{126.4}{53.672},\ \frac{126.4}{13.787}\right)=(2.355,\ 9.168)\approx(2.36,\ 9.17).
+\]
+
+\item[(c)] For an exponential distribution,
+\[
+\sigma=\frac{1}{\lambda}=\mu.
+\]
+Therefore, the $95\%$ confidence interval for the population standard deviation is the same as the $95\%$ confidence interval for the population mean from part (a):
+\[
+(2.69,\ 7.53)\text{ years}.
+\]
+\end{enumerate}
+
+\section*{Section 7.2}
+
+\subsection*{Problem 16}
+
+Using all $72$ observations from the two tables, the ordered-data summary is
+\[
+\min=41, \qquad Q_1=52, \qquad \tilde{x}=55, \qquad Q_3=57, \qquad \max=68.
+\]
+Thus,
+\[
+\text{IQR}=Q_3-Q_1=57-52=5.
+\]
+
+\begin{enumerate}
+\item[(a)] The outlier fences are
+\[
+Q_1-1.5(\text{IQR})=52-1.5(5)=44.5,
+\]
+\[
+Q_3+1.5(\text{IQR})=57+1.5(5)=64.5.
+\]
+So the outliers are
+\[
+41,\ 41,\ 68.
+\]
+The boxplot has lower whisker at $46$, upper whisker at $64$, and box from $52$ to $57$ with median at $55$.
+
+The distribution is centered near $55$ kV, with moderate spread and three outliers: two low outliers at $41$ and one high outlier at $68$.
+
+\item[(b)] For the 72 observations,
+\[
+\bar{x}=54.444, \qquad s=5.040.
+\]
+Since $n=72$ is large, a $95\%$ confidence interval for $\mu$ is
+\[
+\bar{x}\pm z_{0.025}\frac{s}{\sqrt{n}}=54.444\pm 1.96\frac{5.040}{\sqrt{72}}.
+\]
+The margin of error is
+\[
+1.96\frac{5.040}{\sqrt{72}}\approx 1.164.
+\]
+Therefore,
+\[
+54.444\pm 1.164=(53.280,\ 55.609)\approx(53.28,\ 55.61).
+\]
+We are 95\% confident that the true average breakdown voltage lies between $53.28$ and $55.61$ kV. The interval width is about $2.33$ kV, so $\mu$ appears to have been estimated fairly precisely.
+
+\item[(c)] If virtually all values lie between $40$ and $70$, then using the empirical rule,
+\[
+\mu\pm 2\sigma \approx 40 \text{ to } 70.
+\]
+Hence,
+\[
+4\sigma\approx 70-40=30, \qquad \sigma\approx 7.5.
+\]
+For a $95\%$ confidence interval with width $2$, the margin of error is $1$, so
+\[
+1=1.96\frac{7.5}{\sqrt{n}}.
+\]
+Thus,
+\[
+\sqrt{n}=14.7, \qquad n=(14.7)^2=216.09.
+\]
+Rounding up,
+\[
+n=217.
+\]
+\end{enumerate}
+
+\subsection*{Problem 20}
+
+Given
+\[
+\hat{p}=0.53, \qquad n=2343.
+\]
+For a confidence interval for a population proportion,
+\[
+\hat{p}\pm z_{\alpha/2}\sqrt{\frac{\hat{p}(1-\hat{p})}{n}}.
+\]
+
+\begin{enumerate}
+\item[(a)] For a $99\%$ confidence interval, $z_{0.005}=2.576$. Thus,
+\[
+E=2.576\sqrt{\frac{0.53(0.47)}{2343}}\approx 0.0266.
+\]
+Therefore, the $99\%$ confidence interval is
+\[
+0.53\pm 0.0266=(0.5034,\ 0.5566)\approx(0.503,\ 0.557).
+\]
+We are 99\% confident that the true proportion of all adult Americans who had watched digitally streamed TV programming up to that time lies between $0.503$ and $0.557$.
+
+\item[(b)] To make the width at most $0.05$, the margin of error must satisfy
+\[
+E\le 0.025.
+\]
+To guarantee this regardless of the value of $\hat{p}$, use the largest possible value of $\hat{p}(1-\hat{p})$, namely $0.25$. Then
+\[
+0.025=2.576\sqrt{\frac{0.25}{n}}.
+\]
+Solving for $n$,
+\[
+n=\frac{0.25(2.576)^2}{(0.025)^2}\approx 2653.59.
+\]
+Rounding up,
+\[
+n=2654.
+\]
+\end{enumerate}
+
+\subsection*{Problem 26}
+
+From the frequency table,
+\[
+n=50
+\]
+and
+\[
+\sum x_if_i=0(1)+1(4)+2(8)+3(10)+4(8)+5(7)+6(5)+7(3)+8(2)+9(1)+10(1)=203.
+\]
+So
+\[
+\bar{x}=\frac{203}{50}=4.06.
+\]
+For a Poisson distribution,
+\[
+E(X)=\mu, \qquad V(X)=\mu,
+\]
+so for large $n$,
+\[
+Z=\frac{\bar{X}-\mu}{\sqrt{\mu/n}}
+\]
+is approximately standard normal. For a $95\%$ confidence interval,
+\[
+P\left(-1.96\le \frac{\bar{X}-\mu}{\sqrt{\mu/n}}\le 1.96\right)\approx 0.95.
+\]
+Using $\bar{x}=4.06$, solve
+\[
+|\bar{x}-\mu|\le 1.96\sqrt{\frac{\mu}{50}}.
+\]
+Squaring both sides gives
+\[
+(\bar{x}-\mu)^2\le \frac{(1.96)^2\mu}{50},
+\]
+so
+\[
+50(\mu-4.06)^2\le 3.8416\mu.
+\]
+Expanding,
+\[
+50\mu^2-409.8416\mu+824.18\le 0.
+\]
+The endpoints are the roots of
+\[
+50\mu^2-409.8416\mu+824.18=0,
+\]
+which are
+\[
+\mu\approx 3.5386 \qquad \text{and} \qquad \mu\approx 4.6582.
+\]
+Therefore, the large-sample $95\%$ confidence interval for $\mu$ is
+\[
+(3.54,\ 4.66).
+\]
+
+\section*{Section 7.3}
+
+\subsection*{Problem 30}
+
+For a two-sided confidence interval with confidence level $1-\alpha$, the critical value is
+\[
+t_{\alpha/2,\,\nu}.
+\]
+
+\begin{enumerate}
+\item[(a)] Confidence level $95\%$, $\nu=10$:
+\[
+t_{0.025,10}\approx 2.228.
+\]
+
+\item[(b)] Confidence level $95\%$, $\nu=15$:
+\[
+t_{0.025,15}\approx 2.131.
+\]
+
+\item[(c)] Confidence level $99\%$, $\nu=15$:
+\[
+t_{0.005,15}\approx 2.947.
+\]
+
+\item[(d)] Confidence level $99\%$, $n=5$, so $\nu=n-1=4$:
+\[
+t_{0.005,4}\approx 4.604.
+\]
+
+\item[(e)] Confidence level $98\%$, $\nu=24$:
+\[
+t_{0.01,24}\approx 2.492.
+\]
+
+\item[(f)] Confidence level $99\%$, $n=38$, so $\nu=n-1=37$:
+\[
+t_{0.005,37}\approx 2.715.
+\]
+\end{enumerate}
+
+\subsection*{Problem 34}
+
+Given
+\[
+n=14, \qquad \bar{x}=8.48\text{ MPa}, \qquad s=0.79\text{ MPa}.
+\]
+Then $df=n-1=13$. For a one-sided $95\%$ bound,
+\[
+t_{0.05,13}\approx 1.771.
+\]
+
+\begin{enumerate}
+\item[(a)] A $95\%$ lower confidence bound for the true mean $\mu$ is
+\[
+\bar{x}-t_{0.05,13}\frac{s}{\sqrt{n}}.
+\]
+Substituting,
+\[
+8.48-1.771\left(\frac{0.79}{\sqrt{14}}\right).
+\]
+Since
+\[
+\frac{0.79}{\sqrt{14}}\approx 0.2111,
+\]
+the lower bound is
+\[
+8.48-1.771(0.2111)\approx 8.1061\approx 8.11.
+\]
+Thus, the $95\%$ lower confidence bound is $8.11$ MPa. This means there is 95\% confidence that the true average proportional limit stress is at least $8.11$ MPa.
+
+This procedure assumes the sample is random and independent and that the population distribution is approximately normal.
+
+\item[(b)] A $95\%$ lower prediction bound for the proportional limit stress of a single future joint is
+\[
+\bar{x}-t_{0.05,13}s\sqrt{1+\frac{1}{n}}.
+\]
+Thus,
+\[
+8.48-1.771(0.79)\sqrt{1+\frac{1}{14}}.
+\]
+Since
+\[
+\sqrt{1+\frac{1}{14}}=\sqrt{\frac{15}{14}}\approx 1.0351,
+\]
+the lower prediction bound is
+\[
+8.48-1.771(0.79)(1.0351)\approx 7.0319\approx 7.03.
+\]
+So the $95\%$ lower prediction bound is $7.03$ MPa.
+\end{enumerate}
+
+\subsection*{Problem 36}
+
+Given
+\[
+n=26, \qquad \bar{x}=370.69, \qquad s=24.36.
+\]
+Since the normal probability plot shows a substantial linear pattern, a one-sample $t$ procedure is appropriate.
+
+For a one-sided upper confidence bound with confidence level $95\%$,
+\[
+\bar{x}+t_{0.05,25}\frac{s}{\sqrt{n}}.
+\]
+From the $t$ table,
+\[
+t_{0.05,25}\approx 1.708.
+\]
+Therefore,
+\[
+370.69+1.708\left(\frac{24.36}{\sqrt{26}}\right).
+\]
+Since
+\[
+\frac{24.36}{\sqrt{26}}\approx 4.7774,
+\]
+the upper confidence bound is
+\[
+370.69+1.708(4.7774)\approx 378.85.
+\]
+Thus, the $95\%$ upper confidence bound for the population mean escape time is
+\[
+378.85\text{ sec}.
+\]
+
+\section*{Section 7.4}
+
+\subsection*{Problem 42}
+
+Using chi-square critical values with right-tail area $\alpha$:
+\begin{enumerate}
+\item[(a)]
+\[
+\chi^2_{.1,15}\approx 22.307.
+\]
+
+\item[(b)]
+\[
+\chi^2_{.1,25}\approx 34.382.
+\]
+
+\item[(c)]
+\[
+\chi^2_{.01,25}\approx 44.314.
+\]
+
+\item[(d)]
+\[
+\chi^2_{.005,25}\approx 46.928.
+\]
+
+\item[(e)]
+\[
+\chi^2_{.99,25}\approx 11.524.
+\]
+
+\item[(f)]
+\[
+\chi^2_{.995,25}\approx 10.520.
+\]
+\end{enumerate}
+
+\subsection*{Problem 44}
+
+Given
+\[
+n=9, \qquad s=2.81, \qquad s^2=(2.81)^2=7.8961.
+\]
+Assuming normality, a $95\%$ confidence interval for $\sigma^2$ is
+\[
+\left(\frac{(n-1)s^2}{\chi^2_{.025,\,n-1}},\ \frac{(n-1)s^2}{\chi^2_{.975,\,n-1}}\right).
+\]
+Here,
+\[
+n-1=8, \qquad (n-1)s^2=8(7.8961)=63.1688.
+\]
+From the chi-square table,
+\[
+\chi^2_{.025,8}=17.535, \qquad \chi^2_{.975,8}=2.180.
+\]
+Therefore,
+\[
+\left(\frac{63.1688}{17.535},\ \frac{63.1688}{2.180}\right)=(3.603,\ 28.977)\approx(3.60,\ 28.98).
+\]
+So the $95\%$ confidence interval for $\sigma^2$ is
+\[
+(3.60,\ 28.98).
+\]
+Taking square roots of the endpoints,
+\[
+\left(\sqrt{3.603},\ \sqrt{28.977}\right)=(1.898,\ 5.383)\approx(1.90,\ 5.38).
+\]
+Thus, the $95\%$ confidence interval for $\sigma$ is
+\[
+(1.90,\ 5.38).
+\]
+
+\subsection*{Problem 46}
+
+The sample observations (kN/m$^2$) are
+\[
+33.2,\ 41.8,\ 37.3,\ 40.2,\ 36.7,\ 39.1,\ 36.2,\ 41.8,\ 36.0,\ 35.2,\ 36.7,\ 38.9,\ 35.8,\ 35.2,\ 40.1.
+\]
+Thus,
+\[
+n=15.
+\]
+The sample mean and sample standard deviation are
+\[
+\bar{x}=\frac{564.2}{15}=37.613, \qquad s\approx 2.572,
+\]
+so
+\[
+s^2\approx 6.613.
+\]
+
+\begin{enumerate}
+\item[(a)] The ordered data are
+\[
+33.2,\ 35.2,\ 35.2,\ 35.8,\ 36.0,\ 36.2,\ 36.7,\ 36.7,\ 37.3,\ 38.9,\ 39.1,\ 40.1,\ 40.2,\ 41.8,\ 41.8.
+\]
+They are reasonably symmetric, with no obvious extreme outliers or strong skewness. Thus, it is plausible that the sample came from a normal population.
+
+\item[(b)] Assuming normality,
+\[
+\frac{(n-1)S^2}{\sigma^2}\sim \chi^2_{n-1}.
+\]
+For a $95\%$ upper confidence bound for $\sigma^2$,
+\[
+P\left(\frac{(n-1)S^2}{\sigma^2}\ge \chi^2_{.95,14}\right)=0.95.
+\]
+Solving for $\sigma^2$ gives
+\[
+P\left(\sigma^2\le \frac{(n-1)S^2}{\chi^2_{.95,14}}\right)=0.95.
+\]
+Therefore, the $95\%$ upper confidence bound for $\sigma$ is
+\[
+U_{\sigma}=\sqrt{\frac{(n-1)s^2}{\chi^2_{.95,14}}}.
+\]
+Using
+\[
+n-1=14, \qquad s^2\approx 6.613, \qquad \chi^2_{.95,14}\approx 6.571,
+\]
+we get
+\[
+U_{\sigma}=\sqrt{\frac{14(6.613)}{6.571}}=\sqrt{14.090}\approx 3.754.
+\]
+So the $95\%$ upper confidence bound for the population standard deviation is
+\[
+3.75\text{ kN/m}^2.
+\]
+\end{enumerate}
+
+\end{document}
