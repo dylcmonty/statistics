@@ -1,0 +1,805 @@
+
+\documentclass[12pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb}
+\usepackage{array}
+\usepackage{enumitem}
+\usepackage{booktabs}
+
+\begin{document}
+
+\begin{center}
+    {\Large \textbf{PRACTICE TEST FOR TEST 3 (STAT-461/561)}}\\[4pt]
+    {\large \textbf{Complete Solutions}}
+\end{center}
+
+\begin{enumerate}[label=(\arabic*), leftmargin=*]
+
+\item Identify each of the following statements as TRUE or FALSE:
+\begin{enumerate}[label=(\alph*), itemsep=0.5em]
+    \item Two random variables $X$ and $Y$ are independent if and only if their joint p.d.f.\ is the product of their individual (or marginal) p.d.f.s;
+    \item For a discrete random vector $(X,Y)$ where each of $X$ and $Y$ takes two values ($x_1$ and $x_2$ for $X$, $y_1$ and $y_2$ for $Y$) with
+    \[
+    P(X=x_1 , Y=y_1)=p_{11},\quad P(X=x_1 , Y=y_2)=p_{12},
+    \]
+    \[
+    P(X=x_2 , Y=y_1)=p_{21},\quad P(X=x_2 , Y=y_2)=p_{22},
+    \]
+    the random variables $X$ and $Y$ are independent if $p_{11}p_{22}-p_{12}p_{21}=0$;
+    \item If $X$ and $Y$ are two random variables, each having mean $\mu$ and variance $\sigma^2$, the two random variables $X+Y$ and $X-Y$ are uncorrelated;
+    \item If the correlation between two random variables $X$ and $Y$ is $r$, the correlation between $U=aX+b$ and $V=cY+d$ is $(acr+bd)$.
+\end{enumerate}
+
+\par\medskip
+\noindent\textbf{Solution.}
+\begin{enumerate}[label=(\alph*), itemsep=0.5em]
+    \item \textbf{True.} For continuous random variables, independence is equivalent to
+    \[
+    f_{X,Y}(x,y)=f_X(x)f_Y(y)
+    \]
+    for all $(x,y)$ in the support.
+
+    \item \textbf{True.} In the $2\times 2$ discrete case, independence is equivalent to
+    \[
+    p_{11}p_{22}=p_{12}p_{21},
+    \]
+    i.e.
+    \[
+    p_{11}p_{22}-p_{12}p_{21}=0.
+    \]
+
+    \item \textbf{True.} Since
+    \[
+    \operatorname{Cov}(X+Y,X-Y)
+    =\operatorname{Cov}(X,X)-\operatorname{Cov}(X,Y)+\operatorname{Cov}(Y,X)-\operatorname{Cov}(Y,Y),
+    \]
+    we get
+    \[
+    \operatorname{Cov}(X+Y,X-Y)=\operatorname{Var}(X)-\operatorname{Var}(Y)=\sigma^2-\sigma^2=0.
+    \]
+    So $X+Y$ and $X-Y$ are uncorrelated.
+
+    \item \textbf{False.} For $a\neq 0$ and $c\neq 0$,
+    \[
+    \operatorname{Corr}(aX+b,cY+d)=\frac{ac}{|ac|}\operatorname{Corr}(X,Y)=\operatorname{sign}(ac)\,r,
+    \]
+    not $acr+bd$.
+\end{enumerate}
+
+\item If a continuous random variable $X$ has CDF $F(x)=x^4$ for $x\in[0,1]$ and $=0$ for $x<0$ and $=1$ for $x>1$, find the corresponding pdf. Can you identify it as belonging to a known family of densities? Find the mean and the variance of this $X$. Also, find its median.
+
+\par\medskip
+\noindent\textbf{Solution.}
+For $0\le x\le 1$,
+\[
+F(x)=x^4.
+\]
+Therefore the pdf is
+\[
+f(x)=F'(x)=4x^3,\qquad 0\le x\le 1,
+\]
+and $f(x)=0$ otherwise.
+
+This is a Beta density with parameters $\alpha=4$ and $\beta=1$.
+
+Hence
+\[
+E(X)=\frac{\alpha}{\alpha+\beta}=\frac{4}{5}=0.8,
+\]
+and
+\[
+\operatorname{Var}(X)=\frac{\alpha\beta}{(\alpha+\beta)^2(\alpha+\beta+1)}
+=\frac{(4)(1)}{5^2\cdot 6}
+=\frac{4}{150}
+=\frac{2}{75}.
+\]
+
+The median $m$ satisfies $F(m)=0.5$, so
+\[
+m^4=0.5.
+\]
+Thus
+\[
+m=0.5^{1/4}\approx 0.8409.
+\]
+
+\item If $X_1,\ldots,X_n$ are i.i.d.\ $\operatorname{Gamma}(3,5)$ random variables, find the mean and the variance of
+\[
+X=\sum_{i=1}^n (c_iX_i+b_i)
+\]
+for some constants $c_1,\ldots,c_n$ and $b_1,\ldots,b_n$.
+
+\par\medskip
+\noindent\textbf{Solution.}
+Using the Gamma$(\alpha,\beta)$ parameterization with shape $\alpha=3$ and scale $\beta=5$,
+\[
+E(X_i)=\alpha\beta=3(5)=15,
+\qquad
+\operatorname{Var}(X_i)=\alpha\beta^2=3(5^2)=75.
+\]
+
+Therefore
+\[
+E(c_iX_i+b_i)=c_iE(X_i)+b_i=15c_i+b_i,
+\]
+and
+\[
+\operatorname{Var}(c_iX_i+b_i)=c_i^2\operatorname{Var}(X_i)=75c_i^2.
+\]
+
+Hence
+\[
+E\!\left(\sum_{i=1}^n(c_iX_i+b_i)\right)=\sum_{i=1}^n(15c_i+b_i),
+\]
+and, since the $X_i$ are independent,
+\[
+\operatorname{Var}\!\left(\sum_{i=1}^n(c_iX_i+b_i)\right)=\sum_{i=1}^n 75c_i^2.
+\]
+
+\item If $(X,Y)$ is a random vector having the joint pdf
+\[
+f(x,y)=\frac{1}{64}xy^2e^{-(x+y)/2}
+\]
+for $x>0$ and $y>0$, derive the marginal pdf of $X$ and that of $Y$. What are the marginal mean and variance for each of $X$ and $Y$? What is the correlation between $X$ and $Y$? What is $E(X^2Y^2)$? [\textbf{Hint:} In order to avoid lengthy answers to the last two questions, check if $X$ and $Y$ are independent.]
+
+\par\medskip
+\noindent\textbf{Solution.}
+First rewrite the joint pdf as
+\[
+f(x,y)=\left(\frac14 xe^{-x/2}\right)\left(\frac1{16}y^2e^{-y/2}\right),
+\qquad x>0,\ y>0.
+\]
+So $f(x,y)=f_X(x)f_Y(y)$, which shows that $X$ and $Y$ are independent.
+
+The marginal pdf of $X$ is
+\[
+f_X(x)=\int_0^\infty \frac{1}{64}xy^2e^{-(x+y)/2}\,dy
+=\frac14 xe^{-x/2},
+\qquad x>0.
+\]
+Thus $X\sim \Gamma(2,2)$, so
+\[
+E(X)=2(2)=4,
+\qquad
+\operatorname{Var}(X)=2(2^2)=8.
+\]
+
+The marginal pdf of $Y$ is
+\[
+f_Y(y)=\int_0^\infty \frac{1}{64}xy^2e^{-(x+y)/2}\,dx
+=\frac1{16}y^2e^{-y/2},
+\qquad y>0.
+\]
+Thus $Y\sim \Gamma(3,2)$, so
+\[
+E(Y)=3(2)=6,
+\qquad
+\operatorname{Var}(Y)=3(2^2)=12.
+\]
+
+Since $X$ and $Y$ are independent,
+\[
+\operatorname{Corr}(X,Y)=0.
+\]
+
+Also,
+\[
+E(X^2Y^2)=E(X^2)E(Y^2).
+\]
+Now
+\[
+E(X^2)=\operatorname{Var}(X)+[E(X)]^2=8+4^2=24,
+\]
+and
+\[
+E(Y^2)=\operatorname{Var}(Y)+[E(Y)]^2=12+6^2=48.
+\]
+Therefore
+\[
+E(X^2Y^2)=24\cdot 48=1152.
+\]
+
+\item If the random vector $(X,Y)$ has the joint pdf $f(x,y)=k(1-x)$ on $0\le y\le x\le 1$ and $=0$ elsewhere, what must $k$ be for $f(x,y)$ to be a legitimate joint density? Find the marginal densities of $X$ and $Y$. Find the conditional density function of $X$, given that $Y=y$. Are $X$ and $Y$ independent?
+
+\par\medskip
+\noindent\textbf{Solution.}
+To make $f(x,y)$ a joint density, we need
+\[
+\int_0^1\int_0^x k(1-x)\,dy\,dx=1.
+\]
+So
+\[
+k\int_0^1 x(1-x)\,dx
+=k\left[\frac{x^2}{2}-\frac{x^3}{3}\right]_0^1
+=k\left(\frac12-\frac13\right)
+=\frac{k}{6}=1.
+\]
+Hence
+\[
+k=6.
+\]
+
+Therefore the joint density is
+\[
+f(x,y)=6(1-x),\qquad 0\le y\le x\le 1.
+\]
+
+The marginal density of $X$ is
+\[
+f_X(x)=\int_0^x 6(1-x)\,dy=6x(1-x),
+\qquad 0\le x\le 1.
+\]
+
+The marginal density of $Y$ is
+\[
+f_Y(y)=\int_y^1 6(1-x)\,dx
+=6\left[x-\frac{x^2}{2}\right]_y^1
+=3-6y+3y^2
+=3(1-y)^2,
+\qquad 0\le y\le 1.
+\]
+
+For $0\le y\le 1$, the conditional density of $X$ given $Y=y$ is
+\[
+f_{X|Y}(x|y)=\frac{f(x,y)}{f_Y(y)}
+=\frac{6(1-x)}{3(1-y)^2}
+=\frac{2(1-x)}{(1-y)^2},
+\qquad y\le x\le 1.
+\]
+
+Since the support is triangular, not rectangular, $X$ and $Y$ cannot be independent. Equivalently,
+\[
+f(x,y)\neq f_X(x)f_Y(y).
+\]
+So $X$ and $Y$ are \textbf{not} independent.
+
+\item If the joint p.m.f.\ of the random vector $(X,Y)$ is given by the following table, find the correlation between $X$ and $Y$. Are $X$ and $Y$ independent? If not, write down the conditional p.m.f.\ table of $X$ given that $Y=4$.
+
+\[
+\begin{array}{c|cc}
+ & Y=2 & Y=4 \\\hline
+X=0 & 0.15 & 0.25 \\
+X=5 & 0.40 & 0.10 \\
+X=10 & 0.03 & 0.07
+\end{array}
+\]
+
+\par\medskip
+\noindent\textbf{Solution.}
+The marginal pmf of $X$ is
+\[
+P(X=0)=0.40,\qquad P(X=5)=0.50,\qquad P(X=10)=0.10.
+\]
+So
+\[
+E(X)=0(0.40)+5(0.50)+10(0.10)=3.5,
+\]
+and
+\[
+E(X^2)=0^2(0.40)+5^2(0.50)+10^2(0.10)=22.5.
+\]
+Hence
+\[
+\operatorname{Var}(X)=22.5-(3.5)^2=10.25.
+\]
+
+The marginal pmf of $Y$ is
+\[
+P(Y=2)=0.58,\qquad P(Y=4)=0.42.
+\]
+So
+\[
+E(Y)=2(0.58)+4(0.42)=2.84,
+\]
+and
+\[
+E(Y^2)=2^2(0.58)+4^2(0.42)=9.04.
+\]
+Hence
+\[
+\operatorname{Var}(Y)=9.04-(2.84)^2=0.9744.
+\]
+
+Also,
+\[
+E(XY)=5\cdot 2\cdot 0.40+5\cdot 4\cdot 0.10+10\cdot 2\cdot 0.03+10\cdot 4\cdot 0.07=9.4.
+\]
+Thus
+\[
+\operatorname{Cov}(X,Y)=E(XY)-E(X)E(Y)=9.4-(3.5)(2.84)=-0.54.
+\]
+Therefore
+\[
+\operatorname{Corr}(X,Y)=\frac{-0.54}{\sqrt{(10.25)(0.9744)}}\approx -0.171.
+\]
+
+$X$ and $Y$ are not independent; for example,
+\[
+P(X=0,Y=2)=0.15 \neq P(X=0)P(Y=2)=0.40(0.58)=0.232.
+\]
+
+Since
+\[
+P(Y=4)=0.25+0.10+0.07=0.42,
+\]
+the conditional pmf values are
+\[
+P(X=0\mid Y=4)=\frac{0.25}{0.42}=\frac{25}{42},
+\]
+\[
+P(X=5\mid Y=4)=\frac{0.10}{0.42}=\frac{5}{21},
+\]
+and
+\[
+P(X=10\mid Y=4)=\frac{0.07}{0.42}=\frac16.
+\]
+
+So the conditional pmf table is
+\[
+\begin{array}{c|c}
+x & P(X=x\mid Y=4) \\\hline
+0 & \frac{25}{42} \\
+5 & \frac{5}{21} \\
+10 & \frac16
+\end{array}
+\]
+
+\item Let $\{Y_1,\ldots,Y_{51}\}$ be a simple random sample from a Normal population with $\mu=150$ and $\sigma=5$. What's the pdf of $\overline{Y}$? What's the pdf of $2s^2$? [$s^2=$ sample variance]
+
+\par\medskip
+\noindent\textbf{Solution.}
+Since the sample comes from a Normal$(150,5^2)$ population,
+\[
+\overline{Y}\sim \mathrm{Normal}\!\left(150,\frac{5^2}{51}\right)
+=\mathrm{Normal}\!\left(150,\frac{25}{51}\right).
+\]
+Therefore the pdf of $\overline{Y}$ is
+\[
+f_{\overline{Y}}(y)
+=\frac{1}{\sqrt{2\pi(25/51)}}
+\exp\!\left(-\frac{(y-150)^2}{2(25/51)}\right),
+\qquad -\infty<y<\infty.
+\]
+Equivalently,
+\[
+f_{\overline{Y}}(y)
+=\frac{\sqrt{51}}{5\sqrt{2\pi}}
+\exp\!\left(-\frac{51(y-150)^2}{50}\right),
+\qquad -\infty<y<\infty.
+\]
+
+Also, for a Normal sample,
+\[
+\frac{(n-1)S^2}{\sigma^2}\sim \chi^2_{n-1}.
+\]
+Here $n=51$ and $\sigma^2=25$, so
+\[
+\frac{50S^2}{25}=2S^2\sim \chi^2_{50}.
+\]
+Hence the pdf of $2S^2$ is the chi-square pdf with $50$ degrees of freedom:
+\[
+f_{2S^2}(t)
+=\frac{1}{2^{25}\Gamma(25)}\,t^{24}e^{-t/2},
+\qquad t>0.
+\]
+
+\item The daily total milk output from a small Wisconsin dairy farm is Normally distributed with mean $84$ gallons and standard deviation $3.6$ gallons. What are the chances that on a randomly selected day, the milk output will (a) exceed $90$ gallons? (b) be at most $75$ gallons? (c) be between $80$ and $85$ gallons?
+
+\par\medskip
+\noindent\textbf{Solution.}
+Let $X$ be the daily total milk output. Then
+\[
+X\sim \mathrm{Normal}(84,3.6^2).
+\]
+
+\begin{enumerate}[label=(\alph*), itemsep=0.5em]
+    \item
+    \[
+    P(X>90)=P\!\left(Z>\frac{90-84}{3.6}\right)
+    =P(Z>1.67)=1-0.9525=0.0475.
+    \]
+
+    \item
+    \[
+    P(X\le 75)=P\!\left(Z\le\frac{75-84}{3.6}\right)
+    =P(Z\le -2.50)=0.0062.
+    \]
+
+    \item
+    \[
+    P(80<X<85)=P\!\left(\frac{80-84}{3.6}<Z<\frac{85-84}{3.6}\right)
+    =P(-1.11<Z<0.28).
+    \]
+    Using the Normal table,
+    \[
+    P(-1.11<Z<0.28)=0.6103-0.1335=0.4768.
+    \]
+\end{enumerate}
+
+\item In \#(8) above, what is the 90th percentile of daily total milk output? On 80\% of the days, the total milk output is at least how much?
+
+\par\medskip
+\noindent\textbf{Solution.}
+For the 90th percentile, use $z_{0.90}\approx 1.28$. Then
+\[
+\frac{x-84}{3.6}=1.28
+\]
+gives
+\[
+x=84+1.28(3.6)=88.608.
+\]
+So the 90th percentile is about
+\[
+88.608\text{ gallons}.
+\]
+
+For the second part, we need the 20th percentile because
+\[
+P(X\ge x)=0.80 \quad \Longleftrightarrow \quad P(X\le x)=0.20.
+\]
+Using $z_{0.20}\approx -0.84$,
+\[
+\frac{x-84}{3.6}=-0.84,
+\]
+so
+\[
+x=84-0.84(3.6)=80.976.
+\]
+Thus on 80\% of days, the output is at least about
+\[
+80.976\text{ gallons}.
+\]
+
+\item In \#(8) above, if you took a random sample of $n=81$ days and computed the sample average $\overline{X}$ of milk output, what are the chances that $\overline{X}$ would be (a) above $85$ gallons? (b) below $82.8$ gallons? (c) between $83$ and $85$ gallons?
+
+\par\medskip
+\noindent\textbf{Solution.}
+Since
+\[
+\overline{X}\sim \mathrm{Normal}\!\left(84,\frac{3.6^2}{81}\right)
+=\mathrm{Normal}(84,0.16),
+\]
+we have
+\[
+\operatorname{SD}(\overline{X})=\frac{3.6}{9}=0.4.
+\]
+
+\begin{enumerate}[label=(\alph*), itemsep=0.5em]
+    \item
+    \[
+    P(\overline{X}>85)
+    =P\!\left(Z>\frac{85-84}{0.4}\right)
+    =P(Z>2.5)=1-0.9938=0.0062.
+    \]
+
+    \item
+    \[
+    P(\overline{X}<82.8)
+    =P\!\left(Z<\frac{82.8-84}{0.4}\right)
+    =P(Z<-3)=0.0013.
+    \]
+
+    \item
+    \[
+    P(83<\overline{X}<85)
+    =P\!\left(\frac{83-84}{0.4}<Z<\frac{85-84}{0.4}\right)
+    =P(-2.5<Z<2.5).
+    \]
+    Therefore
+    \[
+    P(-2.5<Z<2.5)=0.9938-0.0062=0.9876.
+    \]
+\end{enumerate}
+
+\item If $X$ and $Y$ are independent random variables with means $23$ and $17$, and standard deviations $2$ and $4$ respectively, find the means and variances of (a) $15X$, (b) $20X-12Y$, (c) $5X+8Y$.
+
+\par\medskip
+\noindent\textbf{Solution.}
+Since
+\[
+E(X)=23,\qquad E(Y)=17,\qquad \operatorname{Var}(X)=2^2=4,\qquad \operatorname{Var}(Y)=4^2=16,
+\]
+and $X,Y$ are independent, we obtain:
+
+\begin{enumerate}[label=(\alph*), itemsep=0.5em]
+    \item
+    \[
+    E(15X)=15E(X)=345,
+    \qquad
+    \operatorname{Var}(15X)=15^2\operatorname{Var}(X)=15^2(4)=900.
+    \]
+
+    \item
+    \[
+    E(20X-12Y)=20E(X)-12E(Y)=20(23)-12(17)=256,
+    \]
+    and
+    \[
+    \operatorname{Var}(20X-12Y)=20^2\operatorname{Var}(X)+(-12)^2\operatorname{Var}(Y)
+    =400(4)+144(16)=3904.
+    \]
+
+    \item
+    \[
+    E(5X+8Y)=5E(X)+8E(Y)=5(23)+8(17)=251,
+    \]
+    and
+    \[
+    \operatorname{Var}(5X+8Y)=5^2\operatorname{Var}(X)+8^2\operatorname{Var}(Y)
+    =25(4)+64(16)=1124.
+    \]
+\end{enumerate}
+
+\item In 200 tosses of a coin with $P(H)=\tfrac34$, what are the chances of getting fewer than $165$ heads?
+
+\par\medskip
+\noindent\textbf{Solution.}
+Let $X$ be the number of heads. Then
+\[
+X\sim \operatorname{Binomial}(200,0.75).
+\]
+
+The exact probability is
+\[
+P(X<165)=\sum_{k=0}^{164}\binom{200}{k}(0.75)^k(0.25)^{200-k}\approx 0.9927.
+\]
+
+Using the Normal approximation employed in the provided work,
+\[
+\mu=np=150,
+\qquad
+\sigma^2=np(1-p)=37.5.
+\]
+Then
+\[
+P(X<165)=P(X\le 164)\approx P\!\left(Z\le \frac{164.5-150}{\sqrt{37.5}}\right)
+=P(Z\le 2.37)=0.9911.
+\]
+
+So the normal-approximation answer is
+\[
+P(X<165)\approx 0.9911,
+\]
+while the exact binomial probability is about $0.9927$.
+
+\item For a simple random sample of size $n$ from a population with a Poisson distribution, derive the maximum likelihood estimator of the population mean. What is the MOM estimator of the population mean?
+
+\par\medskip
+\noindent\textbf{Solution.}
+Let $X_1,\ldots,X_n$ be a simple random sample from a Poisson population with mean $\mu$. For a Poisson random variable,
+\[
+P(X=k)=\frac{e^{-\mu}\mu^k}{k!},\qquad k=0,1,2,\ldots
+\]
+
+The likelihood is
+\[
+L(\mu;x_1,\ldots,x_n)=\prod_{i=1}^n \frac{e^{-\mu}\mu^{x_i}}{x_i!}
+=\frac{e^{-n\mu}\mu^{\sum_{i=1}^n x_i}}{x_1!\cdots x_n!}.
+\]
+
+The log-likelihood is
+\[
+\ell(\mu)=-n\mu+\left(\sum_{i=1}^n x_i\right)\ln\mu-\sum_{i=1}^n \ln(x_i!).
+\]
+Differentiate and set equal to zero:
+\[
+\frac{d\ell}{d\mu}=-n+\frac{\sum_{i=1}^n x_i}{\mu}=0.
+\]
+So
+\[
+\hat{\mu}_{\mathrm{MLE}}=\frac{1}{n}\sum_{i=1}^n x_i=\overline{X}.
+\]
+
+For the method of moments, since the population mean is $\mu$, equating it to the sample mean gives
+\[
+\hat{\mu}_{\mathrm{MOM}}=\overline{X}.
+\]
+
+Therefore
+\[
+\boxed{\hat{\mu}_{\mathrm{MLE}}=\overline{X}},
+\qquad
+\boxed{\hat{\mu}_{\mathrm{MOM}}=\overline{X}}.
+\]
+
+\item For a simple random sample of size $n$ from a population having a $\operatorname{Normal}(\mu,\sigma^2)$ density, find the maximum likelihood estimators of the population mean and the population variance. What are the MOM estimators of those two population parameters?
+
+\par\medskip
+\noindent\textbf{Solution.}
+For a Normal$(\mu,\sigma^2)$ sample, the likelihood is
+\[
+L(\mu,\sigma^2;x_1,\ldots,x_n)
+=(2\pi)^{-n/2}\sigma^{-n}
+\exp\!\left(-\frac{1}{2\sigma^2}\sum_{i=1}^n (x_i-\mu)^2\right).
+\]
+
+The log-likelihood is
+\[
+\ell(\mu,\sigma^2)
+=-\frac n2\ln(2\pi)-n\ln\sigma-\frac{1}{2\sigma^2}\sum_{i=1}^n (x_i-\mu)^2.
+\]
+
+Differentiating with respect to $\mu$ and setting equal to zero gives
+\[
+\hat{\mu}_{\mathrm{MLE}}=\overline{X}.
+\]
+
+Substituting $\mu=\overline{X}$ and maximizing with respect to $\sigma^2$ gives
+\[
+\hat{\sigma}^2_{\mathrm{MLE}}=\frac1n\sum_{i=1}^n (x_i-\overline{X})^2.
+\]
+
+For the method of moments, use the first two raw moments:
+\[
+E(X)=\mu,
+\qquad
+E(X^2)=\mu^2+\sigma^2.
+\]
+Equating sample moments to population moments gives
+\[
+\hat{\mu}_{\mathrm{MOM}}=\overline{X},
+\]
+and
+\[
+\hat{\sigma}^2_{\mathrm{MOM}}
+=\frac1n\sum_{i=1}^n X_i^2-\overline{X}^{\,2}
+=\frac1n\sum_{i=1}^n (X_i-\overline{X})^2.
+\]
+
+So
+\[
+\boxed{\hat{\mu}_{\mathrm{MLE}}=\overline{X}},\qquad
+\boxed{\hat{\sigma}^2_{\mathrm{MLE}}=\frac1n\sum_{i=1}^n (X_i-\overline{X})^2},
+\]
+and
+\[
+\boxed{\hat{\mu}_{\mathrm{MOM}}=\overline{X}},\qquad
+\boxed{\hat{\sigma}^2_{\mathrm{MOM}}=\frac1n\sum_{i=1}^n (X_i-\overline{X})^2}.
+\]
+
+\item If a random sample of 400 people was asked the question ``Do you think that using AI is a good idea for school students --- yes or no?'' and 251 of them said ``no'', what is a point estimate of the (unknown) population proportion of people believing ``no''? Construct a 98\% confidence interval for this population proportion.
+
+\par\medskip
+\noindent\textbf{Solution.}
+The point estimate is the sample proportion:
+\[
+\hat p=\frac{251}{400}=0.6275.
+\]
+
+Using $z_{0.01}\approx 2.33$, an approximate 98\% confidence interval is
+\[
+\hat p \pm 2.33\sqrt{\frac{\hat p(1-\hat p)}{400}}.
+\]
+So
+\[
+0.6275 \pm 2.33\sqrt{\frac{0.6275(0.3725)}{400}}
+\approx 0.6275 \pm 0.0563.
+\]
+Hence the interval is
+\[
+\boxed{(0.5712,\ 0.6838)}.
+\]
+
+\item If a 98\% confidence interval for an unknown population proportion $p$ is to be $0.2$ units wide, find the sample size needed.
+
+\par\medskip
+\noindent\textbf{Solution.}
+A total width of $0.2$ means the margin of error is
+\[
+E=0.1.
+\]
+Since $p$ is unknown, use the conservative value $p(1-p)\le 0.25$. Then
+\[
+E=z_{0.01}\sqrt{\frac{0.25}{n}}
+\]
+with $z_{0.01}\approx 2.33$. So
+\[
+0.1=2.33\sqrt{\frac{0.25}{n}}
+\]
+which gives
+\[
+n=\frac{(2.33)^2(0.25)}{0.1^2}
+=\left(\frac{2.33}{0.2}\right)^2
+=135.72.
+\]
+Round up to get
+\[
+\boxed{n=136}.
+\]
+
+\item The hourly wages in a particular industry are normally distributed with mean \$13.20 and standard deviation \$2.50. A company in this industry employs 40 workers, paying them an average of \$12.20 per hour. At a 1\% significance level, can this company be accused of paying substandard wages? What is the p-value of this test?
+
+\par\medskip
+\noindent\textbf{Solution.}
+Let $\mu$ be the company's true mean hourly wage. We test
+\[
+H_0:\mu\ge 13.20
+\qquad \text{vs.} \qquad
+H_1:\mu<13.20.
+\]
+
+Because the population standard deviation is known, use the $z$ statistic:
+\[
+z=\frac{\overline{x}-13.2}{2.5/\sqrt{40}}
+=\frac{12.2-13.2}{2.5/\sqrt{40}}
+=-2.529.
+\]
+
+At the 1\% significance level for a left-tailed test, the critical value is
+\[
+z_{0.01}=-2.33.
+\]
+Since
+\[
+-2.529<-2.33,
+\]
+we reject $H_0$.
+
+The p-value is
+\[
+P(Z\le -2.529)\approx 0.0057.
+\]
+
+Therefore there is sufficient evidence at the 1\% level to accuse the company of paying substandard wages.
+
+\item A simple random sample of 25 students was taken from among all the students enrolled in the University of Akron's remedial mathematics course (for freshmen only), which showed a sample average high-school GPA of 2.79 and a sample standard deviation of 0.12. What is a 95\% confidence interval for the true, unknown population mean high-school GPA of all freshmen enrolled in that course?
+
+\par\medskip
+\noindent\textbf{Solution.}
+Here $n=25$, $\overline{x}=2.79$, and $s=0.12$. Since $\sigma$ is unknown and the population is assumed Normal, use a $t$ interval:
+\[
+\overline{x}\pm t_{0.025,24}\frac{s}{\sqrt{n}}.
+\]
+Using $t_{0.025,24}=2.064$,
+\[
+2.79\pm 2.064\left(\frac{0.12}{5}\right)
+=2.79\pm 0.0495.
+\]
+Thus the 95\% confidence interval is
+\[
+\boxed{(2.7405,\ 2.8395)}.
+\]
+
+\item In a simple random sample of 50 large and mid-sized retailers from the greater Cleveland area, 29 believe that the upcoming holiday season will be better than last year in terms of sales volume and revenue. At a 1\% significance level, test whether a majority of all large and mid-sized retailers in that area believe so. What is the p-value of this test?
+
+\par\medskip
+\noindent\textbf{Solution.}
+Let $p$ be the true proportion of such retailers who believe the upcoming holiday season will be better. Since ``majority'' means more than $0.5$, test
+\[
+H_0:p\le 0.5
+\qquad \text{vs.} \qquad
+H_1:p>0.5.
+\]
+
+The sample proportion is
+\[
+\hat p=\frac{29}{50}=0.58.
+\]
+
+Using the normal approximation under $H_0:p=0.5$,
+\[
+z=\frac{\hat p-0.5}{\sqrt{0.5(1-0.5)/50}}
+=\frac{0.08}{\sqrt{0.25/50}}
+\approx 1.13.
+\]
+
+At the 1\% significance level for a right-tailed test, the critical value is
+\[
+z_{0.99}=2.33.
+\]
+Since
+\[
+1.13<2.33,
+\]
+we do not reject $H_0$.
+
+The p-value is
+\[
+P(Z\ge 1.13)\approx 0.1292.
+\]
+
+There is not enough evidence at the 1\% level to conclude that a majority of these retailers believe the upcoming holiday season will be better.
+
+\end{enumerate}
+
+\end{document}
