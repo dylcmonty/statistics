@@ -1,0 +1,1366 @@
+\documentclass[11pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb}
+\usepackage{booktabs}
+\usepackage{graphicx}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0.25em}
+
+\begin{document}
+
+\section*{Section 8.1}
+
+\subsection*{Problem 4}
+
+Reject $H_0$ when the observed $P$-value is less than or equal to the significance level $\alpha$.
+
+\begin{enumerate}
+\item[(a)]
+\[
+P\text{-value}=0.084>0.05=\alpha.
+\]
+Answer: Do not reject $H_0$.
+
+\item[(b)]
+\[
+P\text{-value}=0.003>0.001=\alpha.
+\]
+Answer: Do not reject $H_0$.
+
+\item[(c)]
+\[
+P\text{-value}=0.498>0.05=\alpha.
+\]
+Answer: Do not reject $H_0$.
+
+\item[(d)]
+\[
+P\text{-value}=0.084<0.10=\alpha.
+\]
+Answer: Reject $H_0$.
+
+\item[(e)]
+\[
+P\text{-value}=0.039>0.01=\alpha.
+\]
+Answer: Do not reject $H_0$.
+
+\item[(f)]
+\[
+P\text{-value}=0.218>0.10=\alpha.
+\]
+Answer: Do not reject $H_0$.
+\end{enumerate}
+
+\subsection*{Problem 8}
+
+Let $\mu$ denote the true mean amperage at which the 40-amp fuses burn out. Since amperage either below or above 40 would be a problem, the relevant hypotheses are
+\[
+H_0:\mu=40
+\qquad \text{and} \qquad
+H_a:\mu\neq 40.
+\]
+This is a two-tailed test.
+
+A type I error would be rejecting $H_0$ when $H_0$ is true. In context, this means concluding that the true mean amperage is not 40 when the true mean burn-out amperage is actually 40.
+
+A type II error would be failing to reject $H_0$ when $H_0$ is false. In context, this means concluding that there is not sufficient evidence that the true mean amperage differs from 40 when the true mean is actually not 40. If $\mu<40$, customers may complain because fuses require replacement too often. If $\mu>40$, the manufacturer may be liable for damage caused by electrical malfunction.
+
+\subsection*{Problem 10}
+
+Let $\mu_R$ denote the true mean warpage for the regular laminate, and let $\mu_S$ denote the true mean warpage for the special laminate. The manufacturer will switch only if the special laminate has a smaller true average amount of warpage, so the hypotheses are
+\[
+H_0:\mu_S-\mu_R \ge 0
+\qquad \text{and} \qquad
+H_a:\mu_S-\mu_R<0.
+\]
+Equivalently,
+\[
+H_0:\mu_S\ge \mu_R
+\qquad \text{and} \qquad
+H_a:\mu_S<\mu_R.
+\]
+This is a lower-tailed test.
+
+A type I error would be rejecting $H_0$ when $H_0$ is true. In context, this means concluding that the special laminate reduces the true average amount of warpage when it actually does not.
+
+A type II error would be failing to reject $H_0$ when $H_0$ is false. In context, this means failing to conclude that the special laminate reduces the true average amount of warpage when it actually does.
+
+\subsection*{Problem 12}
+
+Let $\mu$ denote the true average compressive strength of the mixture. The mixture should be used only if there is convincing evidence that the mean strength exceeds $1300$ KN/m$^2$.
+
+\begin{enumerate}
+\item[(a)] The appropriate hypotheses are
+\[
+H_0:\mu\le 1300
+\qquad \text{and} \qquad
+H_a:\mu>1300.
+\]
+For the test calculation, use the boundary value $\mu_0=1300$.
+
+\item[(b)] Since $\sigma=60$ and $n=10$,
+\[
+\bar{X}\sim N\left(\mu,\frac{60}{\sqrt{10}}\right).
+\]
+When $H_0$ is true at the boundary value $\mu=1300$,
+\[
+\bar{X}\sim N\left(1300,\frac{60}{\sqrt{10}}\right).
+\]
+For $\bar{x}=1340$,
+\[
+z=\frac{1340-1300}{60/\sqrt{10}}
+=\frac{40}{18.9737}
+\approx 2.1082.
+\]
+The upper-tail $P$-value is
+\[
+P\text{-value}=P(Z\ge 2.1082)\approx 0.0175.
+\]
+Since
+\[
+0.0175>0.01,
+\]
+do not reject $H_0$ at the $\alpha=0.01$ significance level.
+
+Equivalently, the critical value for the sample mean is
+\[
+1300+z_{0.99}\frac{60}{\sqrt{10}}
+=1300+2.326(18.9737)
+\approx 1344.1.
+\]
+Since $1340<1344.1$, the rejection region is not reached.
+
+Answer: Do not reject $H_0$ at $\alpha=0.01$.
+
+\item[(c)] If $\mu=1350$, then
+\[
+\bar{X}\sim N\left(1350,\frac{60}{\sqrt{10}}\right).
+\]
+For a test with $\alpha=0.01$, the rejection rule is
+\[
+\bar{X}\ge 1344.1.
+\]
+The mixture is judged unsatisfactory when $H_0$ is not rejected, so
+\[
+P(\text{type II error})=P(\bar{X}<1344.1\mid \mu=1350).
+\]
+Standardizing,
+\[
+z=\frac{1344.1-1350}{60/\sqrt{10}}
+=\frac{-5.9}{18.9737}
+\approx -0.3110.
+\]
+Therefore,
+\[
+P(\bar{X}<1344.1\mid \mu=1350)
+=P(Z<-0.3110)
+\approx 0.3779.
+\]
+Answer: The probability of a type II error when $\mu=1350$ is approximately $0.378$.
+\end{enumerate}
+
+\section*{Section 8.2}
+
+\subsection*{Problem 16}
+
+Let $\mu$ denote the true average tire pressure. Since the test is used to decide whether the tires differ from the target pressure of 30 psi, the hypotheses are
+\[
+H_0:\mu=30
+\qquad \text{and} \qquad
+H_a:\mu\neq 30.
+\]
+Thus this is a two-tailed test, so
+\[
+P\text{-value}=2P(Z\ge |z|).
+\]
+
+\begin{enumerate}
+\item[(a)] For $z=2.10$,
+\[
+P\text{-value}=2P(Z\ge 2.10)=2(0.0179)=0.0358.
+\]
+
+\item[(b)] For $z=-1.75$,
+\[
+P\text{-value}=2P(Z\ge 1.75)=2(0.0401)=0.0802.
+\]
+
+\item[(c)] For $z=-0.55$,
+\[
+P\text{-value}=2P(Z\ge 0.55)=2(0.2912)=0.5824.
+\]
+
+\item[(d)] For $z=1.41$,
+\[
+P\text{-value}=2P(Z\ge 1.41)=2(0.0793)=0.1586.
+\]
+
+\item[(e)] For $z=-5.30$,
+\[
+P\text{-value}=2P(Z\ge 5.30)\approx 2(0.000000058)=0.000000116.
+\]
+\end{enumerate}
+
+\subsection*{Problem 20}
+
+Let $\mu$ denote the true average lifetime of this type of lightbulb. Since the customer wants to know whether the true average lifetime is smaller than advertised, the hypotheses are
+\[
+H_0:\mu=750
+\qquad \text{and} \qquad
+H_a:\mu<750.
+\]
+From the Minitab output,
+\[
+n=50,
+\qquad \bar{x}=738.44,
+\qquad s=38.20,
+\qquad z=-2.14,
+\qquad P\text{-value}=0.016.
+\]
+
+\begin{enumerate}
+\item[(a)] At significance level $\alpha=0.05$,
+\[
+0.016<0.05.
+\]
+Therefore, reject $H_0$. There is sufficient evidence at the 0.05 level that $\mu<750$.
+
+\item[(b)] At significance level $\alpha=0.01$,
+\[
+0.016>0.01.
+\]
+Therefore, do not reject $H_0$. There is not sufficient evidence at the 0.01 level that $\mu<750$.
+
+\item[(c)] Since the customer plans to purchase the bulbs unless it is conclusively demonstrated that the average lifetime is smaller than advertised, a smaller significance level such as $\alpha=0.01$ is appropriate. Because $0.016>0.01$, the evidence is not strong enough at this level to conclude that the true average lifetime is below 750 hours.
+\end{enumerate}
+
+\subsection*{Problem 22}
+
+Let $\mu$ denote the true average maximum penetration for this type of steel conduit. The conduits meet the specification only if the true average penetration is at most 50 mils, so the hypotheses are
+\[
+H_0:\mu\le 50
+\qquad \text{and} \qquad
+H_a:\mu>50.
+\]
+Since $n=45$ is large, use a large-sample one-sample $z$ test with $s=4.8$:
+\[
+z=\frac{\bar{x}-\mu_0}{s/\sqrt{n}}
+=\frac{52.7-50}{4.8/\sqrt{45}}
+=\frac{2.7}{0.7155}
+\approx 3.77.
+\]
+The upper-tail $P$-value is
+\[
+P\text{-value}=P(Z\ge 3.77)\approx 0.0001.
+\]
+Since this $P$-value is very small, reject $H_0$. There is strong evidence that the true average penetration exceeds 50 mils.
+
+Answer: The conduits do not meet the specification and should not be used.
+
+\subsection*{Problem 24}
+
+Let $\mu$ denote the true average estimated calorie content for a 12-oz can of beer among the population sampled. The actual calorie content is 153 calories, and the question is whether the true average estimate exceeds this value.
+\[
+H_0:\mu=153
+\qquad \text{and} \qquad
+H_a:\mu>153.
+\]
+Given
+\[
+n=58,
+\qquad \bar{x}=191,
+\qquad s=89,
+\]
+use the large-sample test statistic
+\[
+z=\frac{\bar{x}-\mu_0}{s/\sqrt{n}}.
+\]
+Substituting,
+\[
+z=\frac{191-153}{89/\sqrt{58}}
+=\frac{38}{11.686}
+\approx 3.25.
+\]
+The corresponding upper-tail $P$-value is
+\[
+P\text{-value}=P(Z\ge 3.25)\approx 0.0006.
+\]
+Since
+\[
+0.0006<0.001,
+\]
+reject $H_0$ at the $\alpha=0.001$ significance level.
+
+Answer: There is sufficient evidence at the 0.001 level that the true average estimated calorie content exceeds 153 calories.
+
+\section*{Section 8.3}
+
+\subsection*{Problem 30}
+
+Let $\mu$ denote the true average pH. The hypotheses are
+\[
+H_0:\mu=7.0
+\qquad \text{and} \qquad
+H_a:\mu<7.0.
+\]
+This is a lower-tailed one-sample $t$ test with $df=n-1$.
+
+\begin{enumerate}
+\item[(a)] Here $n=6$, so $df=5$, $t=-2.3$, and $\alpha=0.05$.
+\[
+P\text{-value}=P(T_5\le -2.3)\approx 0.0349.
+\]
+Since $0.0349<0.05$, reject $H_0$. There is sufficient evidence that the true average pH is less than 7.0.
+
+\item[(b)] Here $n=15$, so $df=14$, $t=-3.1$, and $\alpha=0.01$.
+\[
+P\text{-value}=P(T_{14}\le -3.1)\approx 0.0039.
+\]
+Since $0.0039<0.01$, reject $H_0$. There is sufficient evidence that the true average pH is less than 7.0.
+
+\item[(c)] Here $n=12$, so $df=11$, $t=-1.3$, and $\alpha=0.05$.
+\[
+P\text{-value}=P(T_{11}\le -1.3)\approx 0.1101.
+\]
+Since $0.1101>0.05$, do not reject $H_0$. There is not sufficient evidence that the true average pH is less than 7.0.
+
+\item[(d)] Here $n=6$, so $df=5$, $t=0.7$, and $\alpha=0.05$.
+\[
+P\text{-value}=P(T_5\le 0.7)\approx 0.7424.
+\]
+Since $0.7424>0.05$, do not reject $H_0$. There is not sufficient evidence that the true average pH is less than 7.0.
+
+\item[(e)] Here $n=6$, so $df=5$, $\bar{x}=6.68$, and $s/\sqrt{n}=0.0820$.
+\[
+t=\frac{\bar{x}-\mu_0}{s/\sqrt{n}}
+=\frac{6.68-7.00}{0.0820}
+=-3.9024.
+\]
+Thus,
+\[
+P\text{-value}=P(T_5\le -3.9024)\approx 0.0057.
+\]
+Since no significance level is specified, the conclusion is based on the $P$-value. There is strong evidence that the true average pH is less than 7.0.
+\end{enumerate}
+
+\subsection*{Problem 34}
+
+The observations are
+\[
+32.1,
+30.6,
+31.4,
+30.4,
+31.0,
+31.9.
+\]
+Thus,
+\[
+n=6,
+\qquad \bar{x}=31.2333,
+\qquad s=0.6890.
+\]
+
+\begin{enumerate}
+\item[(a)] Let $\mu$ denote the true average stopping distance. Since the question asks whether the true average exceeds 30 ft, the hypotheses are
+\[
+H_0:\mu=30
+\qquad \text{and} \qquad
+H_a:\mu>30.
+\]
+The test statistic is
+\[
+t=\frac{\bar{x}-\mu_0}{s/\sqrt{n}}
+=\frac{31.2333-30}{0.6890/\sqrt{6}}
+\approx 4.385.
+\]
+With $df=5$, the upper-tail critical value for $\alpha=0.01$ is
+\[
+t_{0.01,5}=3.365.
+\]
+Since $4.385>3.365$, reject $H_0$.
+
+Equivalently,
+\[
+P\text{-value}=P(T_5\ge 4.385)\approx 0.0036<0.01.
+\]
+Answer: There is sufficient evidence at the 0.01 level that the true average stopping distance exceeds 30 ft.
+
+\item[(b)] For a one-tailed $t$ test with $\alpha=0.01$ and $df=5$, the critical value is
+\[
+t_{0.01,5}=3.365.
+\]
+Using the noncentral $t$ distribution, the noncentrality parameter is
+\[
+\delta=\frac{\sqrt{n}(\mu-\mu_0)}{\sigma}.
+\]
+For $\mu=31$ and $\sigma=0.65$,
+\[
+\delta=\frac{\sqrt{6}(31-30)}{0.65}\approx 3.768,
+\]
+so
+\[
+\beta=P(T_{5,\delta}\le 3.365)\approx 0.340.
+\]
+For $\mu=32$ and $\sigma=0.65$,
+\[
+\delta=\frac{\sqrt{6}(32-30)}{0.65}\approx 7.537,
+\]
+so
+\[
+\beta=P(T_{5,\delta}\le 3.365)\approx 0.002.
+\]
+Answer:
+\[
+\beta(\mu=31)\approx 0.340,
+\qquad
+\beta(\mu=32)\approx 0.002.
+\]
+
+\item[(c)] Repeating the calculation with $\sigma=0.80$:
+\[
+\delta=\frac{\sqrt{6}(31-30)}{0.80}\approx 3.062
+\qquad \text{when } \mu=31,
+\]
+so
+\[
+\beta\approx P(T_{5,3.062}\le 3.365)\approx 0.530.
+\]
+Also,
+\[
+\delta=\frac{\sqrt{6}(32-30)}{0.80}\approx 6.124
+\qquad \text{when } \mu=32,
+\]
+so
+\[
+\beta\approx P(T_{5,6.124}\le 3.365)\approx 0.025.
+\]
+Answer:
+\[
+\beta(\mu=31)\approx 0.530,
+\qquad
+\beta(\mu=32)\approx 0.025.
+\]
+Both type II error probabilities are larger when $\sigma=0.80$ than when $\sigma=0.65$, so the test has less power when the population standard deviation is larger.
+\end{enumerate}
+
+\subsection*{Problem 38}
+
+The sample data are
+\[
+\begin{array}{rrrrrrrr}
+1.10&5.09&0.97&1.59&4.60&0.32&0.55&1.45\\
+0.14&4.47&1.20&3.50&5.02&4.67&5.22&2.69\\
+3.98&3.17&3.03&2.21&0.69&4.47&3.31&1.17\\
+0.76&1.17&1.57&2.62&1.66&2.05
+\end{array}
+\]
+The sample statistics are
+\[
+n=30,
+\qquad \bar{x}=2.481,
+\qquad s=1.616,
+\qquad \frac{s}{\sqrt{n}}=0.295.
+\]
+Let $\mu$ denote the true average percentage of organic matter in this type of soil. The hypotheses are
+\[
+H_0:\mu=3
+\qquad \text{and} \qquad
+H_a:\mu\neq 3.
+\]
+Since the population standard deviation is unknown, use a one-sample $t$ test:
+\[
+t=\frac{\bar{x}-\mu_0}{s/\sqrt{n}}
+=\frac{2.481-3}{0.295}
+=\frac{-0.519}{0.295}
+\approx -1.76.
+\]
+The degrees of freedom are
+\[
+df=n-1=29.
+\]
+The two-tailed $P$-value is
+\[
+P\text{-value}=2P(T_{29}\le -1.76)\approx 0.089.
+\]
+At significance level $\alpha=0.10$, since $0.089<0.10$, reject $H_0$. At significance level $\alpha=0.05$, since $0.089>0.05$, do not reject $H_0$.
+
+Answer: Reject $H_0$ at $\alpha=0.10$, but do not reject $H_0$ at $\alpha=0.05$.
+
+\subsection*{Problem 40}
+
+Let $\mu$ denote the true average tensile strength for the WSF/cellulose composite with 2\% fiber content. The question is whether this true average exceeds the tensile strength of 48 MPa for 0\% fibers.
+\[
+H_0:\mu=48
+\qquad \text{and} \qquad
+H_a:\mu>48.
+\]
+Given
+\[
+n=10,
+\qquad \bar{x}=51.3,
+\qquad s=1.2,
+\]
+use a one-sample $t$ test:
+\[
+t=\frac{\bar{x}-\mu_0}{s/\sqrt{n}}
+=\frac{51.3-48}{1.2/\sqrt{10}}
+=\frac{3.3}{0.3795}
+\approx 8.70.
+\]
+The degrees of freedom are $df=9$. The upper-tailed $P$-value is
+\[
+P\text{-value}=P(T_9\ge 8.70)\approx 0.000006.
+\]
+Since the $P$-value is extremely small, reject $H_0$.
+
+Answer: The data provide compelling evidence that the true average tensile strength exceeds 48 MPa.
+
+\section*{Section 8.4}
+
+\subsection*{Problem 44}
+
+Let $p$ denote the true proportion of nickel plates that blister. The sample data are
+\[
+n=100,
+\qquad x=14,
+\qquad \hat{p}=\frac{14}{100}=0.14.
+\]
+
+\begin{enumerate}
+\item[(a)] The hypotheses are
+\[
+H_0:p=0.10
+\qquad \text{and} \qquad
+H_a:p>0.10.
+\]
+Using a one-proportion $z$ test,
+\[
+z=\frac{\hat{p}-p_0}{\sqrt{p_0(1-p_0)/n}}
+=\frac{0.14-0.10}{\sqrt{(0.10)(0.90)/100}}
+=\frac{0.04}{0.03}
+\approx 1.33.
+\]
+The upper-tail $P$-value is
+\[
+P\text{-value}=P(Z\ge 1.33)\approx 0.0918.
+\]
+Since $0.0918>0.05$, do not reject $H_0$.
+
+Answer: There is not sufficient evidence at the 0.05 level that more than 10\% of plates blister. Since $H_0$ was not rejected, the possible error is a type II error.
+
+\item[(b)] For the level 0.05 upper-tailed test, the critical value is
+\[
+z_{0.05}=1.645.
+\]
+The rejection rule is
+\[
+\frac{\hat{p}-0.10}{\sqrt{(0.10)(0.90)/n}}\ge 1.645.
+\]
+For $n=100$,
+\[
+\hat{p}\ge 0.10+1.645\sqrt{\frac{(0.10)(0.90)}{100}}
+=0.14935.
+\]
+Thus reject $H_0$ if $X\ge 15$, so fail to reject if $X\le 14$. If the true proportion is $p=0.15$, then
+\[
+X\sim \operatorname{Bin}(100,0.15),
+\]
+and
+\[
+P(\text{fail to reject }H_0)=P(X\le 14)\approx 0.457.
+\]
+For $n=200$,
+\[
+\hat{p}\ge 0.10+1.645\sqrt{\frac{(0.10)(0.90)}{200}}
+=0.13489.
+\]
+Thus reject $H_0$ if $X\ge 27$, so fail to reject if $X\le 26$. If the true proportion is $p=0.15$, then
+\[
+X\sim \operatorname{Bin}(200,0.15),
+\]
+and
+\[
+P(\text{fail to reject }H_0)=P(X\le 26)\approx 0.248.
+\]
+Answer:
+\[
+n=100:\ 0.457,
+\qquad
+n=200:\ 0.248.
+\]
+\end{enumerate}
+
+\subsection*{Problem 50}
+
+Let $p$ denote the true proportion of intermediate tennis players who prefer gut strings. Since the test is intended to reject only when the evidence strongly favors gut strings, the hypotheses are
+\[
+H_0:p=0.50
+\qquad \text{and} \qquad
+H_a:p>0.50.
+\]
+Under $H_0$,
+\[
+X\sim \operatorname{Bin}(20,0.50).
+\]
+
+\begin{enumerate}
+\item[(a)] A level $\alpha=0.05$ test would reject $H_0$ for large values of $X$. Since $X$ is discrete, the exact significance level must have the form
+\[
+P(X\ge c\mid p=0.50).
+\]
+Checking upper-tail probabilities,
+\[
+P(X\ge 14)=\sum_{x=14}^{20}\binom{20}{x}(0.5)^{20}\approx 0.0577,
+\]
+which is larger than 0.05, while
+\[
+P(X\ge 15)=\sum_{x=15}^{20}\binom{20}{x}(0.5)^{20}\approx 0.0207.
+\]
+Therefore, a significance level of exactly 0.05 is not achievable. The largest achievable significance level less than 0.05 is
+\[
+\alpha=0.0207,
+\]
+with rejection rule
+\[
+\text{Reject }H_0\text{ if }X\ge 15.
+\]
+
+\item[(b)] A type II error occurs when $H_0$ is not rejected even though $p>0.50$. Using the rejection rule from part (a), this means $X\le 14$.
+
+If $p=0.60$, then
+\[
+X\sim \operatorname{Bin}(20,0.60),
+\]
+so
+\[
+\beta=P(X\le 14)=\sum_{x=0}^{14}\binom{20}{x}(0.60)^x(0.40)^{20-x}\approx 0.8744.
+\]
+If $p=0.80$, then
+\[
+X\sim \operatorname{Bin}(20,0.80),
+\]
+so
+\[
+\beta=P(X\le 14)=\sum_{x=0}^{14}\binom{20}{x}(0.80)^x(0.20)^{20-x}\approx 0.1958.
+\]
+Answer:
+\[
+p=0.60:\ \beta\approx 0.8744,
+\qquad
+p=0.80:\ \beta\approx 0.1958.
+\]
+
+\item[(c)] If 13 out of 20 players prefer gut, then $X=13$. The rejection rule from part (a) is $X\ge 15$. Since $13<15$, do not reject $H_0$.
+
+Equivalently,
+\[
+P\text{-value}=P(X\ge 13\mid p=0.50)
+=\sum_{x=13}^{20}\binom{20}{x}(0.5)^{20}
+\approx 0.1316.
+\]
+Since $0.1316>0.0207$, $H_0$ is not rejected.
+
+Answer: Do not reject $H_0$.
+\end{enumerate}
+
+\section*{Section 9.1}
+
+\subsection*{Problem 4}
+
+Let $\mu_B$ denote the true mean PEF for children in biomass households, and let $\mu_L$ denote the true mean PEF for children in LPG households. The sample information is
+\[
+n_B=755,
+\qquad \bar{x}_B=3.30,
+\qquad s_B=1.20,
+\]
+\[
+n_L=750,
+\qquad \bar{x}_L=4.25,
+\qquad s_L=1.75.
+\]
+
+\begin{enumerate}
+\item[(a)] For the biomass households, a large-sample 95\% confidence interval is
+\[
+\bar{x}_B\pm z_{0.025}\frac{s_B}{\sqrt{n_B}}
+=3.30\pm 1.96\left(\frac{1.20}{\sqrt{755}}\right)
+=3.30\pm 0.0856.
+\]
+Thus,
+\[
+(3.214,\ 3.386).
+\]
+For the LPG households, a large-sample 95\% confidence interval is
+\[
+\bar{x}_L\pm z_{0.025}\frac{s_L}{\sqrt{n_L}}
+=4.25\pm 1.96\left(\frac{1.75}{\sqrt{750}}\right)
+=4.25\pm 0.1252.
+\]
+Thus,
+\[
+(4.125,\ 4.375).
+\]
+Since both intervals are individual 95\% confidence intervals based on independent samples, the simultaneous confidence level is
+\[
+(0.95)(0.95)=0.9025.
+\]
+Answer: The simultaneous confidence level is 90.25\%.
+
+\item[(b)] To test whether the true average PEF is lower for children in biomass households, use
+\[
+H_0:\mu_B-\mu_L=0
+\qquad \text{and} \qquad
+H_a:\mu_B-\mu_L<0.
+\]
+The test statistic is
+\[
+z=\frac{(\bar{x}_B-\bar{x}_L)-0}{\sqrt{s_B^2/n_B+s_L^2/n_L}}
+=\frac{3.30-4.25}{\sqrt{1.20^2/755+1.75^2/750}}
+=\frac{-0.95}{0.0774}
+\approx -12.27.
+\]
+The lower-tail $P$-value is approximately 0. Since $P\text{-value}<0.01$, reject $H_0$.
+
+Answer: There is sufficient evidence at the 0.01 level that the true average PEF is lower for children in biomass households.
+\end{enumerate}
+
+\subsection*{Problem 6}
+
+The sample information is
+\[
+m=40,
+\qquad \bar{x}=18.12,
+\qquad n=32,
+\qquad \bar{y}=16.87.
+\]
+Let $\mu_1$ denote the true mean bond strength for the modified mortar and $\mu_2$ denote the true mean bond strength for the unmodified mortar.
+
+\begin{enumerate}
+\item[(a)] The hypotheses are
+\[
+H_0:\mu_1-\mu_2=0
+\qquad \text{and} \qquad
+H_a:\mu_1-\mu_2>0.
+\]
+Since $\sigma_1=1.6$ and $\sigma_2=1.4$ are known, use the two-sample $z$ statistic
+\[
+z=\frac{(\bar{x}-\bar{y})-0}{\sqrt{\sigma_1^2/m+\sigma_2^2/n}}.
+\]
+Substituting,
+\[
+z=\frac{18.12-16.87}{\sqrt{1.6^2/40+1.4^2/32}}
+=\frac{1.25}{0.3540}
+\approx 3.53.
+\]
+The upper-tail $P$-value is
+\[
+P\text{-value}=P(Z\ge 3.53)\approx 0.0002.
+\]
+Since $0.0002<0.01$, reject $H_0$.
+
+Answer: There is sufficient evidence at the 0.01 level that $\mu_1-\mu_2>0$.
+
+\item[(d)] If $\sigma_1$ and $\sigma_2$ are unknown but $s_1=1.6$ and $s_2=1.4$, the standard errors are estimated from the samples. The test statistic becomes
+\[
+t=\frac{(\bar{x}-\bar{y})-0}{\sqrt{s_1^2/m+s_2^2/n}}.
+\]
+Substituting,
+\[
+t=\frac{18.12-16.87}{\sqrt{1.6^2/40+1.4^2/32}}
+\approx 3.53.
+\]
+Using Welch's approximation,
+\[
+df\approx
+\frac{(s_1^2/m+s_2^2/n)^2}{(s_1^2/m)^2/(m-1)+(s_2^2/n)^2/(n-1)}
+\approx 69.4.
+\]
+The upper-tail $P$-value is
+\[
+P\text{-value}=P(T_{69.4}\ge 3.53)\approx 0.0004.
+\]
+Since $0.0004<0.01$, reject $H_0$.
+
+Answer: The analysis changes to a two-sample $t$ test, but the conclusion is unchanged.
+\end{enumerate}
+
+\subsection*{Problem 8}
+
+Let $\mu_{1064}$ denote the true average tensile strength for grade AISI 1064, and let $\mu_{1078}$ denote the true average tensile strength for grade AISI 1078. The sample information is
+\[
+m=129,
+\qquad \bar{x}=107.6,
+\qquad s_1=1.3,
+\]
+\[
+n=129,
+\qquad \bar{y}=123.6,
+\qquad s_2=2.0.
+\]
+
+\begin{enumerate}
+\item[(a)] The question asks whether the true average strength for grade 1078 exceeds that for grade 1064 by more than 10 kg/mm$^2$. The hypotheses are
+\[
+H_0:\mu_{1078}-\mu_{1064}=10
+\qquad \text{and} \qquad
+H_a:\mu_{1078}-\mu_{1064}>10.
+\]
+Since both sample sizes are large, use a two-sample large-sample $z$ test:
+\[
+z=\frac{(\bar{y}-\bar{x})-10}{\sqrt{s_1^2/m+s_2^2/n}}.
+\]
+Substituting,
+\[
+z=\frac{(123.6-107.6)-10}{\sqrt{1.3^2/129+2.0^2/129}}
+=\frac{6.0}{0.2100}
+\approx 28.57.
+\]
+The upper-tail $P$-value is approximately 0. Since $P\text{-value}<0.01$, reject $H_0$.
+
+Answer: There is compelling evidence at the 0.01 level that the true average strength for grade 1078 exceeds that for grade 1064 by more than 10 kg/mm$^2$.
+
+\item[(b)] The point estimate of the difference in true average strengths is
+\[
+\bar{y}-\bar{x}=123.6-107.6=16.0.
+\]
+A large-sample 99\% confidence interval for $\mu_{1078}-\mu_{1064}$ is
+\[
+(\bar{y}-\bar{x})\pm z_{0.005}\sqrt{s_1^2/m+s_2^2/n}.
+\]
+Using $z_{0.005}=2.576$,
+\[
+16.0\pm 2.576\sqrt{\frac{1.3^2}{129}+\frac{2.0^2}{129}}
+=16.0\pm 2.576(0.2100)
+=16.0\pm 0.541.
+\]
+Therefore,
+\[
+(15.459,\ 16.541).
+\]
+The estimated true average tensile strength for grade 1078 is about 16.0 kg/mm$^2$ greater than that for grade 1064, with a 99\% confidence interval from approximately 15.46 to 16.54 kg/mm$^2$.
+\end{enumerate}
+
+\subsection*{Problem 10}
+
+Let $\mu_1$ denote the true average fracture toughness for high-purity steel, and let $\mu_2$ denote the true average fracture toughness for commercial-purity steel. The sample information is
+\[
+m=32,
+\qquad \bar{x}=65.6,
+\qquad \sigma_1=1.2,
+\]
+\[
+n=38,
+\qquad \bar{y}=59.8,
+\qquad \sigma_2=1.1.
+\]
+
+\begin{enumerate}
+\item[(a)] Since the use of the high-purity steel is justified only if its true average toughness exceeds that of the commercial-purity steel by more than 5, the hypotheses are
+\[
+H_0:\mu_1-\mu_2=5
+\qquad \text{and} \qquad
+H_a:\mu_1-\mu_2>5.
+\]
+Since $\sigma_1$ and $\sigma_2$ are known, use the two-sample $z$ statistic
+\[
+z=\frac{(\bar{x}-\bar{y})-5}{\sqrt{\sigma_1^2/m+\sigma_2^2/n}}.
+\]
+Substituting,
+\[
+z=\frac{(65.6-59.8)-5}{\sqrt{1.2^2/32+1.1^2/38}}
+=\frac{0.8}{0.2772}
+\approx 2.89.
+\]
+The upper-tail $P$-value is
+\[
+P\text{-value}=P(Z\ge 2.89)\approx 0.0019.
+\]
+Since $0.0019>0.001$, do not reject $H_0$.
+
+Answer: There is not sufficient evidence at the 0.001 level that the true average toughness for high-purity steel exceeds that for commercial-purity steel by more than 5.
+\end{enumerate}
+
+\section*{Section 9.2}
+
+\subsection*{Problem 28}
+
+Let $\mu_Y$ denote the true average maximum lean angle for younger females, and let $\mu_O$ denote the true average maximum lean angle for older females. The question asks whether older females have a true average lean angle more than $10^\circ$ smaller than younger females, so the hypotheses are
+\[
+H_0:\mu_Y-\mu_O=10
+\qquad \text{and} \qquad
+H_a:\mu_Y-\mu_O>10.
+\]
+From the data,
+\[
+n_Y=10,
+\qquad \bar{x}_Y=30.7,
+\qquad s_Y=2.751,
+\]
+\[
+n_O=5,
+\qquad \bar{x}_O=16.2,
+\qquad s_O=4.438.
+\]
+Thus,
+\[
+\bar{x}_Y-\bar{x}_O=30.7-16.2=14.5.
+\]
+Using the two-sample $t$ statistic,
+\[
+t=\frac{(\bar{x}_Y-\bar{x}_O)-10}{\sqrt{s_Y^2/n_Y+s_O^2/n_O}}
+=\frac{14.5-10}{\sqrt{(2.751)^2/10+(4.438)^2/5}}
+=\frac{4.5}{2.167}
+\approx 2.08.
+\]
+Using Welch's approximation,
+\[
+df\approx 5.59.
+\]
+The upper-tail $P$-value is
+\[
+P\text{-value}=P(T_{5.59}\ge 2.08)\approx 0.043.
+\]
+Since $0.043<0.10$, reject $H_0$.
+
+Answer: There is sufficient evidence at the 0.10 level that the true average maximum lean angle for older females is more than $10^\circ$ smaller than that for younger females.
+
+\subsection*{Problem 30}
+
+Let $\mu_F$ denote the true average ultimate load for fiberglass grid beams, and let $\mu_C$ denote the true average ultimate load for commercial carbon grid beams. The sample information is
+\[
+n_F=26,
+\qquad \bar{x}_F=33.4,
+\qquad s_F=2.2,
+\]
+\[
+n_C=26,
+\qquad \bar{x}_C=42.8,
+\qquad s_C=4.3.
+\]
+
+\begin{enumerate}
+\item[(a)] The estimated difference in true average loads is
+\[
+\bar{x}_F-\bar{x}_C=33.4-42.8=-9.4.
+\]
+A 99\% confidence interval for $\mu_F-\mu_C$ is
+\[
+(\bar{x}_F-\bar{x}_C)\pm t_{0.005,\nu}\sqrt{\frac{s_F^2}{n_F}+\frac{s_C^2}{n_C}}.
+\]
+The standard error is
+\[
+\sqrt{\frac{2.2^2}{26}+\frac{4.3^2}{26}}
+=\sqrt{\frac{4.84}{26}+\frac{18.49}{26}}
+\approx 0.9473.
+\]
+Using Welch's approximation,
+\[
+\nu\approx
+\frac{\left(s_F^2/n_F+s_C^2/n_C\right)^2}{(s_F^2/n_F)^2/(n_F-1)+(s_C^2/n_C)^2/(n_C-1)}
+\approx 37.25.
+\]
+Thus,
+\[
+t_{0.005,37.25}\approx 2.714.
+\]
+Therefore,
+\[
+-9.4\pm 2.714(0.9473)
+=-9.4\pm 2.571,
+\]
+giving
+\[
+(-11.971,\ -6.829).
+\]
+This interval estimates that the true average ultimate load for fiberglass grid beams is between about 6.83 and 11.97 kN less than that for commercial carbon grid beams.
+
+\item[(b)] The upper limit from part (a), $-6.829$, is not a 99\% upper confidence bound because it came from a two-sided 99\% confidence interval. A 99\% upper confidence bound for $\mu_F-\mu_C$ is
+\[
+(\bar{x}_F-\bar{x}_C)+t_{0.01,\nu}\sqrt{\frac{s_F^2}{n_F}+\frac{s_C^2}{n_C}}.
+\]
+Using
+\[
+t_{0.01,37.25}\approx 2.431,
+\]
+the upper bound is
+\[
+-9.4+2.431(0.9473)\approx -7.097.
+\]
+Thus,
+\[
+\mu_F-\mu_C<-7.097.
+\]
+Since this upper bound is less than 0, it strongly suggests that
+\[
+\mu_C>\mu_F.
+\]
+Answer: The carbon grid beams appear to have a substantially larger true average ultimate load.
+\end{enumerate}
+
+\subsection*{Problem 32}
+
+Let $\mu_O$ denote the true average stance duration for older adults, and let $\mu_Y$ denote the true average stance duration for younger adults. The sample information is
+\[
+n_O=28,
+\qquad \bar{x}_O=801,
+\qquad s_O=117,
+\]
+\[
+n_Y=16,
+\qquad \bar{x}_Y=780,
+\qquad s_Y=72.
+\]
+
+\begin{enumerate}
+\item[(a)] A 99\% confidence interval for the true average stance duration among elderly individuals is
+\[
+\bar{x}_O\pm t_{0.005,27}\frac{s_O}{\sqrt{n_O}}.
+\]
+Using $t_{0.005,27}\approx 2.771$,
+\[
+801\pm 2.771\left(\frac{117}{\sqrt{28}}\right)
+=801\pm 61.27.
+\]
+Thus,
+\[
+(739.73,\ 862.27).
+\]
+The interval indicates that the true average stance duration among elderly individuals is between approximately 739.73 ms and 862.27 ms at the 99\% confidence level.
+
+\item[(b)] To test whether the true average stance duration is larger among elderly individuals, use
+\[
+H_0:\mu_O-\mu_Y=0
+\qquad \text{and} \qquad
+H_a:\mu_O-\mu_Y>0.
+\]
+The test statistic is
+\[
+t=\frac{(\bar{x}_O-\bar{x}_Y)-0}{\sqrt{s_O^2/n_O+s_Y^2/n_Y}}
+=\frac{801-780}{\sqrt{117^2/28+72^2/16}}
+=\frac{21}{28.511}
+\approx 0.737.
+\]
+Using Welch's approximation,
+\[
+df\approx 41.69.
+\]
+The upper-tail $P$-value is
+\[
+P\text{-value}=P(T_{41.69}\ge 0.737)\approx 0.233.
+\]
+Since $0.233>0.05$, do not reject $H_0$.
+
+Answer: There is not sufficient evidence at the 0.05 level that elderly individuals have a larger true average stance duration.
+\end{enumerate}
+
+\subsection*{Problem 34}
+
+The pooled $t$ variable is
+\[
+T=\frac{(\bar{X}-\bar{Y})-(\mu_1-\mu_2)}{S_p\sqrt{\frac{1}{m}+\frac{1}{n}}},
+\]
+where
+\[
+S_p=\sqrt{\frac{(m-1)S_1^2+(n-1)S_2^2}{m+n-2}}.
+\]
+
+\begin{enumerate}
+\item[(a)] Since
+\[
+-t_{\alpha/2,m+n-2}
+\le
+\frac{(\bar{X}-\bar{Y})-(\mu_1-\mu_2)}{S_p\sqrt{\frac{1}{m}+\frac{1}{n}}}
+\le
+ t_{\alpha/2,m+n-2},
+\]
+solving for $\mu_1-\mu_2$ gives
+\[
+(\bar{X}-\bar{Y})\pm t_{\alpha/2,m+n-2}S_p\sqrt{\frac{1}{m}+\frac{1}{n}}.
+\]
+Thus, the pooled $t$ confidence interval for $\mu_1-\mu_2$ is
+\[
+(\bar{x}-\bar{y})\pm t_{\alpha/2,m+n-2}s_p\sqrt{\frac{1}{m}+\frac{1}{n}}.
+\]
+
+\item[(b)] For brand 1,
+\[
+14.0,
+14.3,
+12.2,
+15.1,
+\]
+so
+\[
+m=4,
+\qquad \bar{x}=13.9,
+\qquad s_1=1.2247.
+\]
+For brand 2,
+\[
+12.1,
+13.6,
+11.9,
+11.2,
+\]
+so
+\[
+n=4,
+\qquad \bar{y}=12.2,
+\qquad s_2=1.0100.
+\]
+The pooled standard deviation is
+\[
+s_p=\sqrt{\frac{(4-1)(1.2247)^2+(4-1)(1.0100)^2}{4+4-2}}
+\approx 1.1225.
+\]
+The estimated difference is
+\[
+\bar{x}-\bar{y}=13.9-12.2=1.7.
+\]
+For a 95\% confidence interval,
+\[
+df=m+n-2=6,
+\qquad t_{0.025,6}\approx 2.447.
+\]
+Therefore,
+\[
+1.7\pm 2.447(1.1225)\sqrt{\frac{1}{4}+\frac{1}{4}}
+=1.7\pm 1.943,
+\]
+giving
+\[
+(-0.243,\ 3.643).
+\]
+The interval indicates that the true mean output for brand 1 is between 0.243 oz less and 3.643 oz greater than the true mean output for brand 2 at the 95\% confidence level.
+\end{enumerate}
+
+\section*{Section 9.3}
+
+\subsection*{Problem 38}
+
+Let
+\[
+D=\text{Slide}-\text{Digital}
+\]
+denote the paired difference in retrieval time for each subject.
+
+\begin{enumerate}
+\item[(a)] The two samples should be compared as paired observations, since each subject used both retrieval methods. The five-number summaries for comparative boxplots are
+\[
+\begin{array}{c|ccccc}
+\text{Method} & \text{Minimum} & Q_1 & \text{Median} & Q_3 & \text{Maximum}\\
+\hline
+\text{Slide} & 20 & 30 & 35 & 40 & 62\\
+\text{Digital} & 7 & 13 & 15 & 19 & 25
+\end{array}
+\]
+For the slide times,
+\[
+IQR=40-30=10,
+\]
+so the upper outlier cutoff is
+\[
+Q_3+1.5(IQR)=40+1.5(10)=55.
+\]
+Thus, 62 is a high outlier for slide retrieval time. For the digital times,
+\[
+IQR=19-13=6,
+\]
+and there are no outliers.
+
+\begin{center}
+\fbox{%
+\begin{minipage}{0.82\textwidth}
+\vspace{1.8in}
+\centering
+Comparative boxplot for slide and digital retrieval times to be inserted here.
+\vspace{1.8in}
+\end{minipage}}
+\end{center}
+
+Answer: The comparative boxplots would show that slide retrieval times are generally much larger and more variable than digital retrieval times.
+
+\item[(b)] The paired differences are
+\[
+5,
+19,
+25,
+10,
+10,
+10,
+28,
+46,
+25,
+38,
+14,
+23,
+14.
+\]
+The sample mean and sample standard deviation of the differences are
+\[
+\bar{d}=20.538,
+\qquad s_d=11.963,
+\qquad n=13.
+\]
+A 95\% confidence interval for the true mean difference $\mu_D$ is
+\[
+\bar{d}\pm t_{0.025,12}\frac{s_d}{\sqrt{n}}.
+\]
+Using $t_{0.025,12}=2.179$,
+\[
+20.538\pm 2.179\left(\frac{11.963}{\sqrt{13}}\right)
+=20.538\pm 7.229,
+\]
+giving
+\[
+(13.310,\ 27.767).
+\]
+The interval indicates that the true average retrieval time using slides is between 13.31 and 27.77 seconds longer than the true average retrieval time using the digital system at the 95\% confidence level.
+
+Since the entire interval is positive, it does not appear plausible that the two true average retrieval times are identical. The data strongly suggest that digital retrieval is faster on average.
+\end{enumerate}
+
+\subsection*{Problem 42}
+
+Let
+\[
+D=\text{Before}-\text{After}
+\]
+denote the paired difference in the number of crashes per year for each site. The paired differences are
+\[
+-1,
+2,
+24,
+35,
+-16,
+-9.
+\]
+The hypotheses are
+\[
+H_0:\mu_D=0
+\qquad \text{and} \qquad
+H_a:\mu_D\neq 0.
+\]
+From the paired differences,
+\[
+n=6,
+\qquad \bar{d}=5.833,
+\qquad s_d=19.692.
+\]
+The test statistic is
+\[
+t=\frac{\bar{d}-0}{s_d/\sqrt{n}}
+=\frac{5.833}{19.692/\sqrt{6}}
+\approx 0.726.
+\]
+The degrees of freedom are $df=5$. The two-tailed $P$-value is
+\[
+P\text{-value}=2P(T_5\ge 0.726)\approx 0.501.
+\]
+Since the $P$-value is large, do not reject $H_0$.
+
+Answer: There is not sufficient evidence to conclude that the mean number of crashes changed after distance information was added to the signs.
+
+\section*{Section 9.4}
+
+\subsection*{Problem 50}
+
+Let $p_1$ denote the true proportion of non-contaminated Perdue broilers, and let $p_2$ denote the true proportion of non-contaminated Tyson broilers. Since 35 of the 80 Perdue broilers tested positive, the number non-contaminated was
+\[
+80-35=45,
+\]
+so
+\[
+\hat{p}_1=\frac{45}{80}=0.5625.
+\]
+Since 66 of the 80 Tyson broilers tested positive, the number non-contaminated was
+\[
+80-66=14,
+\]
+so
+\[
+\hat{p}_2=\frac{14}{80}=0.175.
+\]
+
+\begin{enumerate}
+\item[(a)] The hypotheses are
+\[
+H_0:p_1-p_2=0
+\qquad \text{and} \qquad
+H_a:p_1-p_2\neq 0.
+\]
+The pooled estimate is
+\[
+\hat{p}=\frac{45+14}{80+80}=\frac{59}{160}=0.36875.
+\]
+The test statistic is
+\[
+z=\frac{\hat{p}_1-\hat{p}_2}{\sqrt{\hat{p}(1-\hat{p})\left(\frac{1}{80}+\frac{1}{80}\right)}}.
+\]
+Substituting,
+\[
+z=\frac{0.5625-0.175}{\sqrt{(0.36875)(0.63125)\left(\frac{1}{80}+\frac{1}{80}\right)}}
+\approx 5.08.
+\]
+The two-tailed $P$-value is
+\[
+P\text{-value}=2P(Z\ge 5.08)\approx 0.0000004.
+\]
+Since $0.0000004<0.01$, reject $H_0$.
+
+Answer: There is sufficient evidence at the 0.01 level that the true non-contaminated proportions differ.
+
+\item[(b)] Suppose
+\[
+p_1=0.50,
+\qquad p_2=0.25.
+\]
+Then
+\[
+p_1-p_2=0.25.
+\]
+For a two-tailed test with $\alpha=0.01$,
+\[
+z_{0.005}=2.576.
+\]
+Using
+\[
+\bar{p}=\frac{0.50+0.25}{2}=0.375,
+\]
+the approximate rejection cutoff for $\hat{p}_1-\hat{p}_2$ is
+\[
+2.576\sqrt{(0.375)(0.625)\left(\frac{1}{80}+\frac{1}{80}\right)}
+\approx 0.197.
+\]
+Thus, the null hypothesis is not rejected approximately when
+\[
+-0.197<\hat{p}_1-\hat{p}_2<0.197.
+\]
+Under $p_1=0.50$ and $p_2=0.25$,
+\[
+\hat{p}_1-\hat{p}_2
+\sim
+N\left(0.25,
+\sqrt{\frac{(0.50)(0.50)}{80}+\frac{(0.25)(0.75)}{80}}
+\right).
+\]
+The standard deviation is
+\[
+\sqrt{\frac{0.25}{80}+\frac{0.1875}{80}}
+\approx 0.07395.
+\]
+Therefore,
+\[
+\beta=P(-0.197<\hat{p}_1-\hat{p}_2<0.197)
+=P\left(\frac{-0.197-0.25}{0.07395}<Z<\frac{0.197-0.25}{0.07395}\right).
+\]
+Thus,
+\[
+\beta=P(-6.04<Z<-0.72)\approx 0.237.
+\]
+Answer: The probability that $H_0$ is not rejected is approximately 0.237.
+\end{enumerate}
+
+\end{document}
