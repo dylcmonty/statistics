@@ -1,0 +1,822 @@
+\documentclass[12pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb}
+\usepackage{array}
+\usepackage{booktabs}
+\usepackage{enumitem}
+\usepackage{mathtools}
+
+\begin{document}
+
+\begin{center}
+    {\Large \textbf{PRACTICE TEST FOR TEST 3 (STAT-461/561)}}\\[4pt]
+    {\large \textbf{Complete Solutions (Questions 1--15)}}
+\end{center}
+
+\begin{enumerate}[label=(\arabic*), leftmargin=*]
+
+\item A CBS News poll conducted in the US in November 16--19, 2012 asked ``Are you in favor of legalizing the use of marijuana''. In the nationwide poll of $n=1100$ adults, $517$ said that they favored legalization. Write down a $95\%$ confidence interval for the true, unknown population proportion of adults supporting the legalization of marijuana in the US. Next, write down a $98\%$ confidence interval for the same parameter.
+
+\par\medskip
+\noindent\textbf{Solution.}
+Let $p$ be the true population proportion. The sample proportion is
+\[
+\hat p=\frac{x}{n}=\frac{517}{1100}=0.47.
+\]
+The standard error is
+\[
+SE=\sqrt{\frac{\hat p(1-\hat p)}{n}}
+=\sqrt{\frac{(0.47)(0.53)}{1100}}
+=\sqrt{\frac{0.2491}{1100}}
+=\sqrt{0.00022645}
+\approx 0.01505.
+\]
+
+For a $95\%$ confidence interval, use $z_{0.025}=1.96$. The margin of error is
+\[
+ME=1.96(0.01505)\approx 0.02950.
+\]
+So the $95\%$ confidence interval is
+\[
+\hat p\pm ME=0.47\pm 0.02950,
+\]
+which gives
+\[
+(0.4405,\ 0.4995).
+\]
+
+For a $98\%$ confidence interval, use $z_{0.01}=2.326$. The margin of error is
+\[
+ME=2.326(0.01505)\approx 0.03501.
+\]
+So the $98\%$ confidence interval is
+\[
+0.47\pm 0.03501,
+\]
+which gives
+\[
+(0.4350,\ 0.5050).
+\]
+
+\item For each combination of sample size and sample proportion given below, find the margin of error (i.e. half-length) for a $99\%$ confidence interval: (a) $n=400$ and $80$ out of $400$ said ``yes'', (b) $n=1000$ and $355$ out of $1000$ were in favor of a government proposal, (c) $n=650$ and $520$ out of $650$ said that they prefer stricter rules for COVID protection.
+
+\par\medskip
+\noindent\textbf{Solution.}
+For a proportion, the margin of error is
+\[
+E=z\sqrt{\frac{\hat p(1-\hat p)}{n}}.
+\]
+For a $99\%$ confidence interval, use $z=2.576$.
+
+\begin{enumerate}[label=(\alph*)]
+    \item Here
+    \[
+    \hat p=\frac{80}{400}=0.20.
+    \]
+    Then
+    \[
+    SE=\sqrt{\frac{(0.20)(0.80)}{400}}=\sqrt{\frac{0.16}{400}}=\sqrt{0.0004}=0.02.
+    \]
+    So the margin of error is
+    \[
+    E=2.576(0.02)=0.05152\approx 0.0515.
+    \]
+
+    \item Here
+    \[
+    \hat p=\frac{355}{1000}=0.355.
+    \]
+    Then
+    \[
+    SE=\sqrt{\frac{(0.355)(0.645)}{1000}}=\sqrt{\frac{0.228975}{1000}}=\sqrt{0.000228975}\approx 0.01513.
+    \]
+    So the margin of error is
+    \[
+    E=2.576(0.01513)\approx 0.03898\approx 0.0390.
+    \]
+
+    \item Here
+    \[
+    \hat p=\frac{520}{650}=0.80.
+    \]
+    Then
+    \[
+    SE=\sqrt{\frac{(0.80)(0.20)}{650}}=\sqrt{\frac{0.16}{650}}=\sqrt{0.00024615}\approx 0.01569.
+    \]
+    So the margin of error is
+    \[
+    E=2.576(0.01569)\approx 0.04042\approx 0.0404.
+    \]
+\end{enumerate}
+
+\item Volunteers who had developed a common cold within the previous 24 hours were randomized to either take zinc lozenges or placebo lozenges every 2 to 3 hours until their cold symptoms were gone. Twenty-five participants took zinc lozenges and twenty-three took the placebo. The mean overall duration of symptoms for those who took zinc was $4.5$ days with a standard deviation of $1.6$ days. For the placebo group, the mean overall duration of symptoms was $8.1$ days with a standard deviation of $1.8$ days. Assuming that the duration of symptoms distributions for both populations are Normal, (a) what is a $95\%$ confidence interval for the true population mean overall duration of symptoms for the zinc group? (b) What is a $95\%$ confidence interval for the true population mean overall duration for the placebo group? (c) Based on these two intervals, do you have reasons to believe that the true population means for the two groups are different? Explain.
+
+\par\medskip
+\noindent\textbf{Solution.}
+Since the population standard deviations are unknown and the samples are small, use $t$ intervals.
+
+\begin{enumerate}[label=(\alph*)]
+    \item \textbf{Zinc group:} $n=25$, $\bar x=4.5$, $s=1.6$. The degrees of freedom are $24$, so $t_{0.025,24}=2.064$.
+    \[
+    SE=\frac{s}{\sqrt n}=\frac{1.6}{\sqrt{25}}=\frac{1.6}{5}=0.32.
+    \]
+    Margin of error:
+    \[
+    ME=2.064(0.32)=0.66048.
+    \]
+    Therefore the interval is
+    \[
+    4.5\pm 0.66048,
+    \]
+    so the $95\%$ confidence interval is
+    \[
+    (3.84,\ 5.16)\text{ days}.
+    \]
+
+    \item \textbf{Placebo group:} $n=23$, $\bar x=8.1$, $s=1.8$. The degrees of freedom are $22$, so $t_{0.025,22}=2.074$.
+    \[
+    SE=\frac{s}{\sqrt n}=\frac{1.8}{\sqrt{23}}\approx 0.3753.
+    \]
+    Margin of error:
+    \[
+    ME=2.074(0.3753)\approx 0.7784.
+    \]
+    Therefore the interval is
+    \[
+    8.1\pm 0.7784,
+    \]
+    so the $95\%$ confidence interval is
+    \[
+    (7.32,\ 8.88)\text{ days}.
+    \]
+
+    \item The zinc interval is $(3.84,5.16)$ and the placebo interval is $(7.32,8.88)$. The intervals do not overlap, so there is evidence that the two population means differ. In particular, the zinc group appears to have a smaller true mean duration of symptoms.
+\end{enumerate}
+
+\item It has long been believed that eating oatmeal regularly lowers blood cholesterol. To test this claim, a scientist with the FDA measured the change in blood cholesterol levels of a randomly chosen sample of $25$ people in a certain age group (who ate oatmeal for breakfast for a month) and found a sample average reduction of $15$ points with a standard deviation of $6$ points. Is it believable at a $5\%$ significance level that the population mean reduction in all people of that age group is more than $10$ points?
+
+\par\medskip
+\noindent\textbf{Solution.}
+Let $\mu$ be the true mean reduction. We test
+\[
+H_0:\mu\le 10
+\qquad\text{versus}\qquad
+H_1:\mu>10.
+\]
+Because $\sigma$ is unknown and $n=25$, use a one-sample $t$ test.
+The test statistic is
+\[
+t=\frac{\bar x-\mu_0}{s/\sqrt n}
+=\frac{15-10}{6/\sqrt{25}}
+=\frac{5}{6/5}
+=\frac{5}{1.2}
+=4.1667.
+\]
+Degrees of freedom: $df=25-1=24$.
+For a right-tailed test at $\alpha=0.05$, the critical value is
+\[
+t_{0.05,24}=1.711.
+\]
+Since
+\[
+4.1667>1.711,
+\]
+we reject $H_0$.
+The p-value is very small, about
+\[
+0.00017.
+\]
+Therefore there is strong evidence at the $5\%$ level that the true mean reduction is more than $10$ points.
+
+\item A political party claims that its presidential candidate has more than $55\%$ support in the New England states. To test this claim, a political fact-checking agency took a random sample of $1225$ voting-age people from the New England states and found that $685$ of them supported that particular candidate. At a $2\%$ significance level, is the political party's claim believable? What is the p-value of this test?
+
+\par\medskip
+\noindent\textbf{Solution.}
+Let $p$ be the true support proportion. We test
+\[
+H_0:p\le 0.55
+\qquad\text{versus}\qquad
+H_1:p>0.55.
+\]
+The sample proportion is
+\[
+\hat p=\frac{685}{1225}=0.5592.
+\]
+Under $H_0$, the standard error is
+\[
+SE=\sqrt{\frac{(0.55)(0.45)}{1225}}=\sqrt{0.00020204}\approx 0.01421.
+\]
+The test statistic is
+\[
+z=\frac{\hat p-p_0}{SE}
+=\frac{0.5592-0.55}{0.01421}
+\approx 0.646.
+\]
+For a right-tailed test at $\alpha=0.02$, the critical value is
+\[
+z_{0.98}\approx 2.054.
+\]
+Since
+\[
+0.646<2.054,
+\]
+we do not reject $H_0$.
+The p-value is
+\[
+P(Z>0.646)\approx 0.2591.
+\]
+So the claim that support exceeds $55\%$ is not believable at the $2\%$ significance level.
+
+\item How large a sample size do you need to estimate an unknown population proportion by a $99\%$ confidence interval whose half-width is $0.15$?
+
+\par\medskip
+\noindent\textbf{Solution.}
+For a proportion, the required sample size is
+\[
+n=\frac{z^2p(1-p)}{E^2},
+\]
+where $E$ is the desired half-width. Here
+\[
+E=0.15.
+\]
+Since $p$ is unknown, use the conservative value $p=0.5$, so that
+\[
+p(1-p)=0.25.
+\]
+For a $99\%$ confidence interval,
+\[
+z=2.576.
+\]
+Thus
+\[
+n=\frac{(2.576)^2(0.25)}{(0.15)^2}
+=\frac{6.6358(0.25)}{0.0225}
+=\frac{1.6589}{0.0225}
+=73.73.
+\]
+Always round up, so the required sample size is
+\[
+\boxed{74}.
+\]
+
+\item For a simple random sample of size $n$ from a population, if we decide to use a slightly different version of the sample variance (with $n$ as the denominator instead of $n-1$) as a point estimator of the unknown population variance, is it an unbiased estimator? What is its MSE? Is it a consistent estimator?
+
+\par\medskip
+\noindent\textbf{Solution.}
+Consider the estimator
+\[
+T=\frac{1}{n}\sum_{i=1}^n (X_i-\bar X)^2.
+\]
+The usual sample variance is
+\[
+S^2=\frac{1}{n-1}\sum_{i=1}^n (X_i-\bar X)^2.
+\]
+Therefore
+\[
+T=\frac{n-1}{n}S^2.
+\]
+Since $E(S^2)=\sigma^2$, we have
+\[
+E(T)=E\left(\frac{n-1}{n}S^2\right)=\frac{n-1}{n}E(S^2)=\frac{n-1}{n}\sigma^2.
+\]
+So $T$ is \textbf{not} unbiased. Its bias is
+\[
+\operatorname{Bias}(T)=E(T)-\sigma^2=\frac{n-1}{n}\sigma^2-\sigma^2=-\frac{\sigma^2}{n}.
+\]
+Thus it is biased downward.
+
+For the mean squared error,
+\[
+\operatorname{MSE}(T)=\operatorname{Var}(T)+[\operatorname{Bias}(T)]^2.
+\]
+Because $T=\frac{n-1}{n}S^2$,
+\[
+\operatorname{Var}(T)=\left(\frac{n-1}{n}\right)^2\operatorname{Var}(S^2).
+\]
+Also,
+\[
+[\operatorname{Bias}(T)]^2=\left(\frac{\sigma^2}{n}\right)^2=\frac{\sigma^4}{n^2}.
+\]
+Hence
+\[
+\operatorname{MSE}(T)=\left(\frac{n-1}{n}\right)^2\operatorname{Var}(S^2)+\frac{\sigma^4}{n^2}.
+\]
+If one uses the general formula
+\[
+\operatorname{Var}(S^2)=\frac{1}{n}\left(\mu_4-\frac{n-3}{n-1}\sigma^4\right),
+\]
+then
+\[
+\operatorname{MSE}(T)=\frac{(n-1)^2}{n^3}\mu_4-\frac{n-2}{n^2}\sigma^4.
+\]
+Finally, since
+\[
+T=\frac{n-1}{n}S^2,
+\]
+and $\frac{n-1}{n}\to 1$ as $n\to\infty$, while $S^2$ is a consistent estimator of $\sigma^2$, it follows that $T$ is also a \textbf{consistent} estimator of $\sigma^2$.
+
+\item For a simple random sample of size $n$ from a Weibull$(2,\lambda)$ population, derive (a) the method-of-moments point estimator for the unknown parameter $\lambda$, (b) the maximum likelihood estimator of the unknown parameter $\lambda$.
+
+\par\medskip
+\noindent\textbf{Solution.}
+Use the Weibull density with shape parameter $2$ and scale parameter $\lambda$:
+\[
+f(x)=\frac{2x}{\lambda^2}e^{-(x/\lambda)^2},\qquad x>0.
+\]
+
+\begin{enumerate}[label=(\alph*)]
+    \item \textbf{Method of moments:}
+
+    For a Weibull distribution with shape $k$ and scale $\lambda$,
+    \[
+    E(X)=\lambda\,\Gamma\!\left(1+\frac{1}{k}\right).
+    \]
+    Here $k=2$, so
+    \[
+    E(X)=\lambda\,\Gamma\!\left(\frac{3}{2}\right).
+    \]
+    Since
+    \[
+    \Gamma\!\left(\frac{3}{2}\right)=\frac{1}{2}\Gamma\!\left(\frac{1}{2}\right)=\frac{\sqrt\pi}{2},
+    \]
+    we get
+    \[
+    E(X)=\lambda\frac{\sqrt\pi}{2}.
+    \]
+    Equating the population mean to the sample mean $\bar X$ gives
+    \[
+    \bar X=\lambda\frac{\sqrt\pi}{2}.
+    \]
+    Solving for $\lambda$,
+    \[
+    \hat\lambda_{\mathrm{MOM}}=\frac{2\bar X}{\sqrt\pi}.
+    \]
+
+    \item \textbf{Maximum likelihood estimator:}
+
+    For observations $x_1,\dots,x_n$, the likelihood is
+    \[
+    L(\lambda)=\prod_{i=1}^n \frac{2x_i}{\lambda^2}e^{-(x_i/\lambda)^2}.
+    \]
+    This simplifies to
+    \[
+    L(\lambda)=\left(\prod_{i=1}^n 2x_i\right)\lambda^{-2n}\exp\left(-\frac{1}{\lambda^2}\sum_{i=1}^n x_i^2\right).
+    \]
+    The log-likelihood is
+    \[
+    \ell(\lambda)=\sum_{i=1}^n \ln(2x_i)-2n\ln\lambda-\frac{1}{\lambda^2}\sum_{i=1}^n x_i^2.
+    \]
+    Differentiate with respect to $\lambda$:
+    \[
+    \frac{d\ell}{d\lambda}=-\frac{2n}{\lambda}+\frac{2\sum x_i^2}{\lambda^3}.
+    \]
+    Set equal to zero:
+    \[
+    -\frac{2n}{\lambda}+\frac{2\sum x_i^2}{\lambda^3}=0.
+    \]
+    Multiply through by $\lambda^3/2$:
+    \[
+    -n\lambda^2+\sum_{i=1}^n x_i^2=0.
+    \]
+    Therefore
+    \[
+    \lambda^2=\frac{1}{n}\sum_{i=1}^n x_i^2.
+    \]
+    Since $\lambda>0$,
+    \[
+    \hat\lambda_{\mathrm{MLE}}=\sqrt{\frac{1}{n}\sum_{i=1}^n x_i^2}.
+    \]
+\end{enumerate}
+
+\item The lengths of tube worms found around the deep-sea vent near the Galapagos Islands are normally distributed with mean $4.5$ feet and standard deviation $1.4$ feet. What are the chances that a randomly selected worm will have length (a) exceeding $6$ feet? (b) at most $4$ feet? (c) between $4$ and $6$ feet?
+
+\par\medskip
+\noindent\textbf{Solution.}
+Let $X$ denote worm length. Then
+\[
+X\sim N(4.5,1.4^2).
+\]
+Standardize using
+\[
+Z=\frac{X-4.5}{1.4}.
+\]
+
+\begin{enumerate}[label=(\alph*)]
+    \item
+    \[
+    P(X>6)=P\!\left(Z>\frac{6-4.5}{1.4}\right)=P(Z>1.0714).
+    \]
+    Using the standard normal table, $P(Z<1.07)\approx 0.8577$, so
+    \[
+    P(Z>1.07)=1-0.8577=0.1423.
+    \]
+    Thus
+    \[
+    P(X>6)\approx 0.1423.
+    \]
+
+    \item
+    \[
+    P(X\le 4)=P\!\left(Z\le\frac{4-4.5}{1.4}\right)=P(Z\le -0.3571).
+    \]
+    Using $z\approx -0.36$,
+    \[
+    P(Z\le -0.36)\approx 0.3594.
+    \]
+    Thus
+    \[
+    P(X\le 4)\approx 0.3594.
+    \]
+
+    \item
+    \[
+    P(4<X<6)=P\left(\frac{4-4.5}{1.4}<Z<\frac{6-4.5}{1.4}\right)=P(-0.3571<Z<1.0714).
+    \]
+    Using the table values,
+    \[
+    P(Z<1.07)\approx 0.8577,
+    \qquad
+    P(Z<-0.36)\approx 0.3594.
+    \]
+    Therefore
+    \[
+    P(-0.3571<Z<1.0714)=0.8577-0.3594=0.4983.
+    \]
+    So
+    \[
+    P(4<X<6)\approx 0.4983.
+    \]
+\end{enumerate}
+
+\item In the problem above, $95\%$ of tube worms are at least how long? What is the $85$th percentile of tube-worm lengths? What is the IQR of the tube-worm lengths?
+
+\par\medskip
+\noindent\textbf{Solution.}
+Again, let
+\[
+X\sim N(4.5,1.4^2).
+\]
+Use
+\[
+z=\frac{x-4.5}{1.4}.
+\]
+
+\begin{enumerate}[label=(\alph*)]
+    \item ``$95\%$ are at least this long'' means find $x$ such that
+    \[
+    P(X\ge x)=0.95.
+    \]
+    Equivalently,
+    \[
+    P(X\le x)=0.05.
+    \]
+    So $x$ is the $5$th percentile. Using $z_{0.05}=-1.645$,
+    \[
+    x=4.5+(-1.645)(1.4)=4.5-2.303=2.197.
+    \]
+    Thus about $95\%$ of tube worms are at least
+    \[
+    2.20\text{ feet long}.
+    \]
+
+    \item For the $85$th percentile, use $z_{0.85}=1.036$.
+    \[
+    x=4.5+(1.036)(1.4)=4.5+1.4504=5.9504.
+    \]
+    So the $85$th percentile is
+    \[
+    5.95\text{ feet}.
+    \]
+
+    \item The IQR is $Q_3-Q_1$. For a normal distribution,
+    \[
+    z_{0.75}=0.674,
+    \qquad
+    z_{0.25}=-0.674.
+    \]
+    Thus
+    \[
+    Q_3=4.5+(0.674)(1.4)=5.4436,
+    \]
+    and
+    \[
+    Q_1=4.5+(-0.674)(1.4)=3.5564.
+    \]
+    Therefore
+    \[
+    IQR=5.4436-3.5564=1.8872\approx 1.89\text{ feet}.
+    \]
+\end{enumerate}
+
+\item If in problem (9) you took a random sample of $49$ worms, what are the chances that the sample-average length would be (a) at least $5$ feet? (b) at most $3.9$ feet? (c) between $4.2$ and $4.8$ feet? (d) more than the population mean?
+
+\par\medskip
+\noindent\textbf{Solution.}
+For a sample size of $n=49$ from a normal population with mean $4.5$ and standard deviation $1.4$, the sample mean satisfies
+\[
+\bar X\sim N\left(4.5,\frac{1.4^2}{49}\right).
+\]
+Thus the mean is $4.5$ and the standard deviation is
+\[
+\sigma_{\bar X}=\frac{1.4}{\sqrt{49}}=\frac{1.4}{7}=0.2.
+\]
+So standardize with
+\[
+Z=\frac{\bar X-4.5}{0.2}.
+\]
+
+\begin{enumerate}[label=(\alph*)]
+    \item
+    \[
+    P(\bar X\ge 5)=P\left(Z\ge \frac{5-4.5}{0.2}\right)=P(Z\ge 2.5).
+    \]
+    Since $P(Z<2.5)=0.9938$,
+    \[
+    P(Z\ge 2.5)=1-0.9938=0.0062.
+    \]
+
+    \item
+    \[
+    P(\bar X\le 3.9)=P\left(Z\le \frac{3.9-4.5}{0.2}\right)=P(Z\le -3).
+    \]
+    From the table,
+    \[
+    P(Z\le -3)=0.0013.
+    \]
+
+    \item
+    \[
+    P(4.2<\bar X<4.8)=P\left(\frac{4.2-4.5}{0.2}<Z<\frac{4.8-4.5}{0.2}\right)=P(-1.5<Z<1.5).
+    \]
+    Since $P(Z<1.5)=0.9332$ and $P(Z<-1.5)=0.0668$,
+    \[
+    P(-1.5<Z<1.5)=0.9332-0.0668=0.8664.
+    \]
+
+    \item
+    \[
+    P(\bar X>4.5)=P\left(Z>\frac{4.5-4.5}{0.2}\right)=P(Z>0)=0.5.
+    \]
+\end{enumerate}
+
+\item If $X$ has an exponential pdf with mean $10$, what is $P(X>15)$? What is the conditional probability that $X$ exceeds $20$, given that $X$ has already exceeded $5$?
+
+\par\medskip
+\noindent\textbf{Solution.}
+For an exponential distribution,
+\[
+E(X)=\frac{1}{\lambda}.
+\]
+Given $E(X)=10$, we have
+\[
+\lambda=\frac{1}{10}=0.1.
+\]
+The tail probability for an exponential random variable is
+\[
+P(X>x)=e^{-\lambda x}.
+\]
+So here
+\[
+P(X>x)=e^{-0.1x}.
+\]
+
+First,
+\[
+P(X>15)=e^{-0.1(15)}=e^{-1.5}\approx 0.2231.
+\]
+
+Next,
+\[
+P(X>20\mid X>5)=\frac{P(X>20\text{ and }X>5)}{P(X>5)}.
+\]
+Since $X>20$ implies $X>5$,
+\[
+P(X>20\mid X>5)=\frac{P(X>20)}{P(X>5)}=\frac{e^{-0.1(20)}}{e^{-0.1(5)}}=e^{-1.5}\approx 0.2231.
+\]
+This also follows from the memoryless property:
+\[
+P(X>20\mid X>5)=P(X>15).
+\]
+
+\item A CBS News poll conducted in the US in November 16--19, 2012 asked ``Are you in favor of legalizing the use of marijuana''. In the nationwide poll of $n=1100$ adults, $517$ said that they favored legalization. Write down a $95\%$ confidence interval for the true, unknown population proportion of adults supporting the legalization of marijuana in the US. Next, write down a $98\%$ confidence interval for the same parameter.
+
+\par\medskip
+\noindent\textbf{Solution.}
+This is the same calculation as in Question 1.
+The sample proportion is
+\[
+\hat p=\frac{517}{1100}=0.47,
+\]
+and the standard error is
+\[
+SE=\sqrt{\frac{(0.47)(0.53)}{1100}}\approx 0.01505.
+\]
+For a $95\%$ confidence interval,
+\[
+ME=1.96(0.01505)\approx 0.02950,
+\]
+so the interval is
+\[
+0.47\pm 0.02950=(0.4405,\ 0.4995).
+\]
+For a $98\%$ confidence interval,
+\[
+ME=2.326(0.01505)\approx 0.03501,
+\]
+so the interval is
+\[
+0.47\pm 0.03501=(0.4350,\ 0.5050).
+\]
+
+\item For each combination of sample size and sample proportion given below, find the margin of error (i.e. half-length) for a $99\%$ confidence interval: (a) $n=400$ and $80$ out of $400$ said ``yes'', (b) $n=1000$ and $355$ out of $1000$ were in favor of a government proposal, (c) $n=650$ and $520$ out of $650$ said that they prefer stricter rules for COVID protection.
+
+\par\medskip
+\noindent\textbf{Solution.}
+This is the same calculation as in Question 2. For a $99\%$ confidence interval, use
+\[
+E=2.576\sqrt{\frac{\hat p(1-\hat p)}{n}}.
+\]
+
+\begin{enumerate}[label=(\alph*)]
+    \item
+    \[
+    \hat p=\frac{80}{400}=0.20,
+    \qquad
+    SE=\sqrt{\frac{(0.20)(0.80)}{400}}=0.02.
+    \]
+    Hence
+    \[
+    E=2.576(0.02)=0.05152\approx 0.0515.
+    \]
+
+    \item
+    \[
+    \hat p=\frac{355}{1000}=0.355,
+    \qquad
+    SE=\sqrt{\frac{(0.355)(0.645)}{1000}}\approx 0.01513.
+    \]
+    Hence
+    \[
+    E=2.576(0.01513)\approx 0.03898\approx 0.0390.
+    \]
+
+    \item
+    \[
+    \hat p=\frac{520}{650}=0.80,
+    \qquad
+    SE=\sqrt{\frac{(0.80)(0.20)}{650}}\approx 0.01569.
+    \]
+    Hence
+    \[
+    E=2.576(0.01569)\approx 0.04042\approx 0.0404.
+    \]
+\end{enumerate}
+
+\item If a discrete random vector $(X,Y)$ has the following joint pmf table, find the marginal pmf of $X$, its mean and variance. Then find the marginal pmf, mean and variance of $Y$. Are $X$ and $Y$ independent? If not, compute the correlation between $X$ and $Y$. Also, what are the conditional pmf of $X$ given that $Y>5$, $E(X\mid Y>5)$ and $\operatorname{Var}(X\mid Y>5)$?
+
+\[
+\begin{array}{c|ccc}
+ & Y=3 & Y=6 & Y=9\\ \hline
+X=0 & 0.05 & 0.08 & 0.12\\
+X=1 & 0.10 & 0.16 & 0.19\\
+X=2 & 0.15 & 0.10 & 0.05
+\end{array}
+\]
+
+\par\medskip
+\noindent\textbf{Solution.}
+First find the marginal pmf of $X$ by adding across each row:
+\[
+P(X=0)=0.05+0.08+0.12=0.25,
+\]
+\[
+P(X=1)=0.10+0.16+0.19=0.45,
+\]
+\[
+P(X=2)=0.15+0.10+0.05=0.30.
+\]
+So the marginal pmf of $X$ is
+\[
+P(X=0)=0.25,\qquad P(X=1)=0.45,\qquad P(X=2)=0.30.
+\]
+Now
+\[
+E(X)=0(0.25)+1(0.45)+2(0.30)=1.05.
+\]
+Also,
+\[
+E(X^2)=0^2(0.25)+1^2(0.45)+2^2(0.30)=1.65.
+\]
+Therefore,
+\[
+\operatorname{Var}(X)=E(X^2)-[E(X)]^2=1.65-(1.05)^2=1.65-1.1025=0.5475.
+\]
+
+Next find the marginal pmf of $Y$ by adding down each column:
+\[
+P(Y=3)=0.05+0.10+0.15=0.30,
+\]
+\[
+P(Y=6)=0.08+0.16+0.10=0.34,
+\]
+\[
+P(Y=9)=0.12+0.19+0.05=0.36.
+\]
+So the marginal pmf of $Y$ is
+\[
+P(Y=3)=0.30,\qquad P(Y=6)=0.34,\qquad P(Y=9)=0.36.
+\]
+Now
+\[
+E(Y)=3(0.30)+6(0.34)+9(0.36)=0.90+2.04+3.24=6.18.
+\]
+Also,
+\[
+E(Y^2)=3^2(0.30)+6^2(0.34)+9^2(0.36)=2.70+12.24+29.16=44.10.
+\]
+Therefore,
+\[
+\operatorname{Var}(Y)=E(Y^2)-[E(Y)]^2=44.10-(6.18)^2=44.10-38.1924=5.9076.
+\]
+
+To check independence, compare one joint probability to the product of the marginals:
+\[
+P(X=0,Y=3)=0.05,
+\]
+while
+\[
+P(X=0)P(Y=3)=0.25(0.30)=0.075.
+\]
+Since $0.05\ne 0.075$, $X$ and $Y$ are not independent.
+
+Now compute $E(XY)$:
+\[
+E(XY)=\sum_x\sum_y xy\,p(x,y).
+\]
+The row with $X=0$ contributes $0$. For $X=1$,
+\[
+1\cdot 3\cdot 0.10+1\cdot 6\cdot 0.16+1\cdot 9\cdot 0.19=0.30+0.96+1.71=2.97.
+\]
+For $X=2$,
+\[
+2\cdot 3\cdot 0.15+2\cdot 6\cdot 0.10+2\cdot 9\cdot 0.05=0.90+1.20+0.90=3.00.
+\]
+So
+\[
+E(XY)=2.97+3.00=5.97.
+\]
+Hence
+\[
+\operatorname{Cov}(X,Y)=E(XY)-E(X)E(Y)=5.97-(1.05)(6.18)=5.97-6.489=-0.519.
+\]
+Therefore,
+\[
+\operatorname{Corr}(X,Y)=\frac{-0.519}{\sqrt{(0.5475)(5.9076)}}\approx -0.289.
+\]
+
+Now condition on $Y>5$, which means $Y=6$ or $Y=9$.
+First,
+\[
+P(Y>5)=P(Y=6)+P(Y=9)=0.34+0.36=0.70.
+\]
+Then
+\[
+P(X=0\mid Y>5)=\frac{0.08+0.12}{0.70}=\frac{0.20}{0.70}=\frac{2}{7},
+\]
+\[
+P(X=1\mid Y>5)=\frac{0.16+0.19}{0.70}=\frac{0.35}{0.70}=\frac{1}{2},
+\]
+\[
+P(X=2\mid Y>5)=\frac{0.10+0.05}{0.70}=\frac{0.15}{0.70}=\frac{3}{14}.
+\]
+So the conditional pmf is
+\[
+P(X=0\mid Y>5)=\frac{2}{7},\qquad P(X=1\mid Y>5)=\frac{1}{2},\qquad P(X=2\mid Y>5)=\frac{3}{14}.
+\]
+Now
+\[
+E(X\mid Y>5)=0\left(\frac{2}{7}\right)+1\left(\frac{1}{2}\right)+2\left(\frac{3}{14}\right)=\frac{1}{2}+\frac{6}{14}=\frac{13}{14}.
+\]
+Next,
+\[
+E(X^2\mid Y>5)=0^2\left(\frac{2}{7}\right)+1^2\left(\frac{1}{2}\right)+2^2\left(\frac{3}{14}\right)=\frac{1}{2}+\frac{12}{14}=\frac{19}{14}.
+\]
+Therefore,
+\[
+\operatorname{Var}(X\mid Y>5)=E(X^2\mid Y>5)-[E(X\mid Y>5)]^2
+=\frac{19}{14}-\left(\frac{13}{14}\right)^2.
+\]
+Compute:
+\[
+\frac{19}{14}=\frac{266}{196},
+\qquad
+\left(\frac{13}{14}\right)^2=\frac{169}{196}.
+\]
+So
+\[
+\operatorname{Var}(X\mid Y>5)=\frac{266}{196}-\frac{169}{196}=\frac{97}{196}\approx 0.4949.
+\]
+
+\end{enumerate}
+
+\end{document}
