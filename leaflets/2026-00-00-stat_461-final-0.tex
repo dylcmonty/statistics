@@ -1,0 +1,104 @@
+\documentclass[11pt]{article}
+
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb}
+\usepackage{enumitem}
+\usepackage{array,booktabs}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0.7em}
+\renewcommand{\arraystretch}{1.25}
+
+\begin{document}
+
+\begin{center}
+    {\Large \textbf{PRACTICE FINAL EXAM (STAT-461/561)}}
+\end{center}
+
+\begin{enumerate}[label=(\arabic*), leftmargin=*, itemsep=1.15em]
+
+\item The world population has recently crossed the 7.5 billion mark, but approximately 1 in 8 people in the world today remain undernourished or malnourished. If you randomly selected 120 people from the world population, what would be the chances that there were (a) AT LEAST 5 undernourished/malnourished people in your sample? (b) AT MOST 9 such people in your sample? (c) BETWEEN 10 and 20 (inclusive) such people in your sample? [\textbf{Hint:} Check if it looks like a `coin tossing' problem with a large enough number of tosses. If so, approximate it with an appropriate density.]
+
+\item If $X$, $Y$ and $Z$ are independent random variables with means 15, 22 and 10 respectively and standard deviations 2, 5 and 7 respectively, find the mean and the standard deviation of $3X + 2Y - 4Z$.
+
+\item If $X_1,\ldots,X_n$ are i.i.d. Standard Beta $(3,5)$ random variables, find the mean and the variance of
+\[
+    X = \sum_{i=1}^{n}(c_iX_i+b_i)
+\]
+for some constants $c_1,\ldots,c_n$ and $b_1,\ldots,b_n$.
+
+\item Durations of 911 phone calls are known to have a population distribution that is skewed to the right, with a population mean of 12 minutes and a population standard deviation of 3.2 minutes. If you take a simple random sample of 64 such phone calls and record their durations, what will be the approximate distribution of the sample average? What are the chances that the sample average will (a) exceed 13 minutes? (b) be below 10.8 minutes? [\textbf{Hint:} Use the Central Limit Theorem]
+
+\item Let $\{Y_1,\ldots,Y_{36}\}$ be a simple random sample from a Poisson$(\mu=9)$ population. What is the approximate distribution of $2(\bar{Y}-9)$? So, what is $P(|\bar{Y}-9|\leq 1.5)$?
+
+\item A CBS News poll conducted in the US in November 16--19, 2012 asked ``Are you in favor of legalizing the use of marijuana''. In the nationwide poll of $n=1100$ adults, 517 said that they favored legalization. Write down a 90\% confidence interval for the true, unknown population proportion of adults supporting the legalization of marijuana in the US. Next, write down a 99\% confidence interval for the same parameter.
+
+\item How large a sample size do you need to estimate an unknown population proportion of `yes' answers to a `yes/no' question by a 99\% confidence interval whose width is 0.4?
+
+\item If you take a random sample of size 15 from a Normal population with mean 75, what are the chances that
+\[
+    \left(\frac{\bar{X}-75}{s/\sqrt{15}}\right)
+\]
+exceeds 2.145 in absolute value?
+
+\item Suppose you have a simple random sample $\{Y_1,\ldots,Y_n\}$ from a Uniform$[0,\theta]$ population. What is the method-of-moments (MOM) estimate of $\theta$? What is the method-of-moments estimate of $\theta^2$?
+
+\item If you have a simple random sample $\{X_1,X_2,\ldots,X_n\}$ from a Weibull $(3,\beta)$ population, derive the maximum likelihood estimate (MLE) of $\beta$. [\textbf{Hint:} First write down the sample likelihood function. Then write down the natural log of the sample likelihood function. Then differentiate it with respect to $\beta$ and equate it to 0 to get the solution. Lastly, check if the 2nd derivative w.r.t. $\beta$ is $<0$]
+
+\item If a random sample of $n=16$ pygmy goats from West Africa shows a sample-average height of 49 centimeters with a sample standard deviation of 6.4 centimeters, what is a 99\% confidence interval for the unknown population-mean height of pygmy goats?
+
+\item A random sample of 9 second graders who participated in regular sports had manual dexterity scores with mean 32.19 and standard deviation 4.34. An independent sample of 7 second graders (who did not participate in regular sports) showed manual dexterity scores with mean 31.68 and standard deviation 4.56. At the 5\% significance level, is there sufficient evidence to claim that second graders who participate in regular sports have a higher mean score?
+
+\item In (12), how would you do the test differently if you knew that the two (unknown) population standard deviations were the same?
+
+\item For each combination of sample size and sample proportion given below, find the margin of error (i.e. half-length) for a 98\% confidence interval: (a) $n=484$ and 98 out of 484 said `yes', (b) $n=1089$ and 655 out of 1089 were in favor of a government proposal, (c) $n=650$ and 540 out of 650 said that they prefer stricter rules for privacy protection.
+
+\item At the start of the Ebola infection epidemic in the Democratic Republic of Congo (Africa), only 0.2\% of the population of Kinshasa (the capital city) had the Ebola virus. At that time, if the government's health department took a random sample of 1000 Kinshasa residents, what would be the chances of finding 5 Ebola-infected people among them? The chances of finding at most 3 Ebola-infected people among them?
+
+\item A bowl has 6 red marbles and 2 blue marbles in it. Another bowl has 2 red marbles and 2 blue marbles. Reaching into the 1st bowl and without looking, you pick a marble and transfer it to the 2nd bowl. Now, if you reach into the 2nd bowl to grab a marble without looking and the marble turns out to be red, what are the (conditional) chances that the marble transferred earlier was red too?
+
+\item A marketing researcher studied the sales of 6 brands of French wine that were $X$ number of years old and they sold for $Y$ per bottle. Find the sample correlation $r$. Find the best-fitting (i.e. least squares) line equation. Find the predicted average $Y$ for $X=7$.
+
+\begin{center}
+\begin{tabular}{c|cccccc}
+\toprule
+Number & 1 & 2 & 3 & 4 & 5 & 6 \\
+\midrule
+$X$ & 2 & 4 & 3 & 2 & 5 & 4 \\
+$Y$ & 98 & 135 & 162 & 178 & 221 & 199 \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\item When you are rolling a balanced die twice, write down the pmf table for the random variable $X=$ the average of the two numbers. Find its mean and standard deviation.
+
+\item Let the random variables $X$ and $Y$ denote the lengths of life (in hundreds of hours) for components of type-1 and type-2 respectively for an electronic system. The joint density of $(X,Y)$ is
+\[
+    f(x,y)=\frac{1}{8}xe^{-(x+y)/2}
+\]
+for $x>0$ and $y>0$. Find the marginal densities of $X$ and $Y$. Are $X$ and $Y$ independent? What are the marginal mean and variance for each of $X$ and $Y$? Find the probability that a component of type-2 will have a life length in excess of 100 hours.
+
+\item 20 patients with severe epilepsy were observed for 8 weeks for seizures. The following are the numbers of major seizures suffered by each patient during that period: 5, 0, 9, 6, 0, 0, 5, 0, 6, 1, 5, 0, 0, 0, 0, 7, 0, 0, 4, 7. (a) What is the mean (or average) number of seizures? (b) What is the five-point summary of this dataset? (c) Draw a modified boxplot (with the fences clearly marked) and do outlier detection.
+
+\item To compare the efficacy of two well-known diabetes medications (Glipizide and Jardiance) with respect to a control group, a simple random sample of 18 diabetics were recruited in a study. Six of them were randomly chosen and assigned to take Glipizide once every day for 6 months, another six were randomly chosen and assigned to take Jardiance once every day for 6 months, while the remaining six were given a placebo once every day for 6 months. At the end of the study period, their morning (i.e., pre-breakfast) blood-sugar readings were taken. The data are provided below. Test at a 1\% significance level if all three (population) mean blood-sugar levels are the same or not.
+
+\begin{center}
+\begin{tabular}{c|ccc}
+\toprule
+ & Placebo & Glipizide & Jardiance \\
+\midrule
+1 & 137 & 128 & 119 \\
+2 & 161 & 139 & 112 \\
+3 & 155 & 121 & 123 \\
+4 & 179 & 146 & 108 \\
+5 & 144 & 151 & 128 \\
+6 & 150 & 125 & 132 \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\end{enumerate}
+
+\end{document}

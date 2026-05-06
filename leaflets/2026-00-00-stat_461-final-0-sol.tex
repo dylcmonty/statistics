@@ -1,0 +1,269 @@
+\documentclass[11pt]{article}
+
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb}
+\usepackage{enumitem}
+\usepackage{tikz}
+
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0.65em}
+
+\begin{document}
+
+\begin{center}
+    {\Large \textbf{Solutions to the Practice Final Exam (STAT 461)}}
+\end{center}
+
+\begin{enumerate}[label=\textbf{(\arabic*)}, start=9, leftmargin=*]
+
+\item If $Y_i \sim \operatorname{Uniform}[0,\theta]$, then the first population moment is
+\[
+E(Y_i)=\frac{0+\theta}{2}=\frac{\theta}{2}.
+\]
+The method-of-moments estimator is obtained by solving
+\[
+\frac{\theta}{2}=\bar{Y}.
+\]
+Therefore,
+\[
+\widehat{\theta}_{\mathrm{MOM}}=2\bar{Y}.
+\]
+
+Next, since
+\[
+\operatorname{Var}(Y_i)=\frac{\theta^2}{12},
+\]
+the MOM estimator of $\theta^2$ is obtained by solving
+\[
+\frac{\theta^2}{12}=S^2,
+\]
+where
+\[
+S^2=\frac{1}{n-1}\sum_{i=1}^{n}(Y_i-\bar{Y})^2
+\]
+is the sample variance. Thus,
+\[
+\widehat{\theta^2}_{\mathrm{MOM}}=12S^2.
+\]
+
+\item Let $X_1,X_2,\ldots,X_n$ be i.i.d., each following a Weibull$(3,\beta)$ density. The Weibull density is
+\[
+f(x)=\frac{\alpha}{\beta^\alpha}x^{\alpha-1}e^{-(x/\beta)^\alpha}, \qquad x>0.
+\]
+With $\alpha=3$,
+\[
+f(x)=\frac{3}{\beta^3}x^2e^{-(x/\beta)^3}.
+\]
+Therefore, the sample likelihood function is
+\[
+L(\beta;x_1,\ldots,x_n)
+=\prod_{i=1}^{n}\left(\frac{3}{\beta^3}x_i^2e^{-(x_i/\beta)^3}\right)
+=\frac{3^n}{\beta^{3n}}\left(\prod_{i=1}^{n}x_i\right)^2
+\exp\left(-\frac{\sum_{i=1}^{n}x_i^3}{\beta^3}\right).
+\]
+The log-likelihood function is
+\[
+\ell(\beta)
+=\ln L(\beta;x_1,\ldots,x_n)
+=n\ln 3-3n\ln \beta+2\sum_{i=1}^{n}\ln(x_i)-\frac{\sum_{i=1}^{n}x_i^3}{\beta^3}.
+\]
+Differentiate with respect to $\beta$ and set equal to zero:
+\[
+\frac{d\ell}{d\beta}
+=-\frac{3n}{\beta}+\frac{3\sum_{i=1}^{n}x_i^3}{\beta^4}=0.
+\]
+Thus,
+\[
+\frac{1}{\beta}\left(-3n+\frac{3\sum_{i=1}^{n}x_i^3}{\beta^3}\right)=0,
+\]
+so
+\[
+-3n+\frac{3\sum_{i=1}^{n}x_i^3}{\beta^3}=0.
+\]
+Therefore,
+\[
+\frac{\sum_{i=1}^{n}x_i^3}{\beta^3}=n,
+\qquad
+\beta^3=\frac{1}{n}\sum_{i=1}^{n}x_i^3,
+\]
+and the maximum likelihood estimator is
+\[
+\widehat{\beta}_{\mathrm{MLE}}
+=\sqrt[3]{\frac{\sum_{i=1}^{n}x_i^3}{n}}.
+\]
+
+Checking the second derivative:
+\[
+\frac{d^2\ell}{d\beta^2}
+=\frac{3n}{\beta^2}-\frac{12\sum_{i=1}^{n}x_i^3}{\beta^5}
+=\frac{1}{\beta^2}\left(3n-\frac{12\sum_{i=1}^{n}x_i^3}{\beta^3}\right).
+\]
+If we plug in $\widehat{\beta}_{\mathrm{MLE}}$ in place of $\beta$, then
+\[
+\frac{d^2\ell}{d\beta^2}\bigg|_{\beta=\widehat{\beta}_{\mathrm{MLE}}}
+=\frac{1}{\widehat{\beta}_{\mathrm{MLE}}^2}(3n-12n)<0.
+\]
+Therefore, this gives a maximum.
+
+\item A $99\%$ confidence interval for the unknown population mean height $\mu$ is
+\[
+\bar{x}\pm t_{0.005,15}\frac{s}{\sqrt{n}}.
+\]
+Using $\bar{x}=49$, $s=6.4$, $n=16$, and $t_{0.005,15}=2.947$,
+\[
+49\pm (2.947)\frac{6.4}{\sqrt{16}}
+=49\pm 4.7152.
+\]
+Thus, the $99\%$ confidence interval is
+\[
+(44.2848,\,53.7152).
+\]
+
+\item We are testing
+\[
+H_1:\mu_1>\mu_2
+\qquad \text{versus} \qquad
+H_0:\mu_1\le \mu_2,
+\]
+that is,
+\[
+H_1:\mu_1-\mu_2>0
+\qquad \text{versus} \qquad
+H_0:\mu_1-\mu_2\le 0.
+\]
+From the first sample of size $n_1=9$,
+\[
+\bar{x}=32.19, \qquad s_1=4.34.
+\]
+From the second sample of size $n_2=7$,
+\[
+\bar{y}=31.68, \qquad s_2=4.56.
+\]
+The test statistic is
+\[
+t=\frac{\bar{x}-\bar{y}-0}{\sqrt{\dfrac{s_1^2}{n_1}+\dfrac{s_2^2}{n_2}}}
+=\frac{32.19-31.68}{\sqrt{\dfrac{4.34^2}{9}+\dfrac{4.56^2}{7}}}
+=0.2266.
+\]
+It should be compared with $t_{0.05,6}$, because the degrees of freedom used here is the smaller of $n_1-1$ and $n_2-1$. Since
+\[
+t_{0.05,6}=1.943
+\]
+and
+\[
+0.2266<1.943,
+\]
+we fail to reject $H_0$. There is not sufficient evidence at the $5\%$ significance level to claim that second graders who participate in regular sports have a higher mean score.
+
+\item If the two unknown population standard deviations are known to be the same, $\sigma_1=\sigma_2=\sigma$, we use the pooled two-sample $t$ test. The common population variance is estimated by
+\[
+S_{\mathrm{pool}}^2
+=\frac{(n_1-1)S_1^2+(n_2-1)S_2^2}{(n_1-1)+(n_2-1)}.
+\]
+Substituting the values,
+\[
+S_{\mathrm{pool}}^2
+=\frac{(8)(4.34^2)+(6)(4.56^2)}{8+6}
+=19.675.
+\]
+The test statistic is
+\[
+t=\frac{\bar{x}-\bar{y}-0}{\sqrt{S_{\mathrm{pool}}^2\left(\frac{1}{n_1}+\frac{1}{n_2}\right)}}
+=\frac{32.19-31.68}{\sqrt{19.675\left(\frac{1}{9}+\frac{1}{7}\right)}}
+=0.2281.
+\]
+It is compared with
+\[
+t_{0.05,14}=1.761.
+\]
+Since
+\[
+0.2281<1.761,
+\]
+we fail to reject $H_0$.
+
+\item For a $98\%$ confidence interval,
+\[
+z_{0.01}=2.33.
+\]
+The margin of error is
+\[
+E=z_{0.01}\sqrt{\frac{\widehat{p}(1-\widehat{p})}{n}}.
+\]
+
+\begin{enumerate}[label=(\alph*)]
+\item For $n=484$ and $\widehat{p}=98/484$,
+\[
+E=(2.33)\sqrt{\frac{\frac{98}{484}\left(1-\frac{98}{484}\right)}{484}}
+=0.0425.
+\]
+
+\item For $n=1089$ and $\widehat{p}=655/1089$,
+\[
+E=(2.33)\sqrt{\frac{\frac{655}{1089}\left(1-\frac{655}{1089}\right)}{1089}}
+=0.03457.
+\]
+
+\item For $n=650$ and $\widehat{p}=540/650$,
+\[
+E=(2.33)\sqrt{\frac{\frac{540}{650}\left(1-\frac{540}{650}\right)}{650}}
+=0.034267.
+\]
+\end{enumerate}
+
+\item Let $X$ be the number of Ebola-infected individuals in a random sample of size $1000$. Then
+\[
+X\sim \operatorname{Binomial}(n=1000,p=0.002).
+\]
+Since
+\[
+np=1000(0.002)=2,
+\]
+this binomial distribution can be approximated by a Poisson distribution with mean $\mu=2$:
+\[
+X\approx \operatorname{Poisson}(2).
+\]
+Therefore,
+\[
+P(X=5)=e^{-2}\frac{2^5}{5!}=0.0361.
+\]
+Also,
+\[
+P(X\le 3)=P(X=0,1,2,3)
+=e^{-2}+e^{-2}\frac{2^1}{1!}+e^{-2}\frac{2^2}{2!}+e^{-2}\frac{2^3}{3!}.
+\]
+Thus,
+\[
+P(X\le 3)=e^{-2}\left(1+2+\frac{4}{2}+\frac{8}{6}\right)=0.8571.
+\]
+
+\item Let $R_T$ be the event that the transferred marble was red, and let $R_D$ be the event that the marble drawn from the second bowl was red. Then
+\[
+P(R_T)=\frac{6}{8}=\frac{3}{4},
+\qquad
+P(B_T)=\frac{2}{8}=\frac{1}{4}.
+\]
+If a red marble was transferred, then the second bowl has $3$ red marbles and $2$ blue marbles, so
+\[
+P(R_D\mid R_T)=\frac{3}{5}.
+\]
+If a blue marble was transferred, then the second bowl has $2$ red marbles and $3$ blue marbles, so
+\[
+P(R_D\mid B_T)=\frac{2}{5}.
+\]
+Using Bayes' formula,
+\[
+P(R_T\mid R_D)
+=\frac{P(R_T)P(R_D\mid R_T)}{P(R_T)P(R_D\mid R_T)+P(B_T)P(R_D\mid B_T)}.
+\]
+Therefore,
+\[
+P(R_T\mid R_D)
+=\frac{\left(\frac{3}{4}\right)\left(\frac{3}{5}\right)}{\left(\frac{3}{4}\right)\left(\frac{3}{5}\right)+\left(\frac{1}{4}\right)\left(\frac{2}{5}\right)}
+=\frac{9/20}{9/20+2/20}
+=\frac{9}{11}.
+\]
+
+\end{enumerate}
+
+\end{document}
