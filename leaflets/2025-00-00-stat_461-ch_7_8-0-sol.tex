@@ -1,0 +1,467 @@
+\documentclass[12pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb}
+\usepackage{enumitem}
+\usepackage{array}
+\usepackage{booktabs}
+
+\begin{document}
+
+\begin{center}
+    {\Large \textbf{Chapter 7 and Chapter 8 Solutions}}
+\end{center}
+
+\section*{Chapter 7}
+
+\begin{enumerate}[label=\textbf{\arabic*.}, leftmargin=*]
+
+\setcounter{enumi}{1}
+\item
+\begin{enumerate}[label=\alph*.]
+    \item The sample mean is the center of the interval, so
+    \[
+    \bar{x}=\frac{114.4+115.6}{2}=115.
+    \]
+    \item The interval $(114.4,115.6)$ has the $90\%$ confidence level. The higher confidence level will produce a wider interval.
+\end{enumerate}
+
+\setcounter{enumi}{3}
+\item
+\begin{enumerate}[label=\alph*.]
+    \item
+    \[
+    58.3\pm \frac{1.96(3)}{\sqrt{25}}=58.3\pm1.18=(57.1,59.5).
+    \]
+    \item
+    \[
+    58.3\pm \frac{1.96(3)}{\sqrt{100}}=58.3\pm0.59=(57.7,58.9).
+    \]
+    \item
+    \[
+    58.3\pm \frac{2.58(3)}{\sqrt{100}}=58.3\pm0.77=(57.5,59.1).
+    \]
+    \item For an $82\%$ confidence interval,
+    \[
+    1-\alpha=.82\Rightarrow \alpha=.18\Rightarrow \alpha/2=.09,
+    \]
+    and $z_{.09}=1.34$. Therefore,
+    \[
+    58.3\pm \frac{1.34(3)}{\sqrt{100}}=(57.9,58.7).
+    \]
+    \item
+    \[
+    n=\left[\frac{2(2.58)3}{1}\right]^2=239.62\approx240.
+    \]
+\end{enumerate}
+
+\setcounter{enumi}{9}
+\item
+\begin{enumerate}[label=\alph*.]
+    \item When $n=15$, $2\lambda\sum X_i$ has a chi-squared distribution with $30$ df. From the $30$ df row of Table A.6, the critical values that capture lower and upper tail areas of $.025$ are $16.791$ and $46.979$. Thus
+    \[
+    \left(\frac{2\sum x_i}{46.979},\frac{2\sum x_i}{16.791}\right)
+    \]
+    is a $95\%$ confidence interval for
+    \[
+    \mu=\frac{1}{\lambda}.
+    \]
+    Since $\sum x_i=63.2$, the interval is
+    \[
+    (2.69,7.53).
+    \]
+
+    \item A $99\%$ confidence level requires critical values that capture area $.005$ in each tail of the chi-squared curve with $30$ df. These are $13.787$ and $53.672$, which replace $16.791$ and $46.979$ in part (a).
+
+    \item
+    \[
+    V(X)=\frac{1}{\lambda^2}
+    \]
+    when $X$ has an exponential distribution, so the standard deviation is
+    \[
+    \frac{1}{\lambda},
+    \]
+    the same as the mean. Thus the interval in part (a) is also a $95\%$ confidence interval for the standard deviation of the lifetime distribution.
+\end{enumerate}
+
+\setcounter{enumi}{15}
+\item
+\begin{enumerate}[label=\alph*.]
+    \item The boxplot shows a high concentration in the middle half of the data, with a narrow box width. There is a single outlier at the upper end, but that value is closer to the median, $55$ kV, than to the smallest sample observation.
+
+    \item From software,
+    \[
+    \bar{x}=54.7,\qquad s=5.23.
+    \]
+    The $95\%$ confidence interval is
+    \[
+    \bar{x}\pm1.96\frac{s}{\sqrt{n}}
+    =54.7\pm1.96\frac{5.23}{\sqrt{48}}
+    =54.7\pm1.5=(53.2,56.2).
+    \]
+    We are $95\%$ confident that the true mean breakdown voltage under these conditions is between $53.2$ kV and $56.2$ kV. The interval is reasonably narrow, indicating that $\mu$ has been estimated fairly precisely.
+
+    \item A conservative estimate of the standard deviation is
+    \[
+    \frac{70-40}{4}=7.5.
+    \]
+    To achieve a margin of error of at most $1$ kV with $95\%$ confidence,
+    \[
+    1.96\frac{s}{\sqrt{n}}\le1
+    \Rightarrow
+    n\ge\left[\frac{1.96s}{1}\right]^2
+    =\left[\frac{1.96(7.5)}{1}\right]^2=216.09.
+    \]
+    Therefore, a sample of size at least $n=217$ is required.
+\end{enumerate}
+
+\setcounter{enumi}{19}
+\item
+\begin{enumerate}[label=\alph*.]
+    \item With the numbers provided, a $99\%$ confidence interval for the parameter $p$ is
+    \[
+    \frac{.53+\frac{(2.58)^2}{2(2343)}\pm 2.58\sqrt{\frac{(.53)(.47)}{2343}+\frac{(2.58)^2}{4(2343)^2}}}{1+\frac{(2.58)^2}{2343}}
+    =(.503,.556).
+    \]
+    We are $99\%$ confident that the proportion of all adult Americans who watched streamed programming was between $.503$ and $.556$.
+
+    \item
+    \[
+    n=\left[\frac{2z_{\alpha/2}\sqrt{\hat{p}\hat{q}}}{w}\right]^2
+    =\left[\frac{2(2.58)(.5)(.5)}{.05}\right]^2=665.64,
+    \]
+    so $n$ must be at least $666$.
+\end{enumerate}
+
+\setcounter{enumi}{25}
+\item
+Using the quadratic equation to solve the limits
+\[
+\frac{\bar{x}-\mu}{\sqrt{\mu/n}}=\pm z
+\]
+gives the solutions
+\[
+\mu=\left(\bar{x}+\frac{z^2}{2n}\right)\pm z\frac{\sqrt{z^2+4n\bar{x}}}{2n}.
+\]
+For the data provided, $n=50$ and
+\[
+\bar{x}=\frac{203}{50}=4.06.
+\]
+Using $z=1.96$, we are $95\%$ confident that the true value of $\mu$ is in the interval
+\[
+\left(4.06+\frac{1.96^2}{2(50)}\right)
+\pm1.96\frac{\sqrt{1.96^2+4(50)(4.06)}}{2(50)}
+=4.10\pm.56=(3.54,4.66).
+\]
+For large $n$, this is approximately equivalent to
+\[
+\bar{x}\pm z\frac{\sqrt{\bar{x}}}{\sqrt{n}}=\hat{\mu}\pm z\frac{\hat{\sigma}}{\sqrt{n}},
+\]
+since $\mu=\sigma^2$ for the Poisson distribution.
+
+\setcounter{enumi}{29}
+\item
+\begin{enumerate}[label=\alph*.]
+    \item $t_{.025,10}=2.228$
+    \item $t_{.025,15}=2.131$
+    \item $t_{.005,15}=2.947$
+    \item $t_{.005,4}=4.604$
+    \item $t_{.01,24}=2.492$
+    \item $t_{.005,37}\approx2.712$
+\end{enumerate}
+
+\setcounter{enumi}{33}
+\item
+Given
+\[
+n=14,\qquad \bar{x}=8.48,\qquad s=.79,\qquad t_{.05,13}=1.771.
+\]
+\begin{enumerate}[label=\alph*.]
+    \item A $95\%$ lower confidence bound is
+    \[
+    8.48-1.771\left(\frac{.79}{\sqrt{14}}\right)=8.48-.37=8.11.
+    \]
+    With $95\%$ confidence, the value of the true mean proportional limit stress of all such joints is greater than $8.11$ MPa. The sample observations must be from a normally distributed population.
+
+    \item A $95\%$ lower prediction bound is
+    \[
+    8.48-1.771(.79)\sqrt{1+\frac{1}{14}}=8.48-1.45=7.03.
+    \]
+    If this bound is calculated for sample after sample, in the long run $95\%$ of these bounds will provide a lower bound for the corresponding future values of the proportional limit stress of a single joint of this type.
+\end{enumerate}
+
+\setcounter{enumi}{35}
+\item
+Given
+\[
+n=26,\qquad \bar{x}=370.69,\qquad s=24.36,\qquad t_{.05,25}=1.708.
+\]
+\begin{enumerate}[label=\alph*.]
+    \item A $95\%$ upper confidence bound is
+    \[
+    370.69+(1.708)\left(\frac{24.36}{\sqrt{26}}\right)=370.69+8.16=378.85.
+    \]
+
+    \item A $95\%$ upper prediction bound is
+    \[
+    370.69+1.708(24.36)\sqrt{1+\frac{1}{26}}
+    =370.69+42.45=413.14.
+    \]
+
+    \item Following the prediction interval argument, find the variance of
+    \[
+    \bar{X}-\bar{X}_{new}.
+    \]
+    Since
+    \[
+    V(\bar{X}-\bar{X}_{new})=V(\bar{X})+V(\bar{X}_{new})
+    =V(\bar{X})+V\left(\frac{1}{2}(X_{27}+X_{28})\right),
+    \]
+    we get
+    \[
+    V(\bar{X})+V\left(\frac{1}{2}X_{27}\right)+V\left(\frac{1}{2}X_{28}\right)
+    =\frac{\sigma^2}{n}+\frac{1}{4}\sigma^2+\frac{1}{4}\sigma^2
+    =\sigma^2\left(\frac{1}{2}+\frac{1}{n}\right).
+    \]
+    Thus
+    \[
+    T=\frac{\bar{X}-\bar{X}_{new}}{s\sqrt{\frac{1}{2}+\frac{1}{n}}}
+    \]
+    has a $t$ distribution with $n-1$ df, so the new prediction interval is
+    \[
+    \bar{x}\pm t_{\alpha/2,n-1}s\sqrt{\frac{1}{2}+\frac{1}{n}}.
+    \]
+    For this situation,
+    \[
+    370.69\pm1.708(24.36)\sqrt{\frac{1}{2}+\frac{1}{26}}
+    =370.69\pm30.53=(340.16,401.22).
+    \]
+\end{enumerate}
+
+\setcounter{enumi}{41}
+\item
+\begin{enumerate}[label=\alph*.]
+    \item $\chi^2_{.1,15}=22.307$ \quad (.1 column, 15 df row)
+    \item $\chi^2_{.1,25}=34.381$
+    \item $\chi^2_{.01,25}=44.313$
+    \item $\chi^2_{.005,25}=46.925$
+    \item $\chi^2_{.99,25}=11.523$ \quad (.99 column, 25 df row)
+    \item $\chi^2_{.995,25}=10.519$
+\end{enumerate}
+
+\setcounter{enumi}{43}
+\item
+Here $n-1=8$, $\chi^2_{.025,8}=17.534$, and $\chi^2_{.975,8}=2.180$. Thus the $95\%$ confidence interval for $\sigma^2$ is
+\[
+\left(\frac{8(7.90)}{17.534},\frac{8(7.90)}{2.180}\right)=(3.60,28.98).
+\]
+The $95\%$ confidence interval for $\sigma$ is
+\[
+(\sqrt{3.60},\sqrt{28.98})=(1.90,5.38).
+\]
+
+\setcounter{enumi}{45}
+\item
+\begin{enumerate}[label=\alph*.]
+    \item Using a normal probability plot, it is plausible that this sample came from a normal population distribution.
+    \item With $s=1.579$, $n=15$, and $\chi^2_{.95,14}=6.571$, the $95\%$ upper confidence bound for $\sigma$ is
+    \[
+    \sqrt{\frac{14(1.579)^2}{6.571}}=2.305.
+    \]
+\end{enumerate}
+
+\end{enumerate}
+
+\section*{Chapter 8}
+
+\begin{enumerate}[label=\textbf{\arabic*.}, leftmargin=*]
+
+\setcounter{enumi}{3}
+\item
+Reject $H_0$ if and only if $P$-value $\le \alpha$.
+\begin{enumerate}[label=\alph*.]
+    \item Do not reject $H_0$, since $.084>.05$.
+    \item Do not reject $H_0$, since $.003>.001$.
+    \item Do not reject $H_0$, since $.498>.05$.
+    \item Reject $H_0$, since $.084\le.10$.
+    \item Do not reject $H_0$, since $.039>.01$.
+    \item Do not reject $H_0$, since $.218>.10$.
+\end{enumerate}
+
+\setcounter{enumi}{7}
+\item
+\[
+H_0:\mu=40\quad\text{versus}\quad H_a:\mu\ne40,
+\]
+where $\mu$ is the true average burn-out amperage for this type of fuse. The alternative reflects that departure from $\mu=40$ in either direction is a concern. A type I error would say that one of the two concerns exists, either $\mu<40$ or $\mu>40$, when the fuses are actually compliant. A type II error would be to fail to detect either concern when one exists.
+
+\setcounter{enumi}{9}
+\item
+Let $\mu_1$ be the average amount of warpage for the regular laminate and $\mu_2$ the analogous value for the special laminate. Then
+\[
+H_0:\mu_1=\mu_2\quad\text{versus}\quad H_a:\mu_1>\mu_2.
+\]
+Type I error: conclude that the special laminate produces less warpage than the regular laminate when it actually does not. Type II error: conclude that there is no difference in the two laminates when, in reality, the special one produces less warpage.
+
+\setcounter{enumi}{11}
+\item
+\begin{enumerate}[label=\alph*.]
+    \item
+    \[
+    H_0:\mu=1300\quad\text{versus}\quad H_a:\mu>1300.
+    \]
+
+    \item When $H_0$ is true, $\bar{X}$ is normally distributed with mean $E(\bar{X})=\mu=1300$ and standard deviation
+    \[
+    \frac{\sigma}{\sqrt{n}}=\frac{60}{\sqrt{10}}=18.97.
+    \]
+    Values more contradictory to $H_0$ than $\bar{x}=1340$ would be anything above $1340$. Thus
+    \[
+    P\text{-value}=P(\bar{X}\ge1340\mid H_0\text{ true})
+    =P\left(Z\ge\frac{1340-1300}{18.97}\right)
+    =1-\Phi(2.11)=.0174.
+    \]
+    Since $.0174>.01$, $H_0$ would not be rejected at the $\alpha=.01$ significance level.
+
+    \item When $\mu=1350$, $\bar{X}$ has a normal distribution with mean $1350$ and standard deviation $18.97$. To determine $\beta(1350)$, first find the threshold between $P$-value $\le\alpha$ and $P$-value $>\alpha$ in terms of $\bar{x}$:
+    \[
+    .01=P(\text{reject }H_0\mid H_0\text{ is true})=P(\bar{X}\ge\bar{x}\mid H_0\text{ is true})
+    =1-\Phi\left(\frac{\bar{x}-1300}{18.97}\right).
+    \]
+    Hence
+    \[
+    \Phi\left(\frac{\bar{x}-1300}{18.97}\right)=.99
+    \Rightarrow
+    \frac{\bar{x}-1300}{18.97}=2.33
+    \Rightarrow
+    \bar{x}=1344.21.
+    \]
+    Thus we reject $H_0$ at the $\alpha=.01$ level if the observed value of $\bar{X}$ is at least $1344.21$. Finally,
+    \[
+    \beta(1350)=P(\text{do not reject }H_0\mid\mu=1350)
+    =P(\bar{X}<1344.21\mid\mu=1350)
+    \]
+    \[
+    =P\left(Z<\frac{1344.21-1350}{18.97}\right)
+    \approx \Phi(-.31)=.3783.
+    \]
+\end{enumerate}
+
+\setcounter{enumi}{29}
+\item
+The hypotheses are
+\[
+H_0:\mu=7.0\quad\text{versus}\quad H_a:\mu<7.0.
+\]
+In each case, the one-tail area to the left of the observed test statistic is needed.
+\begin{enumerate}[label=\alph*.]
+    \item $n=6\Rightarrow df=5$. From Table A.8,
+    \[
+    P(T\le-2.3\mid T\sim t_5)=P(T\ge2.3\mid T\sim t_5)=.035.
+    \]
+    Since $.035\le.05$, reject $H_0$ at the $\alpha=.05$ level.
+
+    \item Similarly,
+    \[
+    P\text{-value}=P(T\ge3.1\mid T\sim t_{14})=.004.
+    \]
+    Since $.004<.01$, reject $H_0$.
+
+    \item Similarly,
+    \[
+    P\text{-value}=P(T\ge1.3\mid T\sim t_{11})=.110.
+    \]
+    Since $.110\ge.05$, do not reject $H_0$.
+
+    \item Here
+    \[
+    P\text{-value}=P(T\le .7\mid T\sim t_5),
+    \]
+    because this is a lower-tailed test. This is
+    \[
+    1-P(T>.7\mid T\sim t_5)=1-.258=.742.
+    \]
+    Since $.742>.05$, do not reject $H_0$.
+
+    \item The observed test statistic is
+    \[
+    t=\frac{\bar{x}-\mu_0}{s/\sqrt{n}}=\frac{6.68-7.0}{.0820}=-3.90.
+    \]
+    Therefore,
+    \[
+    P\text{-value}=P(T\ge3.90\mid T\sim t_5)=.006.
+    \]
+    We would reject $H_0$ for any significance level at or above $.006$.
+\end{enumerate}
+
+\setcounter{enumi}{33}
+\item
+The data provided has
+\[
+n=6,\qquad \bar{x}=31.233,\qquad s=0.689.
+\]
+\begin{enumerate}[label=\alph*.]
+    \item The hypotheses are
+    \[
+    H_0:\mu=30\quad\text{versus}\quad H_a:\mu>30.
+    \]
+    The one-sample $t$ statistic is
+    \[
+    t=\frac{31.233-30}{0.689/\sqrt{6}}=4.38.
+    \]
+    At $df=5$, the $P$-value is $P(T\ge4.38)=.004$. Since $.004\le.01$, reject $H_0$ at the $\alpha=.01$ level and conclude that the true average stopping distance exceeds $30$ ft.
+
+    \item Using statistical software, the power of the test with $n=6$, $\alpha=.01$, and $\sigma=.65$ is $.660$ when $\mu=31$ and $.998$ when $\mu=32$. The corresponding type II error probabilities are
+    \[
+    \beta(31)=1-.660=.340,
+    \qquad
+    \beta(32)=1-.998=.002.
+    \]
+
+    \item Changing $\sigma$ from $.65$ to $.80$ gives
+    \[
+    \beta(31)=1-.470=.530,
+    \qquad
+    \beta(32)=1-.975=.025.
+    \]
+    Type II error is still less likely when the true value of $\mu$ is farther from $\mu_0$. With the larger standard deviation, random sampling variation makes it more likely for the sample mean to deviate substantially from $\mu$, and in particular tricks us into thinking $H_0$ might be plausible even though it is false. Thus $\beta$ increases from $.340$ to $.530$ when $\mu=31$ and from $.002$ to $.025$ when $\mu=32$.
+
+    \item According to statistical software, $n=9$ will suffice to achieve $\beta=.1$ (power $=.9$) when $\alpha=.01$, $\mu=31$, and $\sigma=.65$.
+\end{enumerate}
+
+\setcounter{enumi}{37}
+\item
+$\mu$ is the true average percentage of organic matter in this type of soil, and the hypotheses are
+\[
+H_0:\mu=3\quad\text{versus}\quad H_a:\mu\ne3.
+\]
+With $n=30$ and assuming normality, use the $t$ test:
+\[
+t=\frac{\bar{x}-3}{s/\sqrt{n}}
+=\frac{2.481-3}{.295}=
+\frac{-.519}{.295}=-1.759.
+\]
+At $df=29$,
+\[
+P\text{-value}=2P(T>1.759)=2(.041)=.082.
+\]
+At significance level $.10$, since $.082\le.10$, reject $H_0$ and conclude that the true average percentage of organic matter is something other than $3$. At significance level $.05$, do not reject $H_0$.
+
+\setcounter{enumi}{39}
+\item
+The hypotheses are
+\[
+H_0:\mu=48\quad\text{versus}\quad H_a:\mu>48.
+\]
+Using the one-sample $t$ procedure,
+\[
+t=\frac{51.3-48}{1.2/\sqrt{10}}=8.7.
+\]
+With $df=9$,
+\[
+P(T\ge8.7)\approx0.
+\]
+Hence reject $H_0$ at any reasonable significance level and conclude that the true average strength for the WSF/cellulose composite definitely exceeds $48$ MPa.
+
+\end{enumerate}
+
+\end{document}
