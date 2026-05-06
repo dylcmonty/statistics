@@ -1,5 +1,67 @@
 # sprg-26
 
+## Repository Naming Convention
+
+This repository uses a compact file naming pattern so course material can be found by date, course, artifact type, version, and document role.
+
+Canonical pattern:
+
+```text
+<YYYY-MM-DD>-<course_id>-<artifact_id>-<version>[-<role>].<ext>
+```
+
+Current examples:
+
+```text
+hw/2026-00-00-stat_461-hw_1-0.0-0-sub.tex
+hw/2026-00-00-stat_461-hw_6-0.0-0-sub.tex
+leaflets/2026-00-00-stat_461-exam_1-0-sol.tex
+leaflets/2026-00-00-stat_461-exam_3-0-sol.tex
+leaflets/2026-00-00-stat_461-final-0.tex
+leaflets/2026-00-00-stat_461-final-0-sol.tex
+leaflets/2025-00-00-stat_461-ch_7_8-0-sol.tex
+```
+
+Field meanings:
+
+```text
+YYYY-MM-DD   Calendar date. Use 00 for unknown or general month/day placeholders.
+course_id    Lowercase course identifier, e.g. stat_461.
+artifact_id  Assignment or content unit, e.g. hw_6, exam_3, final, ch_7_8.
+version      Numeric variant/index. Start at 0; use decimals only when a sub-version is needed.
+role         Optional document role.
+ext          File type, usually tex or pdf.
+```
+
+Role suffixes:
+
+```text
+(no suffix)  Prompt, exam, worksheet, or source content.
+-sol         Solution file or answer key.
+-sub         Submission-ready homework file.
+```
+
+Directory usage:
+
+```text
+hw/          Homework files.
+leaflets/    Exams, finals, chapter packets, practice sheets, and solution leaflets.
+```
+
+Agent recall rules:
+
+```text
+Homework N            Search: hw/ + stat_461-hw_N
+Exam N solutions      Search: leaflets/ + stat_461-exam_N + -sol
+Final questions       Search: leaflets/ + stat_461-final-0.tex
+Final solutions       Search: leaflets/ + stat_461-final + -sol
+Chapter A-B solutions Search: leaflets/ + stat_461-ch_A_B + -sol
+```
+
+When multiple files match, prefer the exact year first, then the exact artifact id, then the most specific role suffix. Do not treat a `-sol` file as the source exam/question file unless the request is explicitly asking for solutions.
+
+---
+
 ## Homework
 
 Homework-1: 1.1–1.3
@@ -77,15 +139,6 @@ Exam-4: 1-10 ~ Final
 9.3. Analysis of Paired Data
 9.4. Inferences Concerning a Difference Between Population Proportions
 
-10. HERE
-HERE
+10. The Analysis of Variance & ANOVA
 
 ---
-
-
-
-
-
-
-
-
