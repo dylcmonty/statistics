@@ -1,0 +1,82 @@
+\documentclass[11pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb}
+\usepackage{array,booktabs}
+\usepackage{tikz}
+\usepackage{enumitem}
+
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{6pt}
+\begin{document}
+
+\section*{Problem 14}
+
+\textbf{Question.} For each combination of sample size and sample proportion, find the margin of error for a $98\%$ confidence interval: (a) $n=484$ and 98 yes responses, (b) $n=1089$ and 655 in favor, (c) $n=650$ and 540 prefer stricter rules.
+
+\textbf{Solution.} For a confidence interval for a population proportion, the margin of error is
+\[
+E=z_{\alpha/2}\sqrt{\frac{\hat p(1-\hat p)}{n}}.
+\]
+For a $98\%$ confidence interval,
+\[
+\alpha=0.02, \qquad \alpha/2=0.01, \qquad z_{\alpha/2}=z_{0.01}=2.326.
+\]
+
+\textbf{(a)} Here,
+\[
+n=484, \qquad x=98.
+\]
+Thus,
+\[
+\hat p=\frac{98}{484}\approx 0.2025.
+\]
+The margin of error is
+\[
+E=2.326\sqrt{\frac{(0.2025)(1-0.2025)}{484}}
+=2.326\sqrt{\frac{(0.2025)(0.7975)}{484}}
+\approx 0.0425.
+\]
+Therefore,
+\[
+\boxed{E\approx 0.0425}.
+\]
+
+\textbf{(b)} Here,
+\[
+n=1089, \qquad x=655.
+\]
+Thus,
+\[
+\hat p=\frac{655}{1089}\approx 0.6015.
+\]
+The margin of error is
+\[
+E=2.326\sqrt{\frac{(0.6015)(1-0.6015)}{1089}}
+\approx 0.0345.
+\]
+Therefore,
+\[
+\boxed{E\approx 0.0345}.
+\]
+
+\textbf{(c)} Here,
+\[
+n=650, \qquad x=540.
+\]
+Thus,
+\[
+\hat p=\frac{540}{650}\approx 0.8308.
+\]
+The margin of error is
+\[
+E=2.326\sqrt{\frac{(0.8308)(1-0.8308)}{650}}
+\approx 0.0342.
+\]
+Therefore,
+\[
+\boxed{E\approx 0.0342}.
+\]
+
+\newpage
+
+\end{document}

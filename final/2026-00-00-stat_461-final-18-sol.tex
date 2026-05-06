@@ -1,0 +1,84 @@
+\documentclass[11pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb}
+\usepackage{array,booktabs}
+\usepackage{tikz}
+\usepackage{enumitem}
+
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{6pt}
+\begin{document}
+
+\section*{Problem 18}
+
+\textbf{Question.} When rolling a balanced die twice, write down the pmf table for $X=$ the average of the two numbers. Find its mean and standard deviation.
+
+\textbf{Solution.} Let the two die rolls be $D_1$ and $D_2$. Then
+\[
+X=\frac{D_1+D_2}{2}.
+\]
+There are $36$ equally likely outcomes when rolling a balanced die twice. The possible values of $D_1+D_2$ are $2,3,\ldots,12$, so the possible values of $X$ are
+\[
+1,\frac32,2,\frac52,3,\frac72,4,\frac92,5,\frac{11}{2},6.
+\]
+The pmf table is
+\[
+\begin{array}{c|ccccccccccc}
+x & 1 & \frac32 & 2 & \frac52 & 3 & \frac72 & 4 & \frac92 & 5 & \frac{11}{2} & 6\\
+\hline
+P(X=x)
+& \frac{1}{36}
+& \frac{2}{36}
+& \frac{3}{36}
+& \frac{4}{36}
+& \frac{5}{36}
+& \frac{6}{36}
+& \frac{5}{36}
+& \frac{4}{36}
+& \frac{3}{36}
+& \frac{2}{36}
+& \frac{1}{36}
+\end{array}
+\]
+
+The mean is
+\[
+E(X)=E\left(\frac{D_1+D_2}{2}\right).
+\]
+By linearity of expectation,
+\[
+E(X)=\frac{1}{2}\left[E(D_1)+E(D_2)\right].
+\]
+For one balanced die,
+\[
+E(D_1)=E(D_2)=\frac{1+2+3+4+5+6}{6}=3.5.
+\]
+Therefore,
+\[
+E(X)=\frac{1}{2}(3.5+3.5)=3.5.
+\]
+So,
+\[
+\boxed{\mu_X=3.5}.
+\]
+
+For one balanced die,
+\[
+\operatorname{Var}(D_1)=\frac{35}{12}.
+\]
+Since the two rolls are independent,
+\[
+\operatorname{Var}(X)=\operatorname{Var}\left(\frac{D_1+D_2}{2}\right)=\frac{1}{4}\left[\operatorname{Var}(D_1)+\operatorname{Var}(D_2)\right].
+\]
+Thus,
+\[
+\operatorname{Var}(X)=\frac{1}{4}\left(\frac{35}{12}+\frac{35}{12}\right)=\frac{35}{24}.
+\]
+Therefore, the standard deviation is
+\[
+\boxed{\sigma_X=\sqrt{\frac{35}{24}}\approx 1.2076}.
+\]
+
+\newpage
+
+\end{document}

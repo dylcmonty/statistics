@@ -1,0 +1,59 @@
+\documentclass[11pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb}
+\usepackage{array,booktabs}
+\usepackage{tikz}
+\usepackage{enumitem}
+
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{6pt}
+\begin{document}
+
+\section*{Problem 3}
+
+\textbf{Question.} If $X_1,\ldots,X_n$ are i.i.d. Standard Beta$(3,5)$ random variables, find the mean and variance of
+\[
+X=\sum_{i=1}^n(c_iX_i+b_i),
+\]
+for constants $c_1,\ldots,c_n$ and $b_1,\ldots,b_n$.
+
+\textbf{Solution.} For a Beta$(\alpha,\beta)$ random variable,
+\[
+E(X_i)=\frac{\alpha}{\alpha+\beta},
+\qquad
+\operatorname{Var}(X_i)=\frac{\alpha\beta}{(\alpha+\beta)^2(\alpha+\beta+1)}.
+\]
+Here, $\alpha=3$ and $\beta=5$. Thus,
+\[
+E(X_i)=\frac{3}{3+5}=\frac{3}{8},
+\]
+and
+\[
+\operatorname{Var}(X_i)=\frac{(3)(5)}{(3+5)^2(3+5+1)}=\frac{15}{64(9)}=\frac{15}{576}=\frac{5}{192}.
+\]
+
+Now,
+\[
+E(X)=E\left[\sum_{i=1}^{n}(c_iX_i+b_i)\right].
+\]
+By linearity of expectation,
+\[
+E(X)=\sum_{i=1}^{n}\left(c_iE(X_i)+b_i\right).
+\]
+Therefore,
+\[
+\boxed{E(X)=\sum_{i=1}^{n}\left(\frac{3c_i}{8}+b_i\right)}.
+\]
+
+Since $X_1,\ldots,X_n$ are independent,
+\[
+\operatorname{Var}(X)=\operatorname{Var}\left[\sum_{i=1}^{n}(c_iX_i+b_i)\right]=\sum_{i=1}^{n}c_i^2\operatorname{Var}(X_i).
+\]
+Thus,
+\[
+\boxed{\operatorname{Var}(X)=\frac{5}{192}\sum_{i=1}^{n}c_i^2}.
+\]
+
+\newpage
+
+\end{document}

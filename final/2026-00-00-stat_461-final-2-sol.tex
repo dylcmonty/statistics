@@ -1,0 +1,52 @@
+\documentclass[11pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb}
+\usepackage{array,booktabs}
+\usepackage{tikz}
+\usepackage{enumitem}
+
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{6pt}
+\begin{document}
+
+\section*{Problem 2}
+
+\textbf{Question.} If $X$, $Y$, and $Z$ are independent random variables with means $15$, $22$, and $10$ respectively and standard deviations $2$, $5$, and $7$ respectively, find the mean and the standard deviation of $3X+2Y-4Z$.
+
+\textbf{Solution.} Let
+\[
+W=3X+2Y-4Z.
+\]
+Using linearity of expectation,
+\[
+E(W)=3E(X)+2E(Y)-4E(Z).
+\]
+Substituting the given means,
+\[
+E(W)=3(15)+2(22)-4(10)=45+44-40=49.
+\]
+Thus,
+\[
+\boxed{\mu_W=49}.
+\]
+
+Since $X,Y,Z$ are independent,
+\[
+\operatorname{Var}(W)=3^2\operatorname{Var}(X)+2^2\operatorname{Var}(Y)+(-4)^2\operatorname{Var}(Z).
+\]
+Using the given standard deviations,
+\[
+\operatorname{Var}(X)=2^2=4, \qquad \operatorname{Var}(Y)=5^2=25, \qquad \operatorname{Var}(Z)=7^2=49.
+\]
+Therefore,
+\[
+\operatorname{Var}(W)=9(4)+4(25)+16(49)=36+100+784=920.
+\]
+So,
+\[
+\boxed{\sigma_W=\sqrt{920}=2\sqrt{230}\approx 30.33}.
+\]
+
+\newpage
+
+\end{document}

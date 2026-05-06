@@ -1,0 +1,65 @@
+\documentclass[11pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb}
+\usepackage{array,booktabs}
+\usepackage{tikz}
+\usepackage{enumitem}
+
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{6pt}
+\begin{document}
+
+\section*{Problem 15}
+
+\textbf{Question.} At the start of an Ebola epidemic, $0.2\%$ of the population had the virus. If a random sample of 1000 residents is taken, find the chances of finding exactly 5 infected people and at most 3 infected people.
+
+\textbf{Solution.} Let
+\[
+X=\text{number of Ebola-infected people in the sample}.
+\]
+Since $0.2\%$ of the population had the virus,
+\[
+p=0.002, \qquad n=1000.
+\]
+Thus,
+\[
+X\sim \operatorname{Binomial}(1000,0.002).
+\]
+Since $n$ is large and $p$ is small, use a Poisson approximation with
+\[
+\lambda=np=1000(0.002)=2.
+\]
+Therefore,
+\[
+X\approx \operatorname{Poisson}(2).
+\]
+
+\textbf{Exactly 5 infected people:}
+\[
+P(X=5)=\frac{e^{-2}2^5}{5!}=\frac{e^{-2}(32)}{120}\approx 0.0361.
+\]
+Therefore,
+\[
+\boxed{P(X=5)\approx 0.0361}.
+\]
+
+\textbf{At most 3 infected people:}
+\[
+P(X\le 3)=P(X=0)+P(X=1)+P(X=2)+P(X=3).
+\]
+Using the Poisson pmf,
+\[
+P(X\le 3)=e^{-2}\left(\frac{2^0}{0!}+\frac{2^1}{1!}+\frac{2^2}{2!}+\frac{2^3}{3!}\right).
+\]
+Thus,
+\[
+P(X\le 3)=e^{-2}\left(1+2+2+\frac{8}{6}\right)=e^{-2}\left(\frac{19}{3}\right)\approx 0.8571.
+\]
+Therefore,
+\[
+\boxed{P(X\le 3)\approx 0.8571}.
+\]
+
+\newpage
+
+\end{document}

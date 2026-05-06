@@ -1,0 +1,48 @@
+\documentclass[11pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb}
+\usepackage{array,booktabs}
+\usepackage{tikz}
+\usepackage{enumitem}
+
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{6pt}
+\begin{document}
+
+\section*{Problem 9}
+
+\textbf{Question.} Suppose $Y_1,\ldots,Y_n$ are a simple random sample from a Uniform$[0,\theta]$ population. What is the method-of-moments estimate of $\theta$? What is the method-of-moments estimate of $\theta^2$?
+
+\textbf{Solution.} For a Uniform$[0,\theta]$ random variable,
+\[
+E(Y_i)=\frac{0+\theta}{2}=\frac{\theta}{2}.
+\]
+The first moment equation is
+\[
+\bar Y=\frac{\theta}{2}.
+\]
+Solving for $\theta$,
+\[
+\boxed{\hat\theta_{\text{MOM}}=2\bar Y}.
+\]
+
+For a Uniform$[0,\theta]$ random variable,
+\[
+\operatorname{Var}(Y_i)=\frac{(\theta-0)^2}{12}=\frac{\theta^2}{12}.
+\]
+Equating this to the sample variance,
+\[
+S^2=\frac{1}{n-1}\sum_{i=1}^{n}(Y_i-\bar Y)^2,
+\]
+gives
+\[
+S^2=\frac{\theta^2}{12}.
+\]
+Solving for $\theta^2$,
+\[
+\boxed{\widehat{\theta^2}_{\text{MOM}}=12S^2}.
+\]
+
+\newpage
+
+\end{document}

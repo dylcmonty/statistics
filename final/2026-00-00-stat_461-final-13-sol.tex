@@ -1,0 +1,82 @@
+\documentclass[11pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb}
+\usepackage{array,booktabs}
+\usepackage{tikz}
+\usepackage{enumitem}
+
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{6pt}
+\begin{document}
+
+\section*{Problem 13}
+
+\textbf{Question.} In Problem 12, how would the test be done differently if the two unknown population standard deviations were known to be the same?
+
+\textbf{Solution.} If the two unknown population standard deviations are known to be equal, then the test should be done using a pooled two-sample $t$ test.
+
+The hypotheses remain
+\[
+H_0:\mu_1-\mu_2\le 0
+\]
+versus
+\[
+H_a:\mu_1-\mu_2>0.
+\]
+The sample information is
+\[
+n_1=9,\qquad \bar x_1=32.19,\qquad s_1=4.34,
+\]
+and
+\[
+n_2=7,\qquad \bar x_2=31.68,\qquad s_2=4.56.
+\]
+The pooled sample variance is
+\[
+s_p^2=\frac{(n_1-1)s_1^2+(n_2-1)s_2^2}{n_1+n_2-2}.
+\]
+Substituting,
+\[
+s_p^2=\frac{(9-1)(4.34)^2+(7-1)(4.56)^2}{9+7-2}.
+\]
+Thus,
+\[
+s_p^2=\frac{8(18.8356)+6(20.7936)}{14}=\frac{275.4464}{14}\approx 19.6747.
+\]
+So,
+\[
+s_p=\sqrt{19.6747}\approx 4.4356.
+\]
+The test statistic is
+\[
+t=\frac{\bar x_1-\bar x_2-0}{s_p\sqrt{\frac{1}{n_1}+\frac{1}{n_2}}}.
+\]
+Substituting,
+\[
+t=\frac{32.19-31.68}{4.4356\sqrt{\frac{1}{9}+\frac{1}{7}}}
+=\frac{0.51}{4.4356\sqrt{\frac{16}{63}}}\approx 0.2281.
+\]
+The degrees of freedom are
+\[
+df=n_1+n_2-2=9+7-2=14.
+\]
+At the $5\%$ significance level for a right-tailed test,
+\[
+t_{0.05,14}=1.761.
+\]
+The rejection rule is
+\[
+\text{reject }H_0\text{ if }t>1.761.
+\]
+Since
+\[
+0.2281<1.761,
+\]
+fail to reject $H_0$.
+\[
+\boxed{\text{Fail to reject }H_0.}
+\]
+
+\newpage
+
+\end{document}

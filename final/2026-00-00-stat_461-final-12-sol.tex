@@ -1,0 +1,76 @@
+\documentclass[11pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb}
+\usepackage{array,booktabs}
+\usepackage{tikz}
+\usepackage{enumitem}
+
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{6pt}
+\begin{document}
+
+\section*{Problem 12}
+
+\textbf{Question.} A sample of 9 second graders who participated in regular sports had manual dexterity scores with mean $32.19$ and standard deviation $4.34$. An independent sample of 7 second graders who did not participate in regular sports had mean $31.68$ and standard deviation $4.56$. At the $5\%$ significance level, test whether regular-sports participants have a higher mean score.
+
+\textbf{Solution.} Let
+\[
+\mu_1=\text{mean score for second graders who participated in regular sports}
+\]
+and
+\[
+\mu_2=\text{mean score for second graders who did not participate in regular sports}.
+\]
+The hypotheses are
+\[
+H_0:\mu_1-\mu_2\le 0
+\]
+versus
+\[
+H_a:\mu_1-\mu_2>0.
+\]
+The sample information is
+\[
+n_1=9,\qquad \bar x_1=32.19,\qquad s_1=4.34,
+\]
+and
+\[
+n_2=7,\qquad \bar x_2=31.68,\qquad s_2=4.56.
+\]
+Since the population standard deviations are unknown and not assumed equal, use the two-sample $t$ test statistic
+\[
+t=\frac{\bar x_1-\bar x_2-0}{\sqrt{\frac{s_1^2}{n_1}+\frac{s_2^2}{n_2}}}.
+\]
+Substituting,
+\[
+t=\frac{32.19-31.68}{\sqrt{\frac{4.34^2}{9}+\frac{4.56^2}{7}}}
+=\frac{0.51}{\sqrt{\frac{18.8356}{9}+\frac{20.7936}{7}}}.
+\]
+Thus,
+\[
+t=\frac{0.51}{\sqrt{5.0633}}\approx 0.2266.
+\]
+Using the conservative degrees of freedom,
+\[
+df=\min(n_1-1,n_2-1)=\min(8,6)=6.
+\]
+At the $5\%$ significance level for a right-tailed test,
+\[
+t_{0.05,6}=1.943.
+\]
+The rejection rule is
+\[
+\text{reject }H_0\text{ if }t>1.943.
+\]
+Since
+\[
+0.2266<1.943,
+\]
+fail to reject $H_0$. Therefore, there is not sufficient evidence to claim that second graders who participate in regular sports have a higher mean manual dexterity score.
+\[
+\boxed{\text{Fail to reject }H_0.}
+\]
+
+\newpage
+
+\end{document}

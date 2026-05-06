@@ -1,0 +1,84 @@
+\documentclass[11pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb}
+\usepackage{array,booktabs}
+\usepackage{tikz}
+\usepackage{enumitem}
+
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{6pt}
+\begin{document}
+
+\section*{Problem 10}
+
+\textbf{Question.} If $X_1,X_2,\ldots,X_n$ are a simple random sample from a Weibull$(3,\beta)$ population, derive the maximum likelihood estimate of $\beta$.
+
+\textbf{Solution.} The Weibull density is
+\[
+f(x)=\frac{\alpha}{\beta^\alpha}x^{\alpha-1}e^{-(x/\beta)^\alpha}, \qquad x>0.
+\]
+Since $\alpha=3$,
+\[
+f(x)=\frac{3}{\beta^3}x^2e^{-(x/\beta)^3}, \qquad x>0.
+\]
+
+The likelihood function is
+\[
+L(\beta)=\prod_{i=1}^{n}\frac{3}{\beta^3}x_i^2e^{-(x_i/\beta)^3}.
+\]
+Thus,
+\[
+L(\beta)=\frac{3^n}{\beta^{3n}}\left(\prod_{i=1}^{n}x_i^2\right)\exp\left(-\sum_{i=1}^{n}\frac{x_i^3}{\beta^3}\right).
+\]
+The log-likelihood function is
+\[
+\ell(\beta)=\ln L(\beta)=n\ln 3-3n\ln\beta+2\sum_{i=1}^{n}\ln x_i-\frac{\sum_{i=1}^{n}x_i^3}{\beta^3}.
+\]
+Differentiate with respect to $\beta$:
+\[
+\frac{d\ell}{d\beta}=-\frac{3n}{\beta}+\frac{3\sum_{i=1}^{n}x_i^3}{\beta^4}.
+\]
+Set this equal to $0$:
+\[
+-\frac{3n}{\beta}+\frac{3\sum_{i=1}^{n}x_i^3}{\beta^4}=0.
+\]
+Multiplying by $\beta^4$,
+\[
+-3n\beta^3+3\sum_{i=1}^{n}x_i^3=0.
+\]
+Therefore,
+\[
+n\beta^3=\sum_{i=1}^{n}x_i^3,
+\]
+so
+\[
+\beta^3=\frac{1}{n}\sum_{i=1}^{n}x_i^3.
+\]
+Hence,
+\[
+\hat\beta_{\text{MLE}}=\sqrt[3]{\frac{1}{n}\sum_{i=1}^{n}x_i^3}.
+\]
+
+To check that this gives a maximum,
+\[
+\frac{d^2\ell}{d\beta^2}=\frac{3n}{\beta^2}-\frac{12\sum_{i=1}^{n}x_i^3}{\beta^5}.
+\]
+At $\hat\beta_{\text{MLE}}$,
+\[
+\sum_{i=1}^{n}x_i^3=n\hat\beta_{\text{MLE}}^3.
+\]
+Thus,
+\[
+\left.\frac{d^2\ell}{d\beta^2}\right|_{\hat\beta_{\text{MLE}}}
+=\frac{3n}{\hat\beta_{\text{MLE}}^2}-\frac{12n\hat\beta_{\text{MLE}}^3}{\hat\beta_{\text{MLE}}^5}
+=\frac{3n}{\hat\beta_{\text{MLE}}^2}-\frac{12n}{\hat\beta_{\text{MLE}}^2}
+=-\frac{9n}{\hat\beta_{\text{MLE}}^2}<0.
+\]
+Therefore,
+\[
+\boxed{\hat\beta_{\text{MLE}}=\sqrt[3]{\frac{1}{n}\sum_{i=1}^{n}x_i^3}}.
+\]
+
+\newpage
+
+\end{document}

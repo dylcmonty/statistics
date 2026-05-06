@@ -1,0 +1,80 @@
+\documentclass[11pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb}
+\usepackage{array,booktabs}
+\usepackage{tikz}
+\usepackage{enumitem}
+
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{6pt}
+\begin{document}
+
+\section*{Problem 17}
+
+\textbf{Question.} For six brands of French wine, $X$ is the number of years old and $Y$ is the selling price per bottle. Find the sample correlation $r$, the least-squares line, and the predicted average $Y$ for $X=7$.
+\[
+\begin{array}{c|cccccc}
+\text{Number} & 1 & 2 & 3 & 4 & 5 & 6\\
+\hline
+X & 2 & 4 & 3 & 2 & 5 & 4\\
+Y & 98 & 135 & 162 & 178 & 221 & 199
+\end{array}
+\]
+
+\textbf{Solution.} First compute the sample means:
+\[
+\bar x=\frac{2+4+3+2+5+4}{6}=\frac{20}{6}=\frac{10}{3},
+\]
+and
+\[
+\bar y=\frac{98+135+162+178+221+199}{6}=\frac{993}{6}=165.5.
+\]
+Now compute
+\[
+S_{xx}=\sum (x_i-\bar x)^2, \qquad S_{yy}=\sum (y_i-\bar y)^2, \qquad S_{xy}=\sum (x_i-\bar x)(y_i-\bar y).
+\]
+Using the data,
+\[
+S_{xx}=7.3333, \qquad S_{yy}=9857.5, \qquad S_{xy}=169.
+\]
+The sample correlation is
+\[
+r=\frac{S_{xy}}{\sqrt{S_{xx}S_{yy}}}.
+\]
+Thus,
+\[
+r=\frac{169}{\sqrt{(7.3333)(9857.5)}}\approx 0.6286.
+\]
+Therefore,
+\[
+\boxed{r\approx 0.6286}.
+\]
+
+The least-squares slope is
+\[
+b_1=\frac{S_{xy}}{S_{xx}}=\frac{169}{7.3333}\approx 23.0455.
+\]
+The least-squares intercept is
+\[
+b_0=\bar y-b_1\bar x.
+\]
+So,
+\[
+b_0=165.5-(23.0455)\left(\frac{10}{3}\right)\approx 88.6818.
+\]
+Therefore, the least-squares line is
+\[
+\boxed{\hat y=88.6818+23.0455x}.
+\]
+For $x=7$,
+\[
+\hat y=88.6818+23.0455(7)=250.
+\]
+Thus,
+\[
+\boxed{\hat y=250}.
+\]
+
+\newpage
+
+\end{document}

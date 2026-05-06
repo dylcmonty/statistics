@@ -1,0 +1,55 @@
+\documentclass[11pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb}
+\usepackage{array,booktabs}
+\usepackage{tikz}
+\usepackage{enumitem}
+
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{6pt}
+\begin{document}
+
+\section*{Problem 16}
+
+\textbf{Question.} A first bowl has 6 red and 2 blue marbles. A second bowl has 2 red and 2 blue marbles. A marble is transferred from the first bowl to the second. Then a marble is drawn from the second bowl and it is red. Find the conditional probability that the transferred marble was red.
+
+\textbf{Solution.} Let
+\[
+T_R=\text{the transferred marble was red}
+\]
+and
+\[
+D_R=\text{the marble drawn from the second bowl was red}.
+\]
+From the first bowl,
+\[
+P(T_R)=\frac{6}{8}=\frac{3}{4}, \qquad P(T_B)=\frac{2}{8}=\frac{1}{4}.
+\]
+If a red marble was transferred, then the second bowl has 3 red marbles and 2 blue marbles. Thus,
+\[
+P(D_R\mid T_R)=\frac{3}{5}.
+\]
+If a blue marble was transferred, then the second bowl has 2 red marbles and 3 blue marbles. Thus,
+\[
+P(D_R\mid T_B)=\frac{2}{5}.
+\]
+Find $P(T_R\mid D_R)$. By Bayes' rule,
+\[
+P(T_R\mid D_R)=\frac{P(D_R\mid T_R)P(T_R)}{P(D_R\mid T_R)P(T_R)+P(D_R\mid T_B)P(T_B)}.
+\]
+Substituting,
+\[
+P(T_R\mid D_R)=\frac{\left(\frac{3}{5}\right)\left(\frac{3}{4}\right)}{\left(\frac{3}{5}\right)\left(\frac{3}{4}\right)+\left(\frac{2}{5}\right)\left(\frac{1}{4}\right)}.
+\]
+So,
+\[
+P(T_R\mid D_R)=\frac{\frac{9}{20}}{\frac{9}{20}+\frac{2}{20}}=\frac{\frac{9}{20}}{\frac{11}{20}}=\frac{9}{11}.
+\]
+Therefore,
+\[
+\boxed{P(T_R\mid D_R)=\frac{9}{11}\approx 0.8182}.
+\]
+
+\newpage
+
+\end{document}

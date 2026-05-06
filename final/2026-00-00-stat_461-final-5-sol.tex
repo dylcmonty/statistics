@@ -1,0 +1,64 @@
+\documentclass[11pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb}
+\usepackage{array,booktabs}
+\usepackage{tikz}
+\usepackage{enumitem}
+
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{6pt}
+\begin{document}
+
+\section*{Problem 5}
+
+\textbf{Question.} Let $Y_1,\ldots,Y_{36}$ be a simple random sample from a Poisson$(\mu=9)$ population. What is the approximate distribution of $2(\bar Y-9)$? So, what is $P(|\bar Y-9|\le 1.5)$?
+
+\textbf{Solution.} For a Poisson random variable,
+\[
+E(Y_i)=\mu=9, \qquad \operatorname{Var}(Y_i)=\mu=9.
+\]
+The sample mean is
+\[
+\bar Y=\frac{1}{36}\sum_{i=1}^{36}Y_i.
+\]
+By the Central Limit Theorem,
+\[
+\bar Y\approx N\left(\mu,\frac{\sigma^2}{n}\right)=N\left(9,\frac{9}{36}\right)=N\left(9,\frac14\right).
+\]
+Thus,
+\[
+\bar Y-9\approx N\left(0,\frac14\right).
+\]
+Therefore,
+\[
+2(\bar Y-9)\approx N(0,1).
+\]
+So,
+\[
+\boxed{2(\bar Y-9)\approx N(0,1)}.
+\]
+
+Now,
+\[
+P(|\bar Y-9|\le 1.5)=P(-1.5\le \bar Y-9\le 1.5).
+\]
+Multiplying all parts by $2$,
+\[
+P(|\bar Y-9|\le 1.5)=P(-3\le 2(\bar Y-9)\le 3).
+\]
+Since $2(\bar Y-9)\approx Z$,
+\[
+P(|\bar Y-9|\le 1.5)\approx P(-3\le Z\le 3).
+\]
+Using the standard normal table,
+\[
+P(-3\le Z\le 3)=\Phi(3)-\Phi(-3)\approx 0.9987-0.0013=0.9974.
+\]
+Hence,
+\[
+\boxed{P(|\bar Y-9|\le 1.5)\approx 0.9974}.
+\]
+
+\newpage
+
+\end{document}

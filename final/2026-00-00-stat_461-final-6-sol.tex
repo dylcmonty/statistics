@@ -1,0 +1,66 @@
+\documentclass[11pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb}
+\usepackage{array,booktabs}
+\usepackage{tikz}
+\usepackage{enumitem}
+
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{6pt}
+\begin{document}
+
+\section*{Problem 6}
+
+\textbf{Question.} In a poll of $n=1100$ adults, $517$ said they favored legalizing marijuana. Write down a $90\%$ confidence interval and a $99\%$ confidence interval for the true population proportion supporting legalization.
+
+\textbf{Solution.} Let $p$ be the true unknown population proportion of adults who support legalizing marijuana. The given values are
+\[
+n=1100, \qquad x=517.
+\]
+Thus,
+\[
+\hat p=\frac{x}{n}=\frac{517}{1100}=0.47.
+\]
+Also,
+\[
+1-\hat p=0.53.
+\]
+
+For a large-sample confidence interval for a population proportion,
+\[
+\hat p\pm z_{\alpha/2}\sqrt{\frac{\hat p(1-\hat p)}{n}}.
+\]
+First compute the standard error:
+\[
+SE=\sqrt{\frac{\hat p(1-\hat p)}{n}}=\sqrt{\frac{(0.47)(0.53)}{1100}}\approx 0.01505.
+\]
+
+\textbf{90\% Confidence Interval.} For a $90\%$ confidence interval,
+\[
+z_{\alpha/2}=z_{0.05}=1.645.
+\]
+Therefore,
+\[
+0.47\pm 1.645(0.01505)=0.47\pm 0.02475.
+\]
+Thus,
+\[
+\boxed{(0.4453,0.4947)}.
+\]
+
+\textbf{99\% Confidence Interval.} For a $99\%$ confidence interval,
+\[
+z_{\alpha/2}=z_{0.005}=2.576.
+\]
+Therefore,
+\[
+0.47\pm 2.576(0.01505)=0.47\pm 0.03877.
+\]
+Thus,
+\[
+\boxed{(0.4312,0.5088)}.
+\]
+
+\newpage
+
+\end{document}

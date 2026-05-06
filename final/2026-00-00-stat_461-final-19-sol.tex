@@ -1,0 +1,119 @@
+\documentclass[11pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb}
+\usepackage{array,booktabs}
+\usepackage{tikz}
+\usepackage{enumitem}
+
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{6pt}
+\begin{document}
+
+\section*{Problem 19}
+
+\textbf{Question.} Let $X$ and $Y$ denote lengths of life in hundreds of hours for type-1 and type-2 components. The joint density is
+\[
+f(x,y)=\frac{1}{8}xe^{-(x+y)/2}, \qquad x>0,\ y>0.
+\]
+Find the marginal densities of $X$ and $Y$. Determine whether $X$ and $Y$ are independent. Find the marginal mean and variance for each of $X$ and $Y$. Find the probability that a type-2 component has life length in excess of 100 hours.
+
+\textbf{Solution.} The joint density is
+\[
+f(x,y)=\frac{1}{8}xe^{-(x+y)/2}, \qquad x>0,\ y>0.
+\]
+
+\textbf{Marginal density of $X$.}
+\[
+f_X(x)=\int_0^\infty f(x,y)\,dy.
+\]
+Thus,
+\[
+f_X(x)=\int_0^\infty \frac{1}{8}xe^{-(x+y)/2}\,dy
+=\frac{x}{8}e^{-x/2}\int_0^\infty e^{-y/2}\,dy.
+\]
+Since
+\[
+\int_0^\infty e^{-y/2}\,dy=2,
+\]
+this gives
+\[
+\boxed{f_X(x)=\frac{x}{4}e^{-x/2}, \qquad x>0.}
+\]
+
+\textbf{Marginal density of $Y$.}
+\[
+f_Y(y)=\int_0^\infty f(x,y)\,dx.
+\]
+Thus,
+\[
+f_Y(y)=\int_0^\infty \frac{1}{8}xe^{-(x+y)/2}\,dx
+=\frac{1}{8}e^{-y/2}\int_0^\infty xe^{-x/2}\,dx.
+\]
+Since
+\[
+\int_0^\infty xe^{-x/2}\,dx=4,
+\]
+this gives
+\[
+\boxed{f_Y(y)=\frac{1}{2}e^{-y/2}, \qquad y>0.}
+\]
+
+\textbf{Independence.} Now,
+\[
+f_X(x)f_Y(y)=\left(\frac{x}{4}e^{-x/2}\right)\left(\frac{1}{2}e^{-y/2}\right)=\frac{x}{8}e^{-(x+y)/2}=f(x,y).
+\]
+Therefore,
+\[
+\boxed{X\text{ and }Y\text{ are independent}.}
+\]
+
+\textbf{Mean and variance of $X$.} The marginal density of $X$ is
+\[
+f_X(x)=\frac{x}{4}e^{-x/2}, \qquad x>0.
+\]
+This is a Gamma distribution with $\alpha=2$ and $\beta=2$. Therefore,
+\[
+E(X)=\alpha\beta=(2)(2)=4,
+\]
+and
+\[
+\operatorname{Var}(X)=\alpha\beta^2=(2)(2^2)=8.
+\]
+Thus,
+\[
+\boxed{E(X)=4, \qquad \operatorname{Var}(X)=8}.
+\]
+
+\textbf{Mean and variance of $Y$.} The marginal density of $Y$ is
+\[
+f_Y(y)=\frac{1}{2}e^{-y/2}, \qquad y>0.
+\]
+This is an Exponential distribution with rate $\lambda=1/2$. Therefore,
+\[
+E(Y)=\frac{1}{\lambda}=2,
+\]
+and
+\[
+\operatorname{Var}(Y)=\frac{1}{\lambda^2}=4.
+\]
+Thus,
+\[
+\boxed{E(Y)=2, \qquad \operatorname{Var}(Y)=4}.
+\]
+
+Since $Y$ is measured in hundreds of hours, a lifetime in excess of 100 hours means
+\[
+Y>1.
+\]
+Thus,
+\[
+P(Y>1)=\int_1^\infty \frac{1}{2}e^{-y/2}\,dy=e^{-1/2}.
+\]
+Therefore,
+\[
+\boxed{P(Y>1)=e^{-1/2}\approx 0.6065}.
+\]
+
+\newpage
+
+\end{document}

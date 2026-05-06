@@ -1,0 +1,55 @@
+\documentclass[11pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb}
+\usepackage{array,booktabs}
+\usepackage{tikz}
+\usepackage{enumitem}
+
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{6pt}
+\begin{document}
+
+\section*{Problem 11}
+
+\textbf{Question.} A random sample of $n=16$ pygmy goats from West Africa has sample average height $49$ cm and sample standard deviation $6.4$ cm. Find a $99\%$ confidence interval for the unknown population mean height.
+
+\textbf{Solution.} The given values are
+\[
+n=16, \qquad \bar x=49, \qquad s=6.4.
+\]
+Since the population standard deviation is unknown and the sample size is small, use a one-sample $t$ confidence interval:
+\[
+\bar x\pm t_{\alpha/2,n-1}\frac{s}{\sqrt n}.
+\]
+For a $99\%$ confidence interval,
+\[
+\alpha=0.01, \qquad \alpha/2=0.005, \qquad df=n-1=15.
+\]
+From the $t$-table,
+\[
+t_{0.005,15}=2.947.
+\]
+Thus,
+\[
+49\pm 2.947\frac{6.4}{\sqrt{16}}.
+\]
+Since
+\[
+\frac{6.4}{\sqrt{16}}=\frac{6.4}{4}=1.6,
+\]
+the margin of error is
+\[
+2.947(1.6)=4.7152.
+\]
+Therefore,
+\[
+49\pm 4.7152=(44.2848,53.7152).
+\]
+Hence,
+\[
+\boxed{(44.2848,53.7152)}.
+\]
+
+\newpage
+
+\end{document}

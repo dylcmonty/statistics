@@ -1,0 +1,123 @@
+\documentclass[11pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb}
+\usepackage{array,booktabs}
+\usepackage{tikz}
+\usepackage{enumitem}
+
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{6pt}
+\begin{document}
+
+\section*{Problem 21}
+
+\textbf{Question.} To compare Glipizide and Jardiance with a placebo control group, 18 diabetics were randomly assigned into three groups of 6. The morning blood-sugar readings are shown below. Test at a $1\%$ significance level whether all three population mean blood-sugar levels are the same.
+\[
+\begin{array}{c|ccc}
+& \text{Placebo} & \text{Glipizide} & \text{Jardiance}\\
+\hline
+1 & 137 & 128 & 119\\
+2 & 161 & 139 & 112\\
+3 & 155 & 121 & 123\\
+4 & 179 & 146 & 108\\
+5 & 144 & 151 & 128\\
+6 & 150 & 125 & 132
+\end{array}
+\]
+
+\textbf{Solution.} Test whether the three population mean blood-sugar levels are the same.
+\[
+H_0:\mu_1=\mu_2=\mu_3
+\]
+versus
+\[
+H_a:\text{at least one population mean is different}.
+\]
+
+The sample means are
+\[
+\bar x_1=\frac{137+161+155+179+144+150}{6}=154.3333,
+\]
+\[
+\bar x_2=\frac{128+139+121+146+151+125}{6}=135,
+\]
+and
+\[
+\bar x_3=\frac{119+112+123+108+128+132}{6}=120.3333.
+\]
+The grand mean is
+\[
+\bar x_{\cdot\cdot}=\frac{926+810+722}{18}=136.5556.
+\]
+
+The treatment sum of squares is
+\[
+SSTr=\sum_{i=1}^{3}n_i(\bar x_i-\bar x_{\cdot\cdot})^2.
+\]
+Thus,
+\[
+SSTr=6(154.3333-136.5556)^2+6(135-136.5556)^2+6(120.3333-136.5556)^2.
+\]
+So,
+\[
+SSTr=3489.7778.
+\]
+The error sum of squares is
+\[
+SSE=\sum_{i=1}^{3}\sum_{j=1}^{6}(x_{ij}-\bar x_i)^2.
+\]
+Computing within each group,
+\[
+SSE=2242.6667.
+\]
+
+The degrees of freedom are
+\[
+df_{Tr}=k-1=3-1=2,
+\]
+and
+\[
+df_E=N-k=18-3=15.
+\]
+Therefore,
+\[
+MSTr=\frac{SSTr}{df_{Tr}}=\frac{3489.7778}{2}=1744.8889,
+\]
+and
+\[
+MSE=\frac{SSE}{df_E}=\frac{2242.6667}{15}=149.5111.
+\]
+The ANOVA test statistic is
+\[
+F=\frac{MSTr}{MSE}=\frac{1744.8889}{149.5111}=11.6706.
+\]
+
+The ANOVA table is
+\[
+\begin{array}{c|cccc}
+\text{Source} & df & SS & MS & F\\
+\hline
+\text{Treatment} & 2 & 3489.7778 & 1744.8889 & 11.6706\\
+\text{Error} & 15 & 2242.6667 & 149.5111 & \\
+\text{Total} & 17 & 5732.4444 & &
+\end{array}
+\]
+
+At the $1\%$ significance level,
+\[
+F_{0.01,2,15}=6.3589.
+\]
+The rejection rule is
+\[
+\text{reject }H_0\text{ if }F>6.3589.
+\]
+Since
+\[
+11.6706>6.3589,
+\]
+reject $H_0$. Therefore, at the $1\%$ significance level, there is sufficient evidence to conclude that not all three population mean blood-sugar levels are the same.
+\[
+\boxed{\text{Reject }H_0.}
+\]
+
+\end{document}

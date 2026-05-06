@@ -1,0 +1,61 @@
+\documentclass[11pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb}
+\usepackage{array,booktabs}
+\usepackage{tikz}
+\usepackage{enumitem}
+
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{6pt}
+\begin{document}
+
+\section*{Problem 4}
+
+\textbf{Question.} Durations of 911 phone calls are skewed to the right, with population mean $12$ minutes and population standard deviation $3.2$ minutes. For a simple random sample of $64$ calls, find the approximate distribution of the sample average. Then find the chances that the sample average (a) exceeds $13$ minutes and (b) is below $10.8$ minutes.
+
+\textbf{Solution.} Let $X$ denote the duration of a randomly selected 911 phone call. The given values are
+\[
+\mu=12, \qquad \sigma=3.2, \qquad n=64.
+\]
+Although the population distribution is skewed to the right, the sample size is large enough to use the Central Limit Theorem. Thus,
+\[
+\bar X\approx N\left(\mu,\frac{\sigma^2}{n}\right).
+\]
+Therefore,
+\[
+\bar X\approx N\left(12,\frac{3.2^2}{64}\right)=N(12,0.16).
+\]
+Equivalently,
+\[
+\boxed{\bar X\approx N(12,0.4^2)}.
+\]
+
+\textbf{(a)}
+\[
+P(\bar X>13)=P\left(Z>\frac{13-12}{0.4}\right)=P(Z>2.5).
+\]
+Thus,
+\[
+P(\bar X>13)=1-\Phi(2.5)\approx 1-0.9938=0.0062.
+\]
+Therefore,
+\[
+\boxed{P(\bar X>13)\approx 0.0062}.
+\]
+
+\textbf{(b)}
+\[
+P(\bar X<10.8)=P\left(Z<\frac{10.8-12}{0.4}\right)=P(Z<-3).
+\]
+Thus,
+\[
+P(\bar X<10.8)=\Phi(-3)\approx 0.0013.
+\]
+Therefore,
+\[
+\boxed{P(\bar X<10.8)\approx 0.0013}.
+\]
+
+\newpage
+
+\end{document}

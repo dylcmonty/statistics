@@ -1,0 +1,55 @@
+\documentclass[11pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb}
+\usepackage{array,booktabs}
+\usepackage{tikz}
+\usepackage{enumitem}
+
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{6pt}
+\begin{document}
+
+\section*{Problem 7}
+
+\textbf{Question.} How large a sample size is needed to estimate an unknown population proportion of ``yes'' answers by a $99\%$ confidence interval whose width is $0.4$?
+
+\textbf{Solution.} For a confidence interval for a population proportion,
+\[
+\hat p\pm z_{\alpha/2}\sqrt{\frac{\hat p(1-\hat p)}{n}}.
+\]
+The width of the interval is $2E$, where $E$ is the margin of error. The desired width is $0.4$, so
+\[
+2E=0.4 \qquad \Longrightarrow \qquad E=0.2.
+\]
+Since the population proportion is unknown, use the conservative value
+\[
+\hat p=0.5.
+\]
+Thus,
+\[
+\hat p(1-\hat p)=(0.5)(0.5)=0.25.
+\]
+For a $99\%$ confidence interval,
+\[
+z_{\alpha/2}=z_{0.005}=2.576.
+\]
+The required sample size satisfies
+\[
+E=z_{\alpha/2}\sqrt{\frac{\hat p(1-\hat p)}{n}}.
+\]
+Solving for $n$,
+\[
+n=\frac{z_{\alpha/2}^2\hat p(1-\hat p)}{E^2}.
+\]
+Substituting,
+\[
+n=\frac{(2.576)^2(0.25)}{(0.2)^2}=\frac{6.6358(0.25)}{0.04}=41.474.
+\]
+Since the sample size must be rounded up,
+\[
+\boxed{n=42}.
+\]
+
+\newpage
+
+\end{document}
